@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Software</h2>
+<div class="media">
+     <a class="pull-left" href="http://compbio.mit.edu/cummeRbund">
+       <img class="media-object pull-left" src="images/cummeRbund_gold.png" width="100px"/>
+     </a>
+     <div class="media-body">
+       <h4 class="media-heading"><a class="pull-left" href="http://compbio.mit.edu/cummeRbund">CummeRbund</a></h4><br>
+       <p>An R/Bioconductor package for the persitent storage, manipulation, analysis, and visualization of Cufflinks RNA-Seq data. High-throughput sequencing of RNA-fragments is a powerful technique with many applications. The results of these analyses is often very large data sets with a high degree of relations between various data types and can be somewhat overwhelming. CummeRbund was designed to help simplify the analysis and exploration portion of RNA-Seq data derived from the output of a differential expression analysis using cuffdiff, with the goal of providing fast and intuitive access to your results. CummeRbund takes the various output files from a cuffdiff run and creates a SQLite database of the results describing appropriate relationships betweeen genes, transcripts, transcription start sites, and CDS regions. Once stored and indexed, data for these features, even across multiple samples or conditions, can be retrieved very efficiently and allows the user to explore subfeatures of individual genes, or genesets as the analysis requires.</p>
+     </div>
+   </div>
+{% endblock content %}

@@ -53,6 +53,7 @@ records = Medline.parse(handle)
 pages=[
         ('/', 'index', '','Home'),
         ('/', 'research', 'Experimental Biology','Research'),
+        ('/', 'people', 'General','People'),
         ('/', 'publications', 'Experimental Biology', 'Publications'),
         ('/', 'software', 'Computational Biology','Software'),
         ('/', 'contact', 'General','Contact'),

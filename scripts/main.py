@@ -2,7 +2,7 @@
 
 from Bio import Medline,Entrez
 import shutil
-from RNASeq.misc import pp
+#from RNASeq.misc import pp
 from jinja2 import Environment,FileSystemLoader
 
 
@@ -33,7 +33,9 @@ pmIDs=['22991327',
 '24304912',
 '24381249',
 '24393486',
-'24463464'
+'24463464',
+'24714615',
+'24997765'
 ]
 
 pmIDs.sort(reverse=True)

@@ -1,38 +1,33 @@
 {% extends "base.html" %}
+{% block title %}
+	Landing page
+{% endblock title %}
+
 {% block content %}
 
 	         <!-- <div class="hero-unit" style="background-image:url(images/hero.png);background-repeat:no-repeat;background-position:left center;background-size:100% 100%">
 	         <h1 style="color:#fff">Goff Lab</h1>
 	         <p style="color:#fff">LincRNAs in neural cell subtype specification and development</p>
 	         </div><!-- .hero-unit -->
-         <img src="images/complex1-right.png" style="position:relative;top:-20px;float:right;max-width:30%">
-         <h2>Welcome</h2>
-         <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-         <p><a class="btn" href="#">Click meeee &raquo;</a></p>
-		 <div class="accordion" id="accordion2">
-		   <div class="accordion-group">
-		     <div class="accordion-heading">
-		       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-		         Collapsible Group Item #1
-		       </a>
-		     </div>
-		     <div id="collapseOne" class="accordion-body collapse in">
-		       <div class="accordion-inner">
-		         Anim pariatur cliche...
-		       </div>
-		     </div>
-		   </div>
-		   <div class="accordion-group">
-		     <div class="accordion-heading">
-		       <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-		         Collapsible Group Item #2
-		       </a>
-		     </div>
-		     <div id="collapseTwo" class="accordion-body collapse">
-		       <div class="accordion-inner">
-		         Anim pariatur cliche...
-		       </div>
-		     </div>
-		   </div>
-		 </div>
+	<h1>The Goff Lab</h1>
+	<h3>McKusick-Nathans Institute of Genetic Medicine</h3>
+	<p>The Goff Lab at Johns Hopkins University School of Medicine studies the regulatory role of non-coding RNAs in the establishment of cell identity during differentiation.  We explore these questions in the context of the mammalian brain; an organ system with an incredible diversity of cell types.
+	
+	<!-- News -->
+	<div class="panel panel-default">
+  		<div class="panel-heading">Recent News</div>
+  		<div class="panel-body">
+   			<ul>
+   				<li><strong>October 22, 2014 - <a href="join.html" class="alert-link">Postdocs Wanted!</a></strong><br>
+   				The Goff lab is looking for postdoctoral fellows interested in lncRNA biology and/or neuronal specification. Please contact Dr. Goff directly with any questions or inquiries.</li>
+   			</ul>
+   		</div>
+	</div>
+
+
+	<!--<img src="images/Neurogenesis.png" style="position:relative;float:left;max-width:50%">-->
+	<blockquote class="pull-left">
+  		<p>"...a certain amount of hubris [is] required for anyone to call any part of the genome 'junk', given our level of ignorance."</p>
+  		<small>Francis Collins, <cite title="Source Title">The Language of God: A Scientist Presents Evidence for Belief</cite></small>
+	</blockquote>
 {% endblock content %}

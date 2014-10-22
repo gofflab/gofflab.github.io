@@ -1,9 +1,9 @@
 #!/usr/bin/env python
-
+import string
 from Bio import Medline,Entrez
 import shutil
 #from RNASeq.misc import pp
-from jinja2 import Environment,FileSystemLoader
+from jinja2 import Environment,FileSystemLoader,exceptions
 
 
 templateDir = "templates"
@@ -46,6 +46,7 @@ handle = Entrez.efetch(db="pubmed", id=pmIDs, rettype="medline",
 						   
 records = Medline.parse(handle)
 
+
 ################
 #Pages
 ################
@@ -57,9 +58,12 @@ pages=[
         ('/', 'publications', 'Experimental Biology', 'Publications'),
         ('/', 'software', 'Computational Biology','Software'),
         ('/', 'contact', 'General','Contact'),
-        ('/', 'about', 'General','About'),
+        #('/', 'about', 'General','About'),
+        ('/', 'join', 'General','Join'),
+        #('/', 'resources', 'General','Resources'),
         ('/', 'links', 'General','Links')
 ]
+
 
 #pp(list(records))
 
@@ -81,6 +85,6 @@ if __name__ == '__main__':
               renderPage(page[1],activePage=page[1],pages=pages,records=list(records))
           else:
               renderPage(page[1],activePage=page[1],pages=pages)
-      except:
+      except exceptions.TemplateNotFound:
           shutil.copy(templateDir+"/min.template",templateDir+"/"+page[1]+".html")
           renderPage(page[1],activePage=page[1],pages=pages)

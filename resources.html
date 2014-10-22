@@ -13,9 +13,9 @@
 		 <script src="js/bootstrap.min.js"></script>
 		 
 		 <title>
-		 {% block title %}
-		 GoffLab
-		 {% endblock title %}
+		 
+	Goff Lab
+
 		 </title>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,10 +43,34 @@
 			 <!-- Collect the nav links, forms, and other content for toggling -->
 			 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			 	<ul class="nav navbar-nav">
-				 	{% for href,page,category,caption in pages %}
-				   		<li{% if page == activePage %} class="active"{% endif%}>
-				   		<a href="{{ page+'.html' }}">{{ caption|e }}</a></li>
-		 			{% endfor %}
+				 	
+				   		<li>
+				   		<a href="index.html">Home</a></li>
+		 			
+				   		<li>
+				   		<a href="research.html">Research</a></li>
+		 			
+				   		<li>
+				   		<a href="people.html">People</a></li>
+		 			
+				   		<li>
+				   		<a href="publications.html">Publications</a></li>
+		 			
+				   		<li>
+				   		<a href="software.html">Software</a></li>
+		 			
+				   		<li>
+				   		<a href="contact.html">Contact</a></li>
+		 			
+				   		<li>
+				   		<a href="join.html">Join</a></li>
+		 			
+				   		<li class="active">
+				   		<a href="resources.html">Resources</a></li>
+		 			
+				   		<li>
+				   		<a href="links.html">Links</a></li>
+		 			
 			 	</ul>
 			 	<a class="navbar-brand pull-right" href="http://www.hopkinsmedicine.org/som/">
 			 		<img src="images/JHM_GS_R_H.png" class="text-middle" style="max-height:35px;margin-top:-5px;">
@@ -69,14 +93,9 @@
 
 	         <div class="col-md-10 col-sm-12">
 	         	<img class="pull-right" src="images/complex1-right.png" style="position:relative;top:-20px;width:300px;max-width:30%">
-		         {% block content %}
-					 
-			        <div class="alert alert-dismissable alert-warning">
-		  				<button type="button" class="close" data-dismiss="alert">x</button>
-		 				<h4>Under Development!</h4>
-						<p>It's not a 404, but close enough. Check back again later for some updated content.</p>
-					</div>
-			 	{% endblock content %}
+		         
+
+
 	         </div><!-- .span10 -->
 		   
 		 </div><!-- .row -->

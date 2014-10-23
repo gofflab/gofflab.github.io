@@ -5702,6 +5702,9 @@ button.close {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   line-height: 1;
+  margin: 0 auto;
+  height: 225px;
+  max-height: 225px;
 }
 .carousel-inner > .active,
 .carousel-inner > .next,

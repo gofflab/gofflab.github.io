@@ -5,67 +5,42 @@
 
 {% block content %}
 
-	         <!-- <div class="hero-unit" style="background-image:url(images/hero.png);background-repeat:no-repeat;background-position:left center;background-size:100% 100%">
-	         <h1 style="color:#fff">Goff Lab</h1>
-	         <p style="color:#fff">LincRNAs in neural cell subtype specification and development</p>
-	         </div><!-- .hero-unit -->
-	<a href="https://igm.jhmi.edu/"><img src="images/igm_logo_1_0.png" class="img-rounded pull-right img-responsive" style="width:200px;margin-right:25px"></a>
-	<h1>The Goff Lab</h1>
-	<h3>McKusick-Nathans Institute of Genetic Medicine</h3>
-
-	<!--Carousel
-
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-	  <ol class="carousel-indicators">
-	    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-	    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-	  </ol>
-
-
-	  <div class="carousel-inner">
-	    <div class="item active">
-	      <img src="images/carousel/Figure 7_For Submission.png" alt="Cortical subtype differentiation">
-	    </div>
-	  </div>
-
-
-	  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left"></span>
-	  </a>
-	  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right"></span>
-	  </a>
-	</div>
-
-	end Carousel
-	-->
-
-	<p>The Goff Lab at Johns Hopkins University School of Medicine studies the regulatory role of non-coding RNAs in the establishment of cell identity during differentiation.  We explore these questions in the context of the mammalian brain; an organ system with an incredible diversity of cell types.
-
 	<!-- News -->
-	<div class="panel panel-default">
-  		<div class="panel-heading">Recent News</div>
-  		<div class="panel-body">
-   			<ul>
-					<li><strong>November 7, 2014 - <a href="join.html" class="alert-link">Research Technologist</a></strong><br>
-							<p>We are now hiring for a Research Technologist position.
-					</li>
+		<a href="https://igm.jhmi.edu/"><img src="images/igm_logo_1_0.png" class="img-rounded pull-right img-responsive" style="width:200px;margin-right:25px"></a>
+		<h1>The Goff Lab</h1>
+		<h3>McKusick-Nathans Institute of Genetic Medicine</h3>
 
-   				<li><strong>October 22, 2014 - <a href="join.html" class="alert-link">Postdocs Wanted!</a></strong><br>
-   						<p>The Goff lab is looking for postdoctoral fellows interested in lncRNA biology and/or neuronal specification. Please contact Dr. Goff directly with any questions or inquiries.
-					</li>
-   			</ul>
-   		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<!-- News -->
+				<div class="panel panel-default">
+						<div class="panel-heading">Recent News</div>
+						<div class="panel-body">
+							<ul>
+								<li><strong>November 7, 2014 - <a href="join.html" class="alert-link">Research Technologist</a></strong><br>
+										<p>We are now hiring for a Research Technologist position.
+								</li>
+
+								<li><strong>October 22, 2014 - <a href="join.html" class="alert-link">Postdocs Wanted!</a></strong><br>
+										<p>The Goff lab is looking for postdoctoral fellows interested in lncRNA biology and/or neuronal specification. Please contact Dr. Goff directly with any questions or inquiries.
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+			<div class="col-md-8">
+					<p>The Goff Lab at Johns Hopkins University School of Medicine studies the regulatory role of non-coding RNAs in the establishment of cell identity during differentiation.  We explore these questions in the context of the mammalian brain; an organ system with an incredible diversity of cell types.</p>
+			</div>
+
 	</div>
 
 
 	<!--<img src="images/Neurogenesis.png" style="position:relative;float:left;max-width:50%">-->
-	<!--
-	<blockquote class="pull-left">
+{% endblock content %}
+
+{% block footer %}
+	<blockquote class="pull-left" style="padding:5px;">
   		<p>"...a certain amount of hubris [is] required for anyone to call any part of the genome 'junk', given our level of ignorance."</p>
   		<small>Francis Collins, <cite title="Source Title">The Language of God: A Scientist Presents Evidence for Belief</cite></small>
 	</blockquote>
-	-->
-{% endblock content %}
+{% endblock footer %}

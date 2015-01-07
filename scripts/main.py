@@ -35,7 +35,8 @@ pmIDs=['22991327',
 '24393486',
 '24463464',
 '24714615',
-'24997765'
+'24997765',
+'25556833',
 ]
 
 pmIDs.sort(reverse=True)
@@ -43,7 +44,7 @@ pmIDs.sort(reverse=True)
 Entrez.email="loyalgoff@gmail.com"
 handle = Entrez.efetch(db="pubmed", id=pmIDs, rettype="medline",
                            retmode="text")
-						   
+
 records = Medline.parse(handle)
 
 

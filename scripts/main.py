@@ -37,6 +37,7 @@ pmIDs=['22991327',
 '24714615',
 '24997765',
 '25556833',
+'26034286',
 ]
 
 pmIDs.sort(reverse=True)
@@ -57,6 +58,7 @@ pages=[
         ('/', 'research', 'Experimental Biology','Research'),
         ('/', 'people', 'General','People'),
         ('/', 'publications', 'Experimental Biology', 'Publications'),
+        ('/', 'courses', 'Teaching', 'Courses'),
         ('/', 'software', 'Computational Biology','Software'),
         ('/', 'contact', 'General','Contact'),
         #('/', 'about', 'General','About'),

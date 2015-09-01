@@ -3,21 +3,21 @@
 }
 
 .panel {
-	max-width:75%;
+	max-width:85%;
 }
 
 .panel-heading,
 .panel-title,
 .panel-footer {
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 15px;
   font-weight: 400;
   text-transform: capitalize;
-  color: #fff;
+  color: #eee;
 }
 
 .panel-article-title {
-	font-size: 15px;
+	font-size: 13px;
 	font-weight:600;
 }
 

@@ -20,6 +20,7 @@
       </div>
       <div id="collapse{{ loop.index }}" class="panel-collapse collapse">
         <div class="panel-body" style="background-color:#fffff5;">
+          <div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-pmid="{{record['PMID']}}" class="altmetric-embed pull-left" style="padding-right: 0.25cm;"></div>
           <p>{{ record['AB'] }}</p>
           {% if record['LID'] is defined%}
               <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0] }}">{{ record['LID'].split('[doi]')[0] }}</a>

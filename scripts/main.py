@@ -40,6 +40,7 @@ pmIDs=['22991327',
 '26034286',
 '26430155',
 '26694805',
+'27296516',
 ]
 
 pmIDs.sort(reverse=True)
@@ -60,13 +61,14 @@ pages=[
         ('/', 'research', 'Experimental Biology','Research'),
         ('/', 'people', 'General','People'),
         ('/', 'publications', 'Experimental Biology', 'Publications'),
-        ('/', 'courses', 'Teaching', 'Courses'),
+        #('/', 'courses', 'Teaching', 'Courses'),
         ('/', 'software', 'Computational Biology','Software'),
         ('/', 'contact', 'General','Contact'),
         #('/', 'about', 'General','About'),
         ('/', 'join', 'General','Join'),
         #('/', 'resources', 'General','Resources'),
-        ('/', 'links', 'General','Links')
+        ('/', 'links', 'General','Links'),
+        ('/', 'news', 'General', 'News')
 ]
 
 

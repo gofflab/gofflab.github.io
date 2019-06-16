@@ -51,6 +51,10 @@ pmIDs=['22991327',
 '29499164',
 '30143323',
 '30188322',
+'30866806',
+'30988181',
+'31128945',
+'31121116',
 ]
 
 pmIDs.sort(reverse=True)
@@ -93,7 +97,8 @@ def renderPage(pageName,**kwargs):
     fname=pageName+'.html'
     template=env.get_template(fname)
     outHandle = open(fname,'w')
-    print >>outHandle, template.render(**kwargs)
+    #print >>outHandle, template.render(**kwargs)
+    print(template.render(**kwargs),file=outHandle)
 
 if __name__ == '__main__':
   for page in pages:

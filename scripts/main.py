@@ -55,6 +55,7 @@ pmIDs=['22991327',
 '30988181',
 '31128945',
 '31121116',
+'31337651',
 ]
 
 pmIDs.sort(reverse=True)
@@ -94,11 +95,12 @@ def pubs():
     print >>outHandle, template.render(records=list(records))
 
 def renderPage(pageName,**kwargs):
+    print pageName
     fname=pageName+'.html'
     template=env.get_template(fname)
     outHandle = open(fname,'w')
-    #print >>outHandle, template.render(**kwargs)
-    print(template.render(**kwargs),file=outHandle)
+    print >>outHandle, template.render(**kwargs)
+    #print(template.render(**kwargs),file=outHandle)
 
 if __name__ == '__main__':
   for page in pages:
@@ -108,5 +110,6 @@ if __name__ == '__main__':
           else:
               renderPage(page[1],activePage=page[1],pages=pages)
       except exceptions.TemplateNotFound:
+          print("Creating black tempalte for %s" % [page[1]])
           shutil.copy(templateDir+"/min.template",templateDir+"/"+page[1]+".html")
           renderPage(page[1],activePage=page[1],pages=pages)

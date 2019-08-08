@@ -5,6 +5,7 @@
 {% endblock title %}
 
 {% block content %}
+
 <h2>Summary</h2>
 <ul>
     <li><a href="http://europepmc.org/authors/0000-0003-2875-451X" target="_blank">EBI Summary page</a></li>
@@ -13,17 +14,36 @@
 <h2>Preprints</h2>
 <div class="panel-group" id="preprint-accordion">
 
+<!--ProjectR Appnote preprint-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title">
+        <a data-toggle="collapse" class="panel-article-title" data-parent="#accordionpubs" href="#preprint10">
+                 <em>projectR: An R/Bioconductor package for transfer learning via PCA, NMF, correlation, and clustering</em> (2019)</a>
+                 <p class="note">Gaurav Sharma, Carlo Colantuoni, Loyal A Goff, Genevieve L Stein-O'Brien, Elana Fertig<br>
+                 doi: <a href=https://doi.org/10.1101/726547" target="_blank">https://doi.org/10.1101/726547</a></p>
+        </span>
+      </div>
+      <div id="preprint10" class="panel-collapse collapse">
+        <div class="panel-body" style="background-color:#fffff5;">
+          <div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-altmetric-id="64639523" class="altmetric-embed pull-left" style="padding-right: 0.25cm;"></div>
+          <p>Motivation: Dimension reduction techniques are widely used to interpret high-dimensional biological data. Features learned from these methods are used to discover both technical artifacts and novel biological phenomena. Such feature discovery is critically import to large single-cell datasets, where lack of a ground truth limits validation and interpretation. Transfer learning (TL) can be used to relate the features learned from one source dataset to a new target dataset to perform biologically-driven validation by evaluating their use in or association with additional sample annotations in that independent target dataset. Results: We developed an R/Bioconductor package, projectR, to perform TL for analyses of genomics data via TL of clustering, correlation, and factorization methods. We then demonstrate the utility TL for integrated data analysis with an example for spatial single-cell analysis. Availability: projectR is available on Bioconductor and at https://github.com/genesofeve/projectR.</p>
+            <a target="_blank" href="https://www.biorxiv.org/content/10.1101/726547v1">Preprint</a>
+        </div>
+      </div>
+    </div>
+
 <!--KS1 preprint-->
     <div class="panel panel-default">
       <div class="panel-heading">
         <span class="panel-title">
         <a data-toggle="collapse" class="panel-article-title" data-parent="#accordionpubs" href="#preprint9">
-                 <em>Transcriptional suppression from KMT2D loss disrupts cell cycle and hypoxic responses in neurodevelopmental models of Kabuki syndrome</em> (2018)</a>
+                 <em>Transcriptional suppression from KMT2D loss disrupts cell cycle and hypoxic responses in neurodevelopmental models of Kabuki syndrome</em> (2019)</a>
                  <p class="note"> Giovanni A Carosso, Leandros Boukas, Jonathan J Augustin, Ha Nam Nguyen, Briana L Winer, Gabrielle H Cannon, Johanna D Robertson, Li Zhang, Kasper D Hansen, Loyal A Goff, Hans T Bjornsson<br>
                  doi: <a href=https://doi.org/10.1101/484410" target="_blank">https://doi.org/10.1101/484410</a></p>
         </span>
       </div>
-      <div id="preprint8" class="panel-collapse collapse">
+      <div id="preprint9" class="panel-collapse collapse">
         <div class="panel-body" style="background-color:#fffff5;">
           <div data-badge-popover="bottom" data-badge-type="donut" data-hide-no-mentions="true" data-altmetric-id="52114227" class="altmetric-embed pull-left" style="padding-right: 0.25cm;"></div>
           <p>Chromatin modifiers act to coordinate gene expression changes critical to neuronal differentiation from neural progenitor cells (NPCs). Histone methyltransferase KMT2D promotes transcriptional activation and its loss causes the intellectual disability disorder Kabuki syndrome 1 (KS1) in ways that are not well understood. We conducted parallel studies of proliferation, differentiation, and transcription and chromatin profiling in KMT2D-deficient human and mouse models of brain development to define KMT2D-dependent functions in neurodevelopmental contexts, including adult-born hippocampal NPCs in vivo. We report cell-autonomous proliferation, cell cycle progression, and survival deficits accompanied by transcriptional perturbance of oxygen-sensing, central carbon metabolism, and mRNA/protein metabolism pathways, with functional experiments demonstrating disruption of KMT2D-dependent hypoxia responses and proteasome functions. Importantly, signatures of precocious neuronal differentiation accompanied defects in NPC maintenance. Together, our findings support a model in which KMT2D loss causes transcriptional suppression of metabolic programs for NPC maintenance, resulting in exhaustion of precursors required for adult hippocampal neurogenesis.</p>
@@ -37,7 +57,7 @@
       <div class="panel-heading">
         <span class="panel-title">
         <a data-toggle="collapse" class="panel-article-title" data-parent="#accordionpubs" href="#preprint8">
-                 <em>Expression variation analysis for tumor heterogeneity in single-cell RNA-sequencing data</em> (2018)</a>
+                 <em>Expression variation analysis for tumor heterogeneity in single-cell RNA-sequencing data</em> (2019)</a>
                  <p class="note"> Emily F. Davis-Marcisak, Pranay Orugunta, Genevieve Stein-O'Brien, Sidharth V. Puram, Evanthia Roussos Torres, Alexander Hopkins, Elizabeth M. Jaffee, Alexander V. Favorov, Bahman Afsari, Loyal A. Goff, Elana J. Fertig<br>
                  doi: <a href=https://doi.org/10.1101/479287" target="_blank">https://doi.org/10.1101/479287</a></p>
         </span>
@@ -145,7 +165,7 @@
         </div>
       </div>
     </div>
-    
+
     <!--CthPN preprint-->
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -188,7 +208,7 @@
   </div>
 
 <h2>Publications</h2>
-  
+
   <div class="panel-group" id="accordion">
     {% for record in records %}
     <div class="panel panel-default">

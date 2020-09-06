@@ -4,6 +4,8 @@ from Bio import Medline,Entrez
 import shutil
 #from RNASeq.misc import pp
 from jinja2 import Environment,FileSystemLoader,exceptions
+import urllib.request as request
+import json
 
 
 templateDir = "templates"
@@ -12,7 +14,7 @@ env = Environment(loader=FileSystemLoader([templateDir]))
 ##########################
 #Publication Information
 ##########################
-
+### Fetch publications
 pmIDs=['22991327',
 '22197703',
 '20348442',
@@ -60,12 +62,48 @@ pmIDs=['22991327',
 
 pmIDs.sort(reverse=True)
 
+print(f"Fetching {len(pmIDs)} publication records from Entrez...")
 Entrez.email="loyalgoff@gmail.com"
 handle = Entrez.efetch(db="pubmed", id=pmIDs, rettype="medline",
                            retmode="text")
 
 records = Medline.parse(handle)
+print("\tDone")
 
+##########################
+#Preprint Information
+##########################
+### Fetch Preprints
+preprintIDs = [
+    '157149',
+    '148049',
+    '196394',
+    '196915',
+    '378950',
+    '395004',
+    '479287',
+    '447557',
+    '484410',
+    '726547',
+    '779694',
+    '2020.03.13.990549',
+    '2020.07.23.218586',
+    '2020.08.25.262832',
+]
+
+preprintIDs = reversed(preprintIDs)
+
+def fetchBioRxiv(preprintID):
+    biorxiv_api_url = f'https://api.biorxiv.org/details/biorxiv/10.1101/{preprintID}'
+    response = request.urlopen(biorxiv_api_url)
+    data = json.loads(response.read())
+    return(data)
+
+#print(fetchBioRxiv(preprintIDs[0]))
+print("Fetching Preprints from BioRxiv...")
+preprints = [fetchBioRxiv(id)['collection'][0] for id in preprintIDs]
+print(f"\t{len(preprints)} found")
+#print(preprints[-1]
 
 ################
 #Pages
@@ -77,16 +115,16 @@ pages=[
         ('/', 'people', 'General','People'),
         ('/', 'publications', 'Experimental Biology', 'Publications'),
         ('/', 'preprints', 'Experimental Biology', 'Preprints'),
-        #('/', 'courses', 'Teaching', 'Courses'),
+        ('/', 'teaching', 'Teaching', 'Teaching'),
         ('/', 'software', 'Computational Biology','Software'),
-        #('/', 'contact', 'General','Contact'),
+        ('/', 'contact', 'General','Contact'),
         #('/', 'about', 'General','About'),
-        #('/', 'join', 'General','Join'),
+        ('/', 'join', 'General','Join'),
         #('/', 'resources', 'General','Resources'),
         #('/', 'links', 'General','Links'),
         #('/', 'news', 'General', 'News')
+        ('/', 'blog', 'General', 'Blog'),
 ]
-
 
 #pp(list(records))
 
@@ -94,6 +132,9 @@ def pubs():
     template=env.get_template('pubs.html')
     outHandle = open(outFile,'w')
     print >>outHandle, template.render(records=list(records))
+
+#def preprints():
+#    template=env.get_template('preprints.html')
 
 def renderPage(pageName,**kwargs):
     fname=pageName+'.html'
@@ -107,6 +148,8 @@ if __name__ == '__main__':
       try:
           if page[1]=='publications':
               renderPage(page[1],activePage=page[1],pages=pages,records=list(records))
+          elif page[1]=='preprints':
+              renderPage(page[1],activePage=page[1],pages=pages,preprints=preprints)
           else:
               renderPage(page[1],activePage=page[1],pages=pages)
       except exceptions.TemplateNotFound:

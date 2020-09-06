@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Opportunities
+{% endblock title %}
+
+{% block content %}
+<body class="is-preload">
+<div id="page-wrapper">
+	{% include 'header.html' %}
+	<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major">
+					<h2>Job Opportunities</h2>
+				</header>
+
+				<!-- Content -->
+					<section id="content">
+						<ul>
+							<li><h3>Post-doctoral Fellows</h3>
+								<p>Our group is looking for motivated postdocs who are interested in single-cell biology, neuronal cell fate specification, and functional genomics. We operate at the interface between experimental and computational biology and expect that all postdoc fellows will cross-train in each field.
+								<p>There are currently positions open for post-doctoral fellows in the lab:
+								<ul>
+									<li>One position will focus on wet-bench single cell techniques and approaches, and applicants should have experience with cell culture, mouse models, basic molecular biology techniques and genome editing tools. Projects involve reconstruction of neuronal degeneration in human and mouse models of Parkinson's disease and ALS.</li>
+									<li>The second position will be primarily computational and candidates should have expertise in next-gen sequencing, genetic data analysis, and basic statistics. Projects include exploration and reconstruction of lineage mapping in the developing retina and neocortex.</li>
+								</ul>
+								Interested candidates should send a cover letter, CV, and a brief summary of your research interests to <a href="mailto:loyalgoff@jhmi.edu">loyalgoff@jhmi.edu.</a>
+							</li>
+							<li>
+								<h3>Graduate Students</h3>
+								<p>The Goff lab trains graduate students from the <a href="http://humangenetics.jhmi.edu/">Human Genetics</a> and <a href="http://neuroscience.jhu.edu/graduate-program">Neuroscience</a> graduate training programs at Johns Hopkins. Students in these programs are encouraged to <a href="contact.html">contact</a> Dr. Goff directly for information about rotations or joining our group.</p>
+							</li>
+						</ul>
+					</section>
+			</div>
+		</div>
+</div>
+{% endblock content %}

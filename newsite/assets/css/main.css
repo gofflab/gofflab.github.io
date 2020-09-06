@@ -130,7 +130,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -2516,10 +2516,10 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		border-radius: 4px;
-		padding: 2px;
+		border-radius: 20px;
+		padding: 0px;
 		border: 0px;
-		background-color: #ffffff;
+		background-color: #1c1d26;
 		display: inline-block;
 		position: relative;
 		overflow: hidden;
@@ -4119,6 +4119,7 @@ input, select, textarea {
 	}
 .portrait {
 	width:100px;
+	vertical-align: middle;
 	/*
 	box-shadow: 4px 4px 15px rgb(128,128,128);
 	width:100px;

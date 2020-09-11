@@ -6,7 +6,7 @@ import shutil
 from jinja2 import Environment,FileSystemLoader,exceptions
 import urllib.request as request
 import json
-
+import re
 
 templateDir = "templates"
 env = Environment(loader=FileSystemLoader([templateDir]))
@@ -58,6 +58,14 @@ pmIDs=['22991327',
 '31128945',
 '31121116',
 '31337651',
+'32829096',
+'32386599',
+'32243843',
+'32167521',
+'31843893',
+'31581148',
+'31503409',
+'31465303',
 ]
 
 pmIDs.sort(reverse=True)
@@ -143,6 +151,11 @@ def renderPage(pageName,**kwargs):
     outHandle = open(fname,'w')
     #print >>outHandle, template.render(**kwargs)
     print(template.render(**kwargs),file=outHandle)
+
+def nameBoldPubs(string):
+    return(re.sub('Goff,? L\.?[A]?\.?,?','<span class="font-weight-bold" style="font-size: 1.0rem"><u>Goff LA</u></span>,',string))
+
+env.filters['nameBoldPubs'] = nameBoldPubs
 
 if __name__ == '__main__':
   for page in pages:

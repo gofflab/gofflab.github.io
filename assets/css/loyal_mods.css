@@ -36,6 +36,13 @@
   padding: 3px 5px 3px 10px;
 }
 
-.logo {
+#logo {
+  padding-bottom: 50px;
+  padding-top: 0px;
   vertical-align: middle;
+}
+
+#shield {
+  padding-top: 10px;
+  padding-right: 10px;
 }

@@ -146,12 +146,11 @@ def pubs():
 #    template=env.get_template('preprints.html')
 
 def renderPage(pageName,**kwargs):
-    print pageName
     fname=pageName+'.html'
     template=env.get_template(fname)
     outHandle = open(fname,'w')
-    print >>outHandle, template.render(**kwargs)
-    #print(template.render(**kwargs),file=outHandle)
+    #print >>outHandle, template.render(**kwargs)
+    print(template.render(**kwargs),file=outHandle)
 
 def nameBoldPubs(string):
     return(re.sub('Goff,? L\.?[A]?\.?,?','<span class="font-weight-bold" style="font-size: 1.0rem"><u>Goff LA</u></span>,',string))

@@ -44,7 +44,7 @@
 						          <div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{record['PMID']}}" class="altmetric-embed pull-left"> </div>
 						          <p>{{ record['AB'] }}</p>
 						          {% if record['LID'] is defined%}
-						              <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0] }}">{{ record['LID'].split('[doi]')[0]|split_doi }}</a>
+						              <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0]|split_doi }}">{{ record['LID'].split('[doi]')[0]|split_doi }}</a>
 						          {% else %}
 						              <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/{{ record['PMID'] }}">Article</a>
 						          {% endif %}

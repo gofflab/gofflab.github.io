@@ -159,6 +159,14 @@ def nameBoldPubs(string):
 
 env.filters['nameBoldPubs'] = nameBoldPubs
 
+def split_doi(string):
+    if(' [pii] ' in string):
+        return string.split(" [pii] ")[1]
+    else:
+        return(string)
+
+env.filters['split_doi'] = split_doi
+
 if __name__ == '__main__':
   for page in pages:
       try:

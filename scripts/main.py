@@ -69,7 +69,7 @@ pmIDs=['22991327',
 '33084572',
 '33113347',
 '33277430',
-#'33446502', # Uncomment after 1/19/21 (pre-publication)
+'33446502', # Uncomment after 1/19/21 (pre-publication)
 ]
 
 pmIDs.sort(reverse=True)
@@ -138,6 +138,7 @@ pages=[
         #('/', 'links', 'General','Links'),
         #('/', 'news', 'General', 'News')
         ('/', 'blog', 'General', 'Blog'),
+        ('/', 'lab_resources', 'General', 'Lab Resources'),
 ]
 
 #pp(list(records))

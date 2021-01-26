@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Lab Resources
+{% endblock title %}
+
+{% block content %}
+<body class="is-preload">
+<div id="page-wrapper">
+	{% include 'header.html' %}
+	<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major">
+					<h2>Lab Resources, Snippets, Tips, and Micro-Projects</h2>
+				</header>
+				<!-- Content -->
+					<section id="content">
+						<ul>
+							<li><a href="https://github.com/jaredslosberg/get_SRA_fastqs" target="_blank">Fetch all SRA records for a specific project and convert to fastqs. Author: Jared Slosberg</a></li>
+							<li><a href="https://github.com/gofflab/containers" target="_blank">Collection of singularity containers and .def files for select projects</a></li>
+							<li><a href="https://github.com/gofflab/neurocog_scRNA-Seq_2020" target="_blank">Comprehensive single cell workflow tutorial using kallisto, bustools, and RNAVelocity</a></li>
+							<li><a href="https://github.com/gofflab/lincer_orig" target="_blank"><strong>Lincer</strong> Original in house (Rinn lab) lncRNA assembly, discovery, and annotation pipeline</a></li>
+							<li><a href="https://github.com/gofflab/tileIt" target="_blank"><strong>TileIt:</strong> Simple python utility for designing tiled oligos along fasta sequences</a></li>
+							<li><a href="https://github.com/gofflab/biolib" target="_blank"><strong>Biolib:</strong> Python library of my own personal compbio utilities accumulated over the years. Author: Loyal</a></li>
+						</ul>
+					</section>
+			</div>
+		</div>
+</div>
+{% endblock content %}

@@ -31,24 +31,27 @@
 						    <div class="card text-left">
 						      <div class="card-header" id="heading{{ loop.index }}">
 										<a class="btn btn-dark pull-left" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapse{{ loop.index }}">
-												<span class="pull-left text-left">
+											<span class="pull-left text-left">
+
 														 <p class="font-weight-bold">{{ loop.index }}. {{ record['TI'] }} ({{ record['DP'][:4] }})</p>
 						                 <p class="font-italic font-weight-light">{{ ", ".join(record['AU'])|nameBoldPubs }}</p>
 						                 <p>{{ record['SO'].strip() }}</p>
-												</span>
+
+
+											</span>
 										</a>
 						      </div>
 
 						      <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionpubs">
 						        <div class="card-body" >
-						          <div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{record['PMID']}}" class="altmetric-embed pull-left"> </div>
+											<div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{record['PMID']}}" class="altmetric-embed pull-left"> </div>
 						          <p>{{ record['AB'] }}</p>
 						          {% if record['LID'] is defined%}
 						              <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0]|split_doi }}">{{ record['LID'].split('[doi]')[0]|split_doi }}</a>
 						          {% else %}
 						              <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/{{ record['PMID'] }}">Article</a>
 						          {% endif %}
-						        </div>
+																	        </div>
 						      </div>
 						    </div>
 						    {% endfor %}

@@ -172,6 +172,14 @@ def split_doi(string):
 
 env.filters['split_doi'] = split_doi
 
+def biorxiv_logo(string):
+    if string == 'biorxiv':
+        return 'bio<span style="color: red">R</span><sub><em>&Chi;</em></sub>iv'
+    else:
+        return string
+
+env.filters['biorxiv_logo'] = biorxiv_logo
+
 if __name__ == '__main__':
   for page in pages:
       try:

@@ -46,3 +46,18 @@
   padding-top: 10px;
   padding-right: 10px;
 }
+
+/*sub {
+    vertical-align: sub;
+    font-size: medium;
+}
+*/
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  font-size: medium;
+}
+sub {
+  top: 0.2em;
+}

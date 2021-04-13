@@ -26,15 +26,14 @@
 									<a class="btn btn-dark pull-left" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapse{{ loop.index }}">
 											<span class="pull-left text-left">
 													 <p class="font-weight-bold">{{ loop.index }}. {{ preprint['title'] }} ({{ preprint['date'][:4] }})</p>
-													 <p class="note font-italic font-weight-light">{{ ",".join(preprint['authors'].split(";"))|nameBoldPubs }}</p>
-													 <p>{{ preprint['server'] }}</p>
+													 <p class="note font-weight-light"><span class="font-italic">{{ ",".join(preprint['authors'].split(";"))|nameBoldPubs }}</span>, {{ preprint['server']|biorxiv_logo }}</p>
 											</span>
 									</a>
 								</div>
 
 								<div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionPreprints">
 									<div class="card-body" >
-										<!-- <div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{preprint['doi']}}" class="altmetric-embed pull-left"> </div> -->
+										<div data-badge-type="1" data-hide-no-mentions="true" data-doi="{{preprint['doi']}}" class="altmetric-embed pull-left"> </div>
 										<p>{{ preprint['abstract'] }}</p>
 										<a target="_blank" href="http://dx.doi.org/{{ preprint['doi'] }}">{{ preprint['doi'] }}</a>
 									</div>

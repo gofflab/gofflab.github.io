@@ -70,6 +70,7 @@ pmIDs=['22991327',
 '33113347',
 '33277430',
 '33446502', # Uncomment after 1/19/21 (pre-publication)
+'34266896',
 ]
 
 pmIDs.sort(reverse=True)
@@ -103,6 +104,7 @@ preprintIDs = [
     '2020.08.25.262832',
     '2020.12.09.417931',
     '2021.04.06.438463',
+    '2021.08.25.457650'
 ]
 
 preprintIDs = reversed(preprintIDs)

@@ -35,18 +35,16 @@
 
 														 <p class="font-weight-bold">{{ loop.index }}. {{ record['TI'] }} ({{ record['DP'][:4] }})</p>
 						                 <p class="font-italic font-weight-light">{{ ", ".join(record['AU'])|nameBoldPubs }}</p>
-						                 <p>{{ record['SO'].strip() }}</p>
-
-
+						                 <p>{{ record['SO'].strip() }} PMID: {{record['PMID']}}</p>
 											</span>
 										</a>
 						      </div>
 
 						      <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionpubs">
 						        <div class="card-body" >
-											<div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{record['PMID']}}" class="altmetric-embed pull-left"> </div>
+											<div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{ record['PMID'].strip() }}" class="altmetric-embed pull-left"> </div>
 						          <p>{{ record['AB'] }}</p>
-						          {% if record['LID'] is defined%}
+						          {% if record['LID'] is defined %}
 						              <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0]|split_doi }}">{{ record['LID'].split('[doi]')[0]|split_doi }}</a>
 						          {% else %}
 						              <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/{{ record['PMID'] }}">Article</a>

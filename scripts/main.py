@@ -73,7 +73,7 @@ pmIDs=['22991327',
 '34266896',
 '35148175',
 '35101061',
-'35263579',
+'35263579', # Potter mosquito AgOr2
 ]
 
 pmIDs.sort(reverse=True)

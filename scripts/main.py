@@ -86,7 +86,7 @@ handle = Entrez.efetch(db="pubmed", id=pmIDs, rettype="medline",
 records = Medline.parse(handle)
 print("\tDone")
 
-##########################
+##########Hannah################
 #Preprint Information
 ##########################
 ### Fetch Preprints
@@ -109,7 +109,8 @@ preprintIDs = [
     '2021.04.06.438463',
     '2021.08.25.457650',
     '2021.12.27.473694', # Lindsay Hayes
-    '2021.12.28.474390' # HSCR Manuscript
+    '2021.12.28.474390', # HSCR Manuscript
+    '2022.06.19.494717' # RNA Velocity Study
 ]
 
 preprintIDs = reversed(preprintIDs)

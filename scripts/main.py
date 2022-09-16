@@ -75,6 +75,7 @@ pmIDs=['22991327',
 '35101061',
 '35263579', # Potter mosquito AgOr2
 '35463747', # MacFarlane Smad3 heart
+'35998637', # Kolodkin Tbx5 Direction selectivity
 ]
 
 pmIDs.sort(reverse=True)
@@ -111,7 +112,8 @@ preprintIDs = [
     '2021.08.25.457650',
     '2021.12.27.473694', # Lindsay Hayes
     '2021.12.28.474390', # HSCR Manuscript
-    '2022.06.19.494717' # RNA Velocity Study
+    '2022.06.19.494717', # RNA Velocity Study
+    '2022.07.09.499398', # Genevieve GenePattern Notebooks
 ]
 
 preprintIDs = reversed(preprintIDs)

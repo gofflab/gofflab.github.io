@@ -151,6 +151,8 @@ pages=[
         #('/', 'news', 'General', 'News')
         ('/', 'blog', 'General', 'Blog'),
         ('/', 'lab_resources', 'General', 'Lab Resources'),
+        ('/', 'octopus', 'General', 'Octopus Genome'),
+        ('/', 'octopus_genome', 'General', 'Octopus Genome'),
 ]
 
 #pp(list(records))
@@ -197,7 +199,10 @@ if __name__ == '__main__':
           if page[1]=='publications':
               renderPage(page[1],activePage=page[1],pages=pages,records=list(records))
           elif page[1]=='preprints':
-              renderPage(page[1],activePage=page[1],pages=pages,preprints=preprints)
+              try:
+                  renderPage(page[1],activePage=page[1],pages=pages,preprints=preprints)
+              except:
+                  print("Could not update preprints page")
           else:
               renderPage(page[1],activePage=page[1],pages=pages)
       except exceptions.TemplateNotFound:

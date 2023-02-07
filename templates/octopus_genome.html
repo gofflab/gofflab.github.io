@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Octopus chierchiae genome browswer
+{% endblock title %}
+
+{% block content %}
+<body class="is-preload">
+<div id="page-wrapper">
+	{% include 'header.html' %}
+	<!-- Main -->
+		<div id="main" class="wrapper style1">
+			<div class="container">
+				<header class="major"> 
+					<h2>Octopus chierchiae</h2>
+				</header>
+				<!-- Content -->
+					<section id="content">
+						<h3>Downloads</h3>
+						<h4>GENOME</h4>
+						<table>
+							<tr>
+								<th>File</th>
+								<th>URL</th>
+								<th>Type</th>
+								<th>Size</th>
+								<th>MD5</th>
+							</tr>
+							<tr>
+								<td>Assembled Genome (chromosomes only)</td>
+								<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCA_003317725.1" target="_blank">GCA_003317725.1</a></td>
+								<td>FASTA</td>
+								<td>1.2 GB</td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+							</tr>
+							<tr>
+								<td>Assembled Genome (Full scaffolds and contigs)</td>
+								<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCA_003317725.1" target="_blank">GCA_003317725.1</a></td>
+								<td>FASTA</td>
+								<td>1.2 GB</td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+							</tr>
+							<tr>
+								<td>Repeat Annotation</td>
+								<td><a href="https://www.ncbi.nlm.nih.gov/genome/?term=octopus+chierchiae" target="_blank">GCF_003317725.1</a></td>
+								<td>BED</td>
+								<td>1.2 GB</td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+							</tr>
+						</table>
+
+						<h4>TRANSCRIPTOME</h4>
+						<table>
+							<tr>
+								<th>File</th>
+								<th>url</th>
+								<th>Type</th>
+								<th>Size</th>
+								<th>MD5</th>
+							</tr>
+							<tr>
+								<td>Transcriptome sequence</td>
+								<td><a href="https://genome.ucsc.edu/cgi-bin/hgGateway?db=octopus_chierchiae" target="_blank">UCSC</a></td>
+								<td>FASTA</td>
+								<td>1.2 GB</td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+							</tr>
+							<tr>
+								<td>Transcriptome annotation</td>
+								<td><a href="https://www.ncbi.nlm.nih.gov/genome/?term=octopus+chierchiae" target="_blank">NCBI</a></td>
+								<td>GFF3</td>
+								<td>1.2 GB</td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+							</tr>
+						</table>
+						<h3>Stats</h3>
+						<img src="images/ochier_genome/nxplot.png" alt="N(x) plot" class="image left">
+						<img src="images/ochier_genome/cum_assembly.png" alt="Cumulative Assembly Length" class="image left">
+						<table>
+							<tr>
+								<th>Param</th>
+								<th>Value</th>
+							</tr>
+							<tr>
+								<td>Genome size</td>
+								<td> 5,180,130,439 bases</td>
+							</tr>
+							<tr>
+								<td>Total Number of chromosome scaffolds</td>
+								<td>30</td>
+							</tr>
+							<tr>
+								<td>Total Number of contigs</td>
+								<td>5,569</td>
+							</tr>
+							<tr>
+								<td>Largest scaffold</td>
+								<td>413,096,176 bases</td>
+							</tr>
+							<tr>
+								<td>GC content</td>
+								<td> 35.87%</td>
+							</tr>
+							<tr>
+								<td>N50</td>
+								<td>218,401,579 bases</td>
+							</tr>
+							<tr>
+								<td>L50</td>
+								<td>9</td>
+							</tr>
+							<tr>
+								<td>N90</td>
+								<td>76,540,371 bases</td>
+							</tr>
+							<tr>
+								<td>L90</td>
+								<td>25</td>
+							</tr>
+							<tr>
+								<td>% of bases in chromosomes</td>
+								<td>96.09%</td>
+							</tr>
+							<tr>
+								<td>Total length of scaffolded chromosomes</td>
+								<td>4,977,408,424 bases</td>
+							</tr>
+							<tr>
+								<td>Number of gaps</td>
+								<td> 5,061 </td>
+							<tr>
+								<td>Number of genes</td>
+								<td>TBD</td>
+							</tr>
+						</table>
+					</section>
+			</div>
+		</div>
+</div>
+{% endblock content %}

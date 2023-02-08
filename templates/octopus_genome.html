@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-	Octopus chierchiae genome browswer
+	Octopus chierchiae genome assembly
 {% endblock title %}
 
 {% block content %}
@@ -12,7 +12,7 @@
 		<div id="main" class="wrapper style1">
 			<div class="container">
 				<header class="major"> 
-					<h2>Octopus chierchiae</h2>
+					<h2>Octopus chierchiae genome assembly</h2>
 				</header>
 				<!-- Content -->
 				<section id="content">				
@@ -21,6 +21,8 @@
 						<img src="images/ochier_genome/Och2.jpeg" alt="Octopus chierchiae" class="image left">
 						<img src="images/ochier_genome/Och3.jpeg" alt="Octopus chierchiae" class="image left">
 					</div>
+						<h3>Workflow</h3>
+						<img src="images/ochier_genome/ochier_assembly_workflow_20230208.png" alt="Workflow diagram" class="rounded mx-auto d-block center" style="width:50%;height:50%;">
 						<h3>Downloads</h3>
 						<h4>GENOME</h4>
 						<table>
@@ -32,22 +34,22 @@
 								<th>MD5</th>
 							</tr>
 							<tr>
-								<td>Assembled Genome (chromosomes only)</td>
-								<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCA_003317725.1" target="_blank">GCA_003317725.1</a></td>
-								<td>FASTA</td>
-								<td>1.2 GB</td>
-								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+								<td>Haploid Assembled Genome (chromosomes only, hap1)</td>
+								<td><a href="https://dl.dropboxusercontent.com/s/b5xhmdji66tmm9g/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz</a></td>
+								<td>Gzipped FASTA</td>
+								<td>1.3 GB</td>
+								<td>91bf2620fa15267a2ee6154c475f6978</td>
 							</tr>
 							<tr>
-								<td>Assembled Genome (Full scaffolds and contigs)</td>
-								<td><a href="https://www.ncbi.nlm.nih.gov/assembly/GCA_003317725.1" target="_blank">GCA_003317725.1</a></td>
-								<td>FASTA</td>
-								<td>1.2 GB</td>
-								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+								<td>Unscaffolded contigs (hap1)</td>
+								<td><a href="https://dl.dropboxusercontent.com/s/qyhhielqzijklb1/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz</a></td>
+								<td>Gzipped FASTA</td>
+								<td>39 MB</td>
+								<td>e4d69881d05137ed2848342fc44393f4</td>
 							</tr>
 							<tr>
 								<td>Repeat Annotation</td>
-								<td><a href="https://www.ncbi.nlm.nih.gov/genome/?term=octopus+chierchiae" target="_blank">GCF_003317725.1</a></td>
+								<td><a href="#" target="_blank"></a></td>
 								<td>BED</td>
 								<td>1.2 GB</td>
 								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
@@ -64,18 +66,25 @@
 								<th>MD5</th>
 							</tr>
 							<tr>
-								<td>Transcriptome sequence</td>
-								<td><a href="https://genome.ucsc.edu/cgi-bin/hgGateway?db=octopus_chierchiae" target="_blank">UCSC</a></td>
-								<td>FASTA</td>
-								<td>1.2 GB</td>
-								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+								<td>Assembled transcriptome (stringtie, unannotated)</td>
+								<td><a href="https://dl.dropboxusercontent.com/s/ajscr4jzb1kkn6o/Ochier_stringtie_merged_assembly_20230207.gtf" target="_blank">Ochier_stringtie_merged_assembly_20230207.gtf</a></td>
+								<td>GTF</td>
+								<td>52 MB</td>
+								<td>9db68ca97be46682d12619760d747c75</td>
 							</tr>
 							<tr>
-								<td>Transcriptome annotation</td>
-								<td><a href="https://www.ncbi.nlm.nih.gov/genome/?term=octopus+chierchiae" target="_blank">NCBI</a></td>
+								<td>O.bimaculoides transcriptome liftoff</td>
+								<td><a href="https://dl.dropboxusercontent.com/s/a4cb0buuz01bvag/Ochier_liftoff_from_Obimac_20230207.gff3" target="_blank">Ochier_liftoff_from_Obimac_20230207.gff3</a></td>
 								<td>GFF3</td>
-								<td>1.2 GB</td>
-								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0e8f8b0e</td>
+								<td>25 MB</td>
+								<td>255427d6f9e72fb3b3529961c24614df</td>
+							</tr>
+							<tr>
+								<td>Transcriptome sequence</td>
+								<td><a href="#" target="_blank">In Progress</a></td>
+								<td>FASTA</td>
+								<td></td>
+								<td>notReal0e8f8b0e8f8b0e8f8b0e8f8b0</td>
 							</tr>
 						</table>
 						<h3>Stats</h3>
@@ -133,6 +142,11 @@
 							<tr>
 								<td>Number of gaps</td>
 								<td> 5,061 </td>
+							</tr>
+							<tr>
+								<td>BUSCO metazoa_odb10</td>
+								<td>C:94.4%[S:93.6%,D:0.8%],F:3.5%,M:2.1%,n:954</td>
+							</tr>
 							<tr>
 								<td>Number of genes</td>
 								<td>TBD</td>

@@ -112,6 +112,7 @@ preprintIDs = [
     '2021.08.25.457650',
     '2021.12.27.473694', # Lindsay Hayes
     '2021.12.28.474390', # HSCR Manuscript
+    '2022.10.07.511381', # Pantr2 study
     '2022.06.19.494717', # RNA Velocity Study
     '2022.07.09.499398', # Genevieve GenePattern Notebooks
 ]

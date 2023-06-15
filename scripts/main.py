@@ -76,6 +76,7 @@ pmIDs=['22991327',
 '35263579', # Potter mosquito AgOr2
 '35463747', # MacFarlane Smad3 heart
 '35998637', # Kolodkin Tbx5 Direction selectivity
+'37316665', # Psychadelics reopen the social critical period
 ]
 
 pmIDs.sort(reverse=True)

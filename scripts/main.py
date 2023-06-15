@@ -7,6 +7,7 @@ from jinja2 import Environment,FileSystemLoader,exceptions
 import urllib.request as request
 import json
 import re
+import sys
 
 templateDir = "templates"
 env = Environment(loader=FileSystemLoader([templateDir]))
@@ -159,10 +160,10 @@ pages=[
 
 #pp(list(records))
 
-def pubs():
-    template=env.get_template('pubs.html')
-    outHandle = open(outFile,'w')
-    print >>outHandle, template.render(records=list(records))
+# def pubs():
+#     template=env.get_template('pubs.html')
+#     outHandle = open(outFile,'w')
+#     print(template.render(records=list(records)),file=outHandle)
 
 #def preprints():
 #    template=env.get_template('preprints.html')
@@ -196,6 +197,10 @@ def biorxiv_logo(string):
 env.filters['biorxiv_logo'] = biorxiv_logo
 
 if __name__ == '__main__':
+#   if sys.argv[1] == '-v':
+#       verbose=True
+#  if verbose:
+#      #pp(list(records))
   for page in pages:
       try:
           if page[1]=='publications':

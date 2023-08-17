@@ -78,6 +78,9 @@ pmIDs=['22991327',
 '35463747', # MacFarlane Smad3 heart
 '35998637', # Kolodkin Tbx5 Direction selectivity
 '37316665', # Psychadelics reopen the social critical period
+# MENS eLife paper
+'37585461', # HSCR PNAS paper
+# RNA velocity Genome Biology Paper
 ]
 
 pmIDs.sort(reverse=True)

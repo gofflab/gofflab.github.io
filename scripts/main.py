@@ -80,8 +80,10 @@ pmIDs=['22991327',
 '37316665', # Psychadelics reopen the social critical period
 # MENS eLife paper
 '37585461', # HSCR PNAS paper
-'37812717',
-# RNA velocity Genome Biology Paper
+'37812717', # Sjogren's syndrome
+'38108810', #eLife MENS paper
+'37989764', # CoGAPS Notebooks
+'37885016', # RNA velocity Genome Biology Paper
 ]
 
 pmIDs.sort(reverse=True)
@@ -121,6 +123,9 @@ preprintIDs = [
     '2022.10.07.511381', # Pantr2 study
     '2022.06.19.494717', # RNA Velocity Study
     '2022.07.09.499398', # Genevieve GenePattern Notebooks
+    '2023.11.18.567662', # Sema6a with A.Kolodkin
+    '2023.11.02.565322', # Uli Brn1/2
+    
 ]
 
 preprintIDs = reversed(preprintIDs)

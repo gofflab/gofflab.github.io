@@ -85,7 +85,6 @@ pmIDs=['22991327',
 '37989764', # CoGAPS Notebooks
 '37885016', # RNA velocity Genome Biology Paper
 '38969603', # CFTR paper with Cutting Lab
-''
 ]
 
 pmIDs.sort(reverse=True)
@@ -127,8 +126,8 @@ preprintIDs = [
     '2022.07.09.499398', # Genevieve GenePattern Notebooks
     '2023.11.18.567662', # Sema6a with A.Kolodkin
     '2023.11.02.565322', # Uli Brn1/2
-    '2024.07.01.599554' # mNSF
-    
+    '2024.07.01.599554', # mNSF
+    '2023.01.28.526051', # Fovea preprint from Johnston lab
 ]
 
 preprintIDs = reversed(preprintIDs)

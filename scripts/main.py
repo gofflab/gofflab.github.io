@@ -128,6 +128,7 @@ preprintIDs = [
     '2023.11.02.565322', # Uli Brn1/2
     '2024.07.01.599554', # mNSF
     '2023.01.28.526051', # Fovea preprint from Johnston lab
+    '2024.10.27.620502', # Bergles OPC preprint
 ]
 
 preprintIDs = reversed(preprintIDs)

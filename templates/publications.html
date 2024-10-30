@@ -42,7 +42,8 @@
 
 						      <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="heading{{ loop.index }}" data-parent="#accordionpubs">
 						        <div class="card-body" >
-											<div data-badge-type="1" data-hide-no-mentions="true" data-pmid="{{ record['PMID'].strip() }}" class="altmetric-embed pull-left"> </div>
+											<!-- <div class="altmetric-embed pull-left" data-badge-type="1" data-hide-less-than="1" data-pmid="{{ record['PMID'].strip() }}" > </div> -->
+											<div class="altmetric-embed pull-left altmetric-badge-type-1 altmetric-pmid-{{ record['PMID'].strip() }}" > </div>
 						          <p>{{ record['AB'] }}</p>
 						          {% if record['LID'] is defined %}
 						              <a target="_blank" href="http://dx.doi.org/{{ record['LID'].split('[doi]')[0]|split_doi }}">{{ record['LID'].split('[doi]')[0]|split_doi }}</a>

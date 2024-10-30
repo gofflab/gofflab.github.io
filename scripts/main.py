@@ -213,6 +213,7 @@ if __name__ == '__main__':
 #       verbose=True
 #  if verbose:
 #      #pp(list(records))
+#  print(next(records).keys())
   for page in pages:
       try:
           if page[1]=='publications':

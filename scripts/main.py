@@ -85,6 +85,7 @@ pmIDs=['22991327',
 '37989764', # CoGAPS Notebooks
 '37885016', # RNA velocity Genome Biology Paper
 '38969603', # CFTR paper with Cutting Lab
+'39271675', # BRN1/2 paper with Uli Nat Comm.
 ]
 
 pmIDs.sort(reverse=True)

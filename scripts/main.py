@@ -78,14 +78,17 @@ pmIDs=['22991327',
 '35463747', # MacFarlane Smad3 heart
 '35998637', # Kolodkin Tbx5 Direction selectivity
 '37316665', # Psychadelics reopen the social critical period
-# MENS eLife paper
 '37585461', # HSCR PNAS paper
 '37812717', # Sjogren's syndrome
-'38108810', #eLife MENS paper
 '37989764', # CoGAPS Notebooks
 '37885016', # RNA velocity Genome Biology Paper
+'38108810', # eLife MENS paper
 '38969603', # CFTR paper with Cutting Lab
 '39271675', # BRN1/2 paper with Uli Nat Comm.
+'39495936', # RGC paper with Kolodkin lab
+'40164771', # Bergles OPC scRNA-Seq
+'40457480', # MNSF paper with Kasper
+'40844876', # L6 Consensus cell types (w/ Brown lab)
 ]
 
 pmIDs.sort(reverse=True)
@@ -131,6 +134,8 @@ preprintIDs = [
     '2023.01.28.526051', # Fovea preprint from Johnston lab
     '2024.10.27.620502', # Bergles OPC preprint
     '2024.11.04.621933',
+    '2024.07.01.599554',
+    
 ]
 
 preprintIDs = reversed(preprintIDs)

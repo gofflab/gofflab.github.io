@@ -11,11 +11,6 @@
     <link rel="stylesheet" href="../assets/css/loyal_mods.css" />
   </head>
   <body>
-    <div id="main" class="wrapper style1">
-        <div class="container">
-            <header class="major">
-                <h2>Posters</h2>
-            </header>
     <script>
       (async () => {
         try {
@@ -36,16 +31,22 @@
           }
 
           htmlString += '</ul>';
-          document.getElementsByTagName('body')[0].innerHTML = htmlString;
+          document.getElementById('poster-list').innerHTML = htmlString;
         } catch (error) {
-          document.getElementsByTagName('body')[0].innerHTML = `<p>Error: ${error.message}</p>`;
+          document.getElementById('poster-list').innerHTML = `<p>Error: ${error.message}</p>`;
           console.error('Error fetching directory:', error);
         }
       })()
     </script>
+    <div id="main" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>Posters</h2>
+            </header>
+    <div id="poster-list">Loading posters...</div>
         </div>
     </div>
-    
+
   <!-- Footer -->
   <footer id="footer">
     <ul class="icons">

@@ -89,6 +89,9 @@ pmIDs=['22991327',
 '40164771', # Bergles OPC scRNA-Seq
 '40457480', # MNSF paper with Kasper
 '40844876', # L6 Consensus cell types (w/ Brown lab)
+'40286269', # Margolis heat stress neurons
+'41284876', # Rroid2 paper
+
 ]
 
 pmIDs.sort(reverse=True)

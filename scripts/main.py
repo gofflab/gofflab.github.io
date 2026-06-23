@@ -91,6 +91,8 @@ pmIDs=['22991327',
 '40844876', # L6 Consensus cell types (w/ Brown lab)
 '40286269', # Margolis heat stress neurons
 '41284876', # Rroid2 paper
+'41686445', # Johnston lab fovea paper
+'41889203', # Bergles Glia paper
 
 ]
 

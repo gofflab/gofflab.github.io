@@ -93,7 +93,6 @@ pmIDs=['22991327',
 '41284876', # Rroid2 paper
 '41686445', # Johnston lab fovea paper
 '41889203', # Bergles Glia paper
-
 ]
 
 pmIDs.sort(reverse=True)

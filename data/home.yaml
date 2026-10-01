@@ -1,0 +1,40 @@
+# Homepage content.
+# Anything under a 'draft:' key renders as a visible DRAFT box (to be written together before launch).
+
+hero:
+  # Placeholder: existing O. chierchiae photo from the genome page. Replace once new photography is chosen.
+  image: {src: ochier_genome/Och3.jpeg, alt: Octopus chierchiae hatchling}
+  actions:
+    - {label: Our research, href: research.html}
+    - {label: Cephalopod resources, href: cephalopods.html}
+
+approach:
+  # DRAFT wording taken directly from the refresh brief; to be rewritten together.
+  draft_flag: true
+  kicker: Computational and experimental molecular neuroscience
+  pillars:
+    - title: Develop
+      text: New single cell and spatial transcriptomics assays, and computational tools for their analysis.
+    - title: Apply
+      text: These tools in challenging biological contexts in which off-the-shelf assays routinely struggle.
+    - title: Extend
+      text: To non-traditional model organisms, including cephalopods.
+
+spotlight:
+  image: {src: ochier_genome/Och2.jpeg, alt: Octopus chierchiae hatchling}
+  title: <em>Octopus chierchiae</em> genome assembly
+  draft: "Short narrative on the O. chierchiae genome project and why it matters for the lab."
+  # Values taken from the existing genome page (data/genome_ochier.yaml).
+  stats:
+    - {value: "5.18 Gb", label: Genome size}
+    - {value: "30", label: Chromosome scaffolds}
+    - {value: "218 Mb", label: Scaffold N50}
+    - {value: "94.4%", label: BUSCO complete (metazoa)}
+  link: {label: Genome resources and downloads, href: octopus_genome.html}
+
+directions:
+  draft: "Future directions teaser (2 to 4 projects), linking to the Research page."
+
+join:
+  # Verbatim from join.html.
+  text: The Goff lab trains graduate students from the <a href="http://humangenetics.jhmi.edu/">Human Genetics</a>, BCMB, and <a href="http://neuroscience.jhu.edu/graduate-program">Neuroscience</a> graduate training programs at Johns Hopkins.

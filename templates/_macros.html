@@ -1,0 +1,60 @@
+{# Shared building blocks. #}
+
+{% macro img(src, alt, width, cls='', eager=false) -%}
+{%- set i = webimg(src, width) -%}
+<img src="{{ root }}{{ i.path }}" width="{{ i.w }}" height="{{ i.h }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{%- endmacro %}
+
+{# Visible placeholder for content still to be written. Remove all before launch. #}
+{% macro draft(obj) -%}
+{% if obj and obj.draft %}<div class="draft">{{ obj.draft }}</div>{% endif %}
+{%- endmacro %}
+
+{% macro doi_link(doi) -%}
+<a href="https://doi.org/{{ doi }}" rel="noopener">doi:{{ doi }}</a>
+{%- endmacro %}
+
+{% macro paper(p) -%}
+<li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.journal ~ ' ' ~ p.year)|lower|e }}">
+  <p class="pub-title">{{ p.title }}</p>
+  <p class="pub-authors">{{ p.authors|authors }}</p>
+  <p class="pub-venue">{{ p.journal }}</p>
+  <div class="pub-links">
+    {% if p.doi %}{{ doi_link(p.doi) }}{% endif %}
+    <a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/" rel="noopener">PubMed {{ p.pmid }}</a>
+  </div>
+  {% if p.abstract %}
+  <details>
+    <summary>Abstract</summary>
+    <div class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-pmid="{{ p.pmid }}"></div>
+    <p>{{ p.abstract }}</p>
+  </details>
+  {% endif %}
+</li>
+{%- endmacro %}
+
+{% macro preprint(p) -%}
+<li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.year ~ ' preprint biorxiv')|lower|e }}">
+  <p class="pub-title">{{ p.title }}</p>
+  <p class="pub-authors">{{ p.authors|authors }}</p>
+  <p class="pub-venue">bioRxiv preprint, {{ p.year }}</p>
+  <div class="pub-links">
+    {{ doi_link(p.doi) }}
+    {% if p.published %}<span class="pub-note">Published</span><a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.published.pmid }}/" rel="noopener">{{ p.published.journal.split('.')[0] }}, {{ p.published.year }}</a>{% endif %}
+  </div>
+  {% if p.abstract %}
+  <details>
+    <summary>Abstract</summary>
+    <div class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ p.doi }}"></div>
+    <p>{{ p.abstract }}</p>
+  </details>
+  {% endif %}
+</li>
+{%- endmacro %}
+
+{% macro compact(p) -%}
+<li>
+  <a href="{% if p.doi %}https://doi.org/{{ p.doi }}{% else %}https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/{% endif %}" rel="noopener">{{ p.title }}</a>
+  <p class="pub-venue">{{ p.journal.split('.')[0] }}, {{ p.year }}</p>
+</li>
+{%- endmacro %}

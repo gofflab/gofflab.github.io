@@ -1,242 +1,288 @@
 #!/usr/bin/env python
-import string
-from Bio import Medline,Entrez
-import shutil
-#from RNASeq.misc import pp
-from jinja2 import Environment,FileSystemLoader,exceptions
-import urllib.request as request
+"""Build the Goff Lab website.
+
+Content lives in data/*.yaml, layout in templates/, styles in assets/css/site.css.
+Rendered pages are written to the repository root (served by GitHub Pages).
+
+    python scripts/main.py                 # fetch PubMed/bioRxiv, then render
+    python scripts/main.py --offline       # render from data/cache only
+    python scripts/main.py --no-analytics  # omit the GA4 tag (local previews)
+"""
+import argparse
+import datetime
+import difflib
 import json
 import re
 import sys
+import urllib.request
+from pathlib import Path
 
-templateDir = "templates"
-env = Environment(loader=FileSystemLoader([templateDir]))
+import yaml
+from jinja2 import Environment, FileSystemLoader
+from PIL import Image, ImageOps
 
-##########################
-#Publication Information
-##########################
-### Fetch publications
-pmIDs=['22991327',
-'22197703',
-'20348442',
-'19784364',
-'19257808',
-'18814314',
-'18657893',
-'18004940',
-'17916793',
-'17114923',
-'15469607',
-'23222703',
-'22383036',
-'21890647',
-'23401553',
-'23623381',
-'24107992',
-'24304912',
-'24381249',
-'24393486',
-'24463464',
-'24714615',
-'24997765',
-'25556833',
-'26034286',
-'26430155',
-'26694805',
-'27296516',
-'27479747',
-'27525555',
-'27801893',
-'27999180',
-'28821643',
-'28930659',
-'29320739',
-'29499164',
-'30143323',
-'30188322',
-'30866806',
-'30988181',
-'31128945',
-'31121116',
-'31337651',
-'32829096',
-'32386599',
-'32243843',
-'32167521',
-'31843893',
-'31581148',
-'31503409',
-'31465303',
-'33084572',
-'33113347',
-'33277430',
-'33446502', 
-'34266896',
-'35148175',
-'35101061',
-'35263579', # Potter mosquito AgOr2
-'35463747', # MacFarlane Smad3 heart
-'35998637', # Kolodkin Tbx5 Direction selectivity
-'37316665', # Psychadelics reopen the social critical period
-'37585461', # HSCR PNAS paper
-'37812717', # Sjogren's syndrome
-'37989764', # CoGAPS Notebooks
-'37885016', # RNA velocity Genome Biology Paper
-'38108810', # eLife MENS paper
-'38969603', # CFTR paper with Cutting Lab
-'39271675', # BRN1/2 paper with Uli Nat Comm.
-'39495936', # RGC paper with Kolodkin lab
-'40164771', # Bergles OPC scRNA-Seq
-'40457480', # MNSF paper with Kasper
-'40844876', # L6 Consensus cell types (w/ Brown lab)
-'40286269', # Margolis heat stress neurons
-'41284876', # Rroid2 paper
-'41686445', # Johnston lab fovea paper
-'41889203', # Bergles Glia paper
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / 'data'
+CACHE = DATA / 'cache'
+IMAGES = ROOT / 'images'
+WEB_IMG = ROOT / 'assets' / 'img'
+
+ENTREZ_EMAIL = 'loyalgoff@gmail.com'
+
+# (template, output path, page title). Output paths are relative to the repo root.
+PAGES = [
+    ('index.html', 'index.html', None),
+    ('research.html', 'research.html', 'Research'),
+    ('cephalopods.html', 'cephalopods.html', 'Cephalopods'),
+    ('octopus_genome.html', 'octopus_genome.html', 'Octopus chierchiae genome assembly'),
+    ('publications.html', 'publications.html', 'Publications'),
+    ('tools.html', 'tools.html', 'Tools & Data'),
+    ('people.html', 'people.html', 'People'),
+    ('join.html', 'join.html', 'Join'),
+    ('contact.html', 'contact.html', 'Contact'),
+    ('teaching.html', 'teaching.html', 'Teaching'),
+    ('posters.html', 'posters/index.html', 'Posters'),
 ]
 
-pmIDs.sort(reverse=True)
+# Old URLs kept alive as redirects so external links and bookmarks still work.
+REDIRECTS = {
+    'preprints.html': 'publications.html#preprints',
+    'software.html': 'tools.html#software',
+    'datasets.html': 'tools.html#datasets',
+    'lab_resources.html': 'tools.html#snippets',
+    'octopus.html': 'octopus_genome.html',
+}
 
-print(f"Fetching {len(pmIDs)} publication records from Entrez...")
-Entrez.email="loyalgoff@gmail.com"
-handle = Entrez.efetch(db="pubmed", id=pmIDs, rettype="medline",
-                           retmode="text")
 
-records = Medline.parse(handle)
-print("\tDone")
+def load_yaml(name):
+    with open(DATA / f'{name}.yaml') as fh:
+        return yaml.safe_load(fh)
 
-##########Hannah################
-#Preprint Information
+
+def log(msg):
+    print(msg, file=sys.stderr)
+
+
 ##########################
-### Fetch Preprints
-preprintIDs = [
-    '157149',
-    '148049',
-    '196394',
-    '196915',
-    '378950',
-    '395004',
-    '479287',
-    '447557',
-    '484410',
-    '726547',
-    '779694',
-    '2020.03.13.990549',
-    '2020.07.23.218586',
-    '2020.08.25.262832',
-    '2020.12.09.417931',
-    '2021.04.06.438463',
-    '2021.08.25.457650',
-    '2021.12.27.473694', # Lindsay Hayes
-    '2021.12.28.474390', # HSCR Manuscript
-    '2022.10.07.511381', # Pantr2 study
-    '2022.06.19.494717', # RNA Velocity Study
-    '2022.07.09.499398', # Genevieve GenePattern Notebooks
-    '2023.11.18.567662', # Sema6a with A.Kolodkin
-    '2023.11.02.565322', # Uli Brn1/2
-    '2024.07.01.599554', # mNSF
-    '2023.01.28.526051', # Fovea preprint from Johnston lab
-    '2024.10.27.620502', # Bergles OPC preprint
-    '2024.11.04.621933',
-    '2024.07.01.599554',
-    
-]
+# Publications
+##########################
 
-preprintIDs = reversed(preprintIDs)
+def read_cache(name):
+    path = CACHE / f'{name}.json'
+    return json.loads(path.read_text()) if path.exists() else {}
 
-def fetchBioRxiv(preprintID):
-    biorxiv_api_url = f'https://api.biorxiv.org/details/biorxiv/10.1101/{preprintID}'
-    response = request.urlopen(biorxiv_api_url)
-    data = json.loads(response.read())
-    return(data)
 
-#print(fetchBioRxiv(preprintIDs[0]))
-print("Fetching Preprints from BioRxiv...")
-preprints = [fetchBioRxiv(id)['collection'][0] for id in preprintIDs]
-print(f"\t{len(preprints)} found")
-#print(preprints[-1]
+def write_cache(name, records):
+    CACHE.mkdir(parents=True, exist_ok=True)
+    (CACHE / f'{name}.json').write_text(json.dumps(records, indent=1, ensure_ascii=False) + '\n')
 
-################
-#Pages
-################
 
-pages=[
-        ('/', 'index', '','Home'),
-        #('/', 'research', 'Experimental Biology','Research'),
-        ('/', 'people', 'General','People'),
-        ('/', 'publications', 'Experimental Biology', 'Publications'),
-        ('/', 'preprints', 'Experimental Biology', 'Preprints'),
-        ('/', 'teaching', 'Teaching', 'Teaching'),
-        ('/', 'software', 'Computational Biology','Software'),
-        ('/', 'datasets', 'Computational Biology', 'datasets'),
-        ('/', 'contact', 'General','Contact'),
-        #('/', 'about', 'General','About'),
-        ('/', 'join', 'General','Join'),
-        #('/', 'resources', 'General','Resources'),
-        #('/', 'links', 'General','Links'),
-        #('/', 'news', 'General', 'News')
-        ('/', 'blog', 'General', 'Blog'),
-        ('/', 'lab_resources', 'General', 'Lab Resources'),
-        ('/', 'octopus', 'General', 'Octopus Genome'),
-        ('/', 'octopus_genome', 'General', 'Octopus Genome'),
-]
+def fetch_pubmed(pmids, cache):
+    """Refresh cached PubMed records. Keeps the cached copy for anything that fails."""
+    from Bio import Entrez, Medline
+    Entrez.email = ENTREZ_EMAIL
+    log(f'Fetching {len(pmids)} records from PubMed...')
+    try:
+        handle = Entrez.efetch(db='pubmed', id=pmids, rettype='medline', retmode='text')
+        records = list(Medline.parse(handle))
+    except Exception as err:  # network or API failure: fall back to cache
+        log(f'\tPubMed fetch failed ({err}); using cached records')
+        return cache
+    for rec in records:
+        if 'PMID' not in rec:
+            continue
+        doi = next((a.split(' ')[0] for a in rec.get('AID', []) if a.endswith('[doi]')), None)
+        if not doi and '[doi]' in rec.get('LID', ''):
+            doi = rec['LID'].split(' [doi]')[0].split(' [pii] ')[-1]
+        cache[rec['PMID']] = dict(
+            pmid=rec['PMID'], title=rec.get('TI', '').strip(), year=int(rec.get('DP', '0')[:4]),
+            authors=rec.get('AU', []), journal=rec.get('SO', '').strip(), doi=doi,
+            abstract=rec.get('AB', ''))
+    log(f'\t{len(records)} records')
+    return cache
 
-#pp(list(records))
 
-# def pubs():
-#     template=env.get_template('pubs.html')
-#     outHandle = open(outFile,'w')
-#     print(template.render(records=list(records)),file=outHandle)
+def fetch_biorxiv(ids, cache):
+    log(f'Fetching {len(ids)} preprints from bioRxiv...')
+    ok = 0
+    for pid in ids:
+        doi = f'10.1101/{pid}'
+        try:
+            with urllib.request.urlopen(f'https://api.biorxiv.org/details/biorxiv/{doi}', timeout=30) as resp:
+                versions = json.loads(resp.read())['collection']
+        except Exception as err:
+            log(f'\t{doi}: fetch failed ({err}); using cache')
+            continue
+        if not versions:
+            continue
+        first, latest = versions[0], versions[-1]
+        published = latest.get('published')
+        cache[doi] = dict(
+            doi=doi, title=latest['title'].strip(), year=int(first['date'][:4]), date=first['date'],
+            authors=[a.strip() for a in latest['authors'].split(';') if a.strip()],
+            server=latest.get('server', 'biorxiv'), abstract=latest.get('abstract', ''),
+            published_doi=None if published in (None, '', 'NA') else published)
+        ok += 1
+    log(f'\t{ok} refreshed')
+    return cache
 
-#def preprints():
-#    template=env.get_template('preprints.html')
 
-def renderPage(pageName,**kwargs):
-    fname=pageName+'.html'
-    template=env.get_template(fname)
-    outHandle = open(fname,'w')
-    #print >>outHandle, template.render(**kwargs)
-    print(template.render(**kwargs),file=outHandle)
+def _norm_title(t):
+    return re.sub(r'[^a-z0-9 ]', '', t.lower())
 
-def nameBoldPubs(string):
-    return(re.sub('Goff,? L\\.? ?[A]?\\.?,?','<span class="font-weight-bold" style="font-size: 1.0rem"><u>Goff LA</u></span>,',string))
 
-env.filters['nameBoldPubs'] = nameBoldPubs
+def publications(offline):
+    cfg = load_yaml('publications')
+    pmids = [str(p['pmid']) for p in cfg['papers']]
+    pre_ids = [str(p['id']) for p in cfg['preprints']]
 
-def split_doi(string):
-    if(' [pii] ' in string):
-        return string.split(" [pii] ")[1]
-    else:
-        return(string)
+    pub_cache, pre_cache = read_cache('pubmed'), read_cache('biorxiv')
+    if not offline:
+        pub_cache = fetch_pubmed(pmids, pub_cache)
+        pre_cache = fetch_biorxiv(pre_ids, pre_cache)
+        write_cache('pubmed', pub_cache)
+        write_cache('biorxiv', pre_cache)
 
-env.filters['split_doi'] = split_doi
+    themes = {str(p['pmid']): p.get('themes', []) for p in cfg['papers']}
+    papers = []
+    for pmid in pmids:
+        if pmid not in pub_cache:
+            log(f'WARNING: no record for PMID {pmid} (run without --offline)')
+            continue
+        papers.append(dict(pub_cache[pmid], themes=themes[pmid]))
+    papers.sort(key=lambda p: (p['year'], int(p['pmid'])), reverse=True)
 
-def biorxiv_logo(string):
-    if string == 'biorxiv':
-        return 'bio<span style="color: red">R</span><sub><em>&Chi;</em></sub>iv'
-    else:
-        return string
+    # Flag preprints that now have a published version on the papers list.
+    by_doi = {p['doi'].lower(): p for p in papers if p['doi']}
+    titles = {_norm_title(p['title']): p for p in papers}
+    preprints = []
+    for pid in pre_ids:
+        doi = f'10.1101/{pid}'
+        if doi not in pre_cache:
+            log(f'WARNING: no record for preprint {doi} (run without --offline)')
+            continue
+        pre = dict(pre_cache[doi])
+        match = by_doi.get((pre.get('published_doi') or '').lower()) if pre.get('published_doi') else None
+        if not match:
+            close = difflib.get_close_matches(_norm_title(pre['title']), titles, n=1, cutoff=0.85)
+            match = titles[close[0]] if close else None
+        pre['published'] = match
+        preprints.append(pre)
+    preprints.sort(key=lambda p: (p['year'], p.get('date') or ''), reverse=True)
+    return papers, preprints
 
-env.filters['biorxiv_logo'] = biorxiv_logo
+
+##########################
+# Images
+##########################
+
+USED_IMAGES = set()
+
+
+def web_image(src, width):
+    """Return a resized WebP copy of images/<src> (generated once, then committed)."""
+    source = IMAGES / src
+    stem = src.rsplit('.', 1)[0].replace('/', '__')
+    out = WEB_IMG / f'{stem}-{width}.webp'
+    USED_IMAGES.add(out.name)
+    if not out.exists():
+        WEB_IMG.mkdir(parents=True, exist_ok=True)
+        with Image.open(source) as im:
+            im = ImageOps.exif_transpose(im)
+            im = im.convert('RGBA' if im.mode in ('RGBA', 'LA', 'P') else 'RGB')
+            if im.width > width:
+                im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+            im.save(out, 'WEBP', quality=82, method=6)
+    with Image.open(out) as im:
+        w, h = im.size
+    return dict(path=f'assets/img/{out.name}', w=w, h=h)
+
+
+##########################
+# Posters
+##########################
+
+def posters():
+    items = []
+    for pdf in sorted((ROOT / 'posters').glob('*.pdf')):
+        name = pdf.stem
+        year = None
+        m = re.match(r'^(20\d{2})\d{4}_', name) or re.match(r'^(\d{2})\d{4}_', name)
+        if m:
+            year = int(m.group(1)) if len(m.group(1)) == 4 else 2000 + int(m.group(1))
+            name = name.split('_', 1)[1]
+        else:
+            m = re.search(r'(20\d{2})', name)
+            year = int(m.group(1)) if m else None
+        label = re.sub(r'[_]+', ' ', name).strip()
+        items.append(dict(file=pdf.name, label=label, year=year,
+                          size=f'{pdf.stat().st_size / 1e6:.1f} MB'))
+    items.sort(key=lambda p: (p['year'] or 0, p['label']), reverse=True)
+    return items
+
+
+##########################
+# Filters
+##########################
+
+GOFF = re.compile(r'^(Goff,? ?L\.? ?A?\.?|Loyal A?\.? ?Goff)$')
+
+
+def author_list(authors):
+    out = []
+    for a in authors:
+        a = a.strip()
+        out.append(f'<strong class="self">{a}</strong>' if GOFF.match(a) else a)
+    return ', '.join(out)
+
+
+def render(env, template, out, **ctx):
+    target = ROOT / out
+    target.parent.mkdir(parents=True, exist_ok=True)
+    html = env.get_template(template).render(**ctx)
+    html = re.sub(r'\n\s*\n+', '\n', html)
+    target.write_text(html)
+    return html.count('class="draft"')
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--offline', action='store_true', help='skip PubMed/bioRxiv fetch; use data/cache')
+    ap.add_argument('--no-analytics', action='store_true', help='omit the Google Analytics tag')
+    args = ap.parse_args()
+
+    site = load_yaml('site')
+    if args.no_analytics:
+        site['ga4_id'] = None
+    papers, preprints = publications(args.offline)
+
+    env = Environment(loader=FileSystemLoader(ROOT / 'templates'), trim_blocks=True, lstrip_blocks=True)
+    env.filters['authors'] = author_list
+    env.globals['webimg'] = web_image
+    env.tests['contains'] = lambda seq, item: item in (seq or [])
+
+    common = dict(
+        site=site, year=datetime.date.today().year,
+        home=load_yaml('home'), research=load_yaml('research'), cephalopods=load_yaml('cephalopods'),
+        people=load_yaml('people'), tools=load_yaml('tools'), contact=load_yaml('contact'),
+        genome=load_yaml('genome_ochier'), papers=papers, preprints=preprints, posters=posters())
+
+    drafts = 0
+    for template, out, title in PAGES:
+        depth = out.count('/')
+        drafts += render(env, template, out, page=out, title=title, root='../' * depth, **common)
+    for old, new in REDIRECTS.items():
+        render(env, '_redirect.html', old, target=new, root='', **common)
+
+    for stale in WEB_IMG.glob('*.webp'):
+        if stale.name not in USED_IMAGES:
+            stale.unlink()
+
+    log(f'Rendered {len(PAGES)} pages, {len(REDIRECTS)} redirects; '
+        f'{len(papers)} papers, {len(preprints)} preprints, {len(common["posters"])} posters.')
+    if drafts:
+        log(f'NOTE: {drafts} DRAFT placeholders remain (data/*.yaml "draft" keys).')
+
 
 if __name__ == '__main__':
-#   if sys.argv[1] == '-v':
-#       verbose=True
-#  if verbose:
-#      #pp(list(records))
-#  print(next(records).keys())
-  for page in pages:
-      try:
-          if page[1]=='publications':
-              renderPage(page[1],activePage=page[1],pages=pages,records=list(records))
-          elif page[1]=='preprints':
-              try:
-                  renderPage(page[1],activePage=page[1],pages=pages,preprints=preprints)
-              except:
-                  print("Could not update preprints page")
-          else:
-              renderPage(page[1],activePage=page[1],pages=pages)
-      except exceptions.TemplateNotFound:
-          print("No good template for %s" % (page[1]))
-          #shutil.copy(templateDir+"/min.template",templateDir+"/"+page[1]+".html")
-          #renderPage(page[1],activePage=page[1],pages=pages)
+    main()

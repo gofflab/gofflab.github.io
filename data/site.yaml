@@ -1,0 +1,32 @@
+# Site-wide settings. Edit here; every page picks these up on the next build.
+name: Goff Lab
+tagline: Single Cell and Spatial Transcriptomics in Cephalopod Neural Development
+affiliation: Departments of Neuroscience & Genetic Medicine, Johns Hopkins University School of Medicine
+url: https://www.gofflab.org
+
+# Google Analytics 4 measurement ID (added to <head> of every page).
+# Pass --no-analytics to the build script for local previews.
+ga4_id: G-X36CPG7L73
+
+nav:
+  - {label: Research, href: research.html}
+  - {label: Cephalopods, href: cephalopods.html}
+  - {label: Publications, href: publications.html}
+  - {label: Tools & Data, href: tools.html}
+  - {label: People, href: people.html}
+  - {label: Join, href: join.html}
+  - {label: Contact, href: contact.html}
+
+footer_links:
+  - {label: Bluesky, href: "https://bsky.app/profile/TODO"}   # TODO: Bluesky handle
+  - {label: GitHub, href: "https://github.com/gofflab"}
+  - {label: Google Scholar, href: "https://scholar.google.com/citations?user=2ZVv2v8AAAAJ&hl=en"}
+  - {label: ORCID, href: "https://orcid.org/0000-0003-2875-451X"}
+  - {label: Email, href: "mailto:loyalgoff@jhmi.edu"}
+
+funders:
+  - name: National Science Foundation
+  - name: National Institutes of Health / National Institute on Aging
+  - name: The Kavli Foundation
+    note: Kavli Scholar
+  - name: Johns Hopkins Discovery Fund

@@ -1,34 +1,84 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<head>
-		<title>
-	    {% block title %}
-	    Single Cell Neuroscience Lab JHU
-	    {% endblock title %}
-		</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
-		<link rel="stylesheet" href="assets/css/jquery-ui.structure.min.css" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/loyal_mods.css" />
-	</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% if site.ga4_id %}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4_id }}');
+  </script>
+{% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} | {{ site.tagline }}{% endif %}</title>
+  <meta name="description" content="{% block description %}{{ site.name }}: {{ site.tagline }}. {{ site.affiliation }}.{% endblock %}">
+  <link rel="canonical" href="{{ site.url }}/{{ page if page != 'index.html' else '' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ site.tagline }}">
+  <meta property="og:url" content="{{ site.url }}/{{ page if page != 'index.html' else '' }}">
+  <meta name="theme-color" content="#0b1016">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="{{ root }}assets/css/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ root }}index.html">
+        <span class="brand-name">{{ site.name }}</span>
+        <span class="brand-sub">Cephalopod Neural Development</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Main">
+        <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ root }}{{ item.href }}"{% if item.href == page or (page == 'octopus_genome.html' and item.href == 'cephalopods.html') or (page == 'posters/index.html' and item.href == 'publications.html') %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
 
+  <main id="main">
+{% block content %}{% endblock %}
+  </main>
 
-	{% block content %}
-	<body class="is-preload">
-		<div id="page-wrapper">
-		</div>
-	 	{% endblock content %}
-		{% include 'footer.html' %}
-		{% include 'scripts.html' %}
-	</body>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">{{ site.name }}</div>
+          <p>{{ site.tagline }}</p>
+          <p>{{ site.affiliation }}</p>
+        </div>
+        <div>
+          <h2>Elsewhere</h2>
+          <ul>
+          {% for link in site.footer_links %}
+            <li><a href="{{ link.href }}"{% if not link.href.startswith('mailto:') %} rel="noopener"{% endif %}>{{ link.label }}</a></li>
+          {% endfor %}
+          </ul>
+        </div>
+        <div>
+          <h2>Visit</h2>
+          <address>
+          {% for line in contact.lab.lines %}{{ line }}<br>{% endfor %}
+          </address>
+          <p><a href="{{ root }}contact.html">Contact details</a></p>
+        </div>
+      </div>
+      <p class="legal">&copy; {{ year }} {{ site.name }}, Johns Hopkins University. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="{{ root }}assets/js/site.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
 </html>

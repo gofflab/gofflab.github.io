@@ -1,0 +1,132 @@
+# Lab members. Text is carried over verbatim from the previous site.
+# Text fields may contain inline HTML (links, <em>).
+# 'bio_hidden' = text that was commented out on the old site (not shown).
+# 'hidden: true' = whole entry not shown.
+
+current:
+- name: Loyal Goff
+  role: Principal Investigator
+  photo: Goff_color.jpg
+  alt: Loyal Goff, PI
+  email: loyalgoff@jhmi.edu
+  bio: Dr. Goff is an Associate Professor of Neuroscience & Genetic Medicine in the <a href="https://igm.jhmi.edu/">McKusick-Nathans Department of Genetic Medicine</a> at Johns Hopkins University School of Medicine. His postdoctoral work was conducted under the joint mentorship of Drs. John Rinn (Harvard, SCRB) and Manolis Kellis (MIT, CSAIL) and involved the discovery, annotation, and characterization of long non-coding RNAs in a variety of cellular and developmental contexts. The Goff Lab is currently focused on developing and adapting single cell gene expression measurement systems to explore how cells in the developing and degenerating mammalian nervous system vary in response to genetic or other disease-associated insults.
+- name: Jared Slosberg
+  role: Human Genetics Graduate Program
+  photo: jared_slosberg.jpg
+  email: jslosbe1@jhmi.edu
+  bio: Jared joined the Human Genetics graduate program in 2019. He graduated from The George Washington University with a B.S. in Biomedical Engineering, and a minor in Biophysics. He is interested in developing computational methods to interrogate changes in gene expression associated with developmental processes, particularly in the context of single-cell transcriptomics. His current work involves characterizing the emergence and roles of a sub-population of neurons in the enteric nervous system.
+- name: Alina Spiegel
+  role: MD/PhD Program, Neuroscience
+  photo: alina_spiegel.jpg
+  email: aspiege4@jhmi.edu
+  bio: Alina did her undergraduate training in chemistry at Princeton University. After additional research opportunities in Germany and China (as a Fulbright Scholar), she joined the Johns Hopkins MD/PhD program in the Department of Neuroscience. She is jointly mentored by Dr. Goff and Dr. Solange Brown (JHU Neuroscience). Alina is currently involved in several projects including the development of a novel assay to measure neuronal connectivity, a deep dive into the cellular processes affected in C9orf72 disease (ALS), and an exploration of synaptic transcriptional variation in the cortex.
+- name: Chaichontat (Richard) Sriworarat
+  role: Neuroscience Graduate Program
+  photo: richard.jpg
+  alt: Chaichontat Sriworarat
+  email: csriwor1@jhmi.edu
+- name: Kyla Woyshner
+  role: Human Genetics Graduate Student
+  photo: KWpic.jpg
+  email: kwoyshn1@jhmi.edu
+- name: Rachel Latanich
+  role: Goff Lab & STAC Lab Manager
+  photo: missing.png
+  email: latanich@jhmi.edu
+  hidden: true
+- name: Alyson Hally
+  role: Human Genetics Graduate Student
+  photo: Alyson_Hally.jpg
+  email: ahally1@jhmi.edu
+alumni:
+- name: Genevieve Stein-O'Brien, Ph.D.
+  role: <a href="https://kavlijhu.org/" target="_blank">Kavli NDI</a> Postdoctoral Fellow
+  photo: Genevieve.jpg
+  alt: Genevieve Stein-O'Brien
+  email: gsteinobrien@gmail.com
+  bio: Dr. Stein-O'Brien is a post doctoral fellow in Oncology Biostatics and Bioinformatics and Neuroscience Departments at Johns Hopkins University with affiliations in the McKusick-Nathans Institute of Genomics Medicine and Institute for Data Intensive Engineering and Science. In 2017, she received a PhD in Human Genetics from Johns Hopkins School of Medicine and a MHS in Biostatistics from Johns Hopkins School of Public Health. Dr. Stein-O'Brien's research is focused on the stochastic processes underlying gene regulation in dynamic biological systems. Specifically, she develops computational and statistical methods for pattern detection and data integration in high-throughput genomics.
+- name: Jonathan Augustin
+  role: Ph.D., Biochemistry, Cellular and Molecular Biology Graduate Program; NSF Graduate Fellow
+  photo: jaugustin.jpg
+  email: jaugust7@jhmi.edu
+  bio: Jonathan received his Ph.D. from the BCMB program in 2022. He is currently a postdoctoral scholar at the Eli and Edythe Broad Center of Regeneration Medicine and Stem Cell Research, Lab of Dr. Arnold Kriegstein. Prior to joining our lab, he was a research technician in the lab of Dr. Hao Jiang at the University of Alabama at Birmingham. He did his undergraduate work at Maryville College in Tennessee where he earned his B.A. in Biochemistry, and a minor in Mathematics.
+- name: Elizabeth Vincent
+  role: 'Ph.D. Candidate, Human Genetics Graduate Program, Current: Postdoc with the Beier & Shendure Labs at UW/Seattle Children''s Hospital'
+  photo: Elizabeth_Vincent_2.jpg
+  email: liz.vincent92@gmail.com
+  bio: Liz joined the Human Genetics program in August 2015 after receiving her B.A. in Chemistry from Yale University. Her undergraduate thesis involved a genetic study of a trio of individuals to identify a causal variant for a specific neurological disorder. She brings with her experience in both experimental and computation biology. Her thesis project includes a characterization of newborn enteric neurons in a mouse model of Hirschsprung Disease, and identifying the specific role(s) for the receptor tyrosine kinase RET in regulating neural fate specification in the mammalian gut.
+- name: Kenji Johnson, Ph.D.
+  role: Postdoctoral Fellow
+  photo: kenji.jpg
+  alt: Kenji Johnson
+- name: Asher Baraban
+  role: Intern, Software Development
+  photo: asher_baraban.jpg
+  bio: Asher is currently an undergraduate student at WashU in St. Louis, MO. He has been developing <a href="https://scproject.readthedocs.io/en/master/#overview" target="_blank">scProject</a>, a single cell transfer learning tool for visualization and exploration of latent space utilization.
+- name: Michael Feyder
+  role: 'Postdoctoral Fellow, Current: Data Engineer, UPitt'
+  photo: mfeyder.jpg
+- name: Gabrielle Cannon
+  role: 'Research Technologist, Current: Lab Manager, UNC Chapel Hill'
+  photo: gabby.jpg
+- name: Brian Clark, Ph.D.
+  role: 'Current: Assistant Professor, Ophthalmology and Visual Sciences, Washington University SOM, St. Louis, MO'
+  photo: Brian.jpg
+  alt: Brian Clark
+- name: Gloria Shin
+  role: Research Technologist
+  photo: missing.png
+  bio_hidden: A graduate of the Johns Hopkins Human Genetics graduate program, Gloria has found her way back to the Miller Research Building as a member of the Goff lab. Gloria is coordinating our collaborative single cell experiments and is the point of contact for the developing Single Cell Innovation Lab.
+- name: Victoria Hoskins
+  role: 'Ph.D., Human Genetics Graduate Program, Current: Postdoc, UNC Chapel Hill'
+  photo: Tori.jpg
+  bio_hidden: Tori Hoskins hails from the hometown of Krispy Kreme Doughnuts where she attended Wake Forest University and earned a B.S. in Biology and minors in Chemistry and Anthropology. She is currently a PhD Candidate in the Human Genetics program at The Johns Hopkins School of Medicine and is jointly mentored by Loyal Goff and Karen Reddy. Her project is focused on understanding how Lamina Associated Domains are re-established after mitosis.
+- name: Briana Winer
+  role: 'Research Technologist, Current: JHU CMM Graduate Program'
+  photo: Briana.jpg
+  email: bwiner2@jhmi.edu
+  bio_hidden: Briana, born and raised in Baltimore County, received her B.S. in Biochemistry from Stevenson University. Whilst an undergrad, she retained membership in various honor societies, such as, Beta Beta Beta, Gamma Sigma Epsilon, and Sigma Xi. She was also highly involved in the Phi Sigma Sigma sorority. She completed a Capstone Research Project at the Johns Hopkins Bloomberg School of Public Health under the mentorship of Dr. Janice Evans. This project focused on optimizing antibody conditions for determining protein localization within mouse oocytes. Briana also participated in a semester long course, at her alma mater, doing research on the role of ubiquitination and its' effect on stem cell differentiation and lineage determination. While she hopes to contribute her knowledge and dedication to our lab, she remains focused on her goal of becoming an Embryologist in the near future.
+- name: Alejandra Patino
+  role: 'Predoctoral Fellow, JHU PREP Program, Current: Duke MD/PhD Program'
+  photo: alejandra_patino.png
+- name: Alexa Pérez-Torres
+  role: 'Predoctoral Fellow, JHU PREP Program, Current: Harvard MCO Graduate Program'
+  photo: alexa_perez_torres.png
+  alt: Alexa Perez
+rotations:
+- year: 2016
+  students:
+  - Vamsee Pillalamarri (HG)
+  - Stephanie Yang (HG)
+  - Ah Young Lee (HG)
+- year: 2017
+  students:
+  - Emily Davis (HG)
+  - Tim Nieuwenhuis (HG)
+- year: 2018
+  students:
+  - Parris Washington (HG)
+  - Katie Jenike (HG)
+- year: 2019
+  students:
+  - Annie Campbell (BCMB)
+  - Vickie Tringh (HG)
+- year: 2020
+  students:
+  - Wei Feng (HG)
+  - Jared Slosberg (HG)
+- year: 2021
+  students:
+  - Saki Takayanaygi (XD Bio)
+  - Maddi Denton (HG)
+  - Chaichontat (Richard) Sriworarat (Neuroscience)
+- year: 2022
+  students:
+  - Jessica Lin (Neuroscience)
+  - Kyla Woyshner (HG)
+- year: 2023
+  students:
+  - Alyson Hally (HG)
+  - Hope Orjuela (HG)
+- year: 2024
+  students: []

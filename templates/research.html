@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import '_macros.html' as m with context %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Research</span>
+    <h1>Research</h1>
+    <nav class="subnav" aria-label="On this page">
+      <a href="#approach">Approach</a>
+      <a href="#directions">Future directions</a>
+      <a href="#past">Past research</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" id="approach">
+  <div class="wrap narrow">
+    <span class="eyebrow">Approach</span>
+    {{ m.draft(research.approach) }}
+  </div>
+</section>
+
+<section class="section section--alt" id="directions">
+  <div class="wrap narrow">
+    <span class="eyebrow">Looking ahead</span>
+    <h2>Future directions</h2>
+    {{ m.draft(research.directions) }}
+  </div>
+</section>
+
+<section class="section" id="past">
+  <div class="wrap">
+    <span class="eyebrow">Past research</span>
+    <h2>Themes and selected papers</h2>
+    {% for t in research.past_themes %}
+    {% set refs = papers | selectattr('themes') | selectattr('themes', 'contains', t.id) | list %}
+    <article class="theme" id="{{ t.id }}">
+      <div class="theme-body">
+        <h3>{{ t.title }}</h3>
+        {% if t.question %}<p class="question">{{ t.question }}</p>{% endif %}
+        {% for para in t.text or [] %}<p>{{ para }}</p>{% endfor %}
+        {{ m.draft(t) }}
+      </div>
+      <div class="theme-refs">
+        {% if refs %}
+        <h4>Papers{% if refs %} ({{ refs|length }}){% endif %} <span class="draft-badge" title="Theme tagging is a draft"></span></h4>
+        <ul class="compact-pubs">
+        {% for p in refs %}{{ m.compact(p) }}{% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

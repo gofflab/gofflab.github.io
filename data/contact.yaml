@@ -1,0 +1,18 @@
+# Contact page. Carried over verbatim.
+lab:
+  title: Goff Lab
+  lines:
+    - Miller Research Building, Room 560
+    - 733 N. Broadway Ave.
+    - Baltimore, MD 21205
+  phone: (410) 502-9894
+pi:
+  title: "PI: Loyal Goff"
+  lines:
+    - Institute of Genetic Medicine
+    - Miller Research Building, Room 549
+    - 733 N. Broadway Ave.
+    - Baltimore, MD 21205
+  phone: (443) 287-0251
+  email: loyalgoff@jhmi.edu
+image: {src: MRB.jpg, alt: Miller Research Building}

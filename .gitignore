@@ -2,3 +2,4 @@
 .DS*
 carousel/
 .Rproj.user
+__pycache__/

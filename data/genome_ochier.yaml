@@ -1,0 +1,125 @@
+# O. chierchiae genome resource page (octopus_genome.html). Carried over verbatim.
+# Download links point at Dropbox for now; swap 'url' values once the assembly is deposited.
+# NOTE: the stringtie annotation .xlsx row repeats the type/size/MD5 of the row above it on the old site (needs correct values).
+
+species: Octopus chierchiae
+title: Octopus chierchiae genome assembly
+photos:
+- src: ochier_genome/Och1.jpeg
+  alt: Octopus chierchiae
+- src: ochier_genome/Och2.jpeg
+  alt: Octopus chierchiae
+- src: ochier_genome/Och3.jpeg
+  alt: Octopus chierchiae
+workflow_image:
+  src: ochier_genome/ochier_assembly_workflow_20230208.png
+  alt: Workflow diagram
+stats_images:
+- src: ochier_genome/nxplot.png
+  alt: N(x) plot
+- src: ochier_genome/cum_assembly.png
+  alt: Cumulative Assembly Length
+downloads:
+  Genome:
+  - description: Haplotype-resolved Assembled Genome (chromosomes only, hap1)
+    file: Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz
+    url: https://dl.dropboxusercontent.com/s/b5xhmdji66tmm9g/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz
+    type: Gzipped FASTA
+    size: 1.3 GB
+    md5: 91bf2620fa15267a2ee6154c475f6978
+  - description: Unscaffolded contigs (hap1)
+    file: Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz
+    url: https://dl.dropboxusercontent.com/s/qyhhielqzijklb1/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz
+    type: Gzipped FASTA
+    size: 39 MB
+    md5: e4d69881d05137ed2848342fc44393f4
+  - description: Repeatmasker-masked assembly (primary chromosomes only)
+    file: Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom_masked.fa.gz
+    url: https://dl.dropboxusercontent.com/s/9ix5svkfeuqb3ch/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom_masked.fa.gz
+    type: Gzipped FASTA
+    size: 410 MB
+    md5: 948832d9d2dd2ff20649ce47ef792122
+  - description: Hi-C contact matrix
+    file: hap1_contact_map.hic
+    url: https://dl.dropboxusercontent.com/s/y8fb90ctbxc24k3/hap1_contact_map.hic
+    type: HIC
+    size: 2.5 GB
+    md5: 444dc4579cb209ebebd68a6b32c9d9d9
+  - description: RepeatModeler 2.0 output (learned from O.chierchiae hap1 scaffolded assembly)
+    file: ochierchiae-families.fa
+    url: https://dl.dropboxusercontent.com/s/gmb6fby0g181phl/ochierchiae-families.fa
+    type: Fasta
+    size: 3.0 MB
+    md5: a9f4d3718bb2d914dd5c649f9711750d
+  - description: Repeat Annotation (against O.chierchiae hap1 scaffolded assembly)
+    file: Ochierchiae_hap1_scaffold_v1.0_20230221_repeatmasker_features.bed.gz
+    url: https://dl.dropboxusercontent.com/s/12la16tmbs1yayi/Ochierchiae_hap1_scaffold_v1.0_20230221_repeatmasker_features.bed.gz
+    type: Gzipped BED
+    size: 663.3 MB
+    md5: 3b2e2064a2ed45e1e8076dcab164664f
+  Transcriptome:
+  - description: Assembled reference transcriptome (stringtie, unannotated)
+    file: Ochier_stringtie_merged_assembly_20230207.gtf
+    url: https://dl.dropboxusercontent.com/s/ajscr4jzb1kkn6o/Ochier_stringtie_merged_assembly_20230207.gtf
+    type: GTF
+    size: 52 MB
+    md5: 9db68ca97be46682d12619760d747c75
+  - description: Assembled reference transcriptome sequences (stringtie)
+    file: Ochier_stringtie_merged_assembly_20230207.fa.gz
+    url: https://dl.dropboxusercontent.com/s/qzdtbpjxz1mzc4e/Ochier_stringtie_merged_assembly_20230207.fa.gz
+    type: Gzipped FASTA
+    size: 32 MB
+    md5: 66524aeca6a845ebee08be0d4f162dd2
+  - description: Assembled reference transcriptome sequence annotations (stringtie)
+    file: stringtie_merged_assembly_annotation_20230505.xlsx
+    url: https://www.dropbox.com/scl/fi/jrud32fspmlolxtsyph6f/stringtie_merged_assembly_annotation_20230505.xlsx?dl=0&rlkey=go2cfi00ws6lg7b3hn5wafr96
+    type: Gzipped FASTA
+    size: 32 MB
+    md5: 66524aeca6a845ebee08be0d4f162dd2
+  - description: O.bimaculoides transcriptome liftoff
+    file: Ochier_liftoff_from_Obimac_20230207.gff3
+    url: https://dl.dropboxusercontent.com/s/a4cb0buuz01bvag/Ochier_liftoff_from_Obimac_20230207.gff3
+    type: GFF3
+    size: 25 MB
+    md5: 255427d6f9e72fb3b3529961c24614df
+  - description: <em>de novo</em> Transcriptome assembly sequence (Trinity, unannotated)
+    file: Ochierchiae.Trinity.fa.gz
+    url: https://dl.dropboxusercontent.com/s/yg9qa2ljf159ha9/Ochierchiae.Trinity.fa.gz
+    type: Gzipped FASTA
+    size: 96 MB
+    md5: b6022ca6e1f5464be6137a8fc86d858e
+  - description: <em>de novo</em> Transcriptome assembly alignment to reference genome (Trinity, unannotated)
+    file: Trinity_aln_to_ref_hap1.gff3.gz
+    url: https://dl.dropboxusercontent.com/s/r9kmsp5x64jfaij/Trinity_aln_to_ref_hap1.gff3.gz
+    type: Gzipped GFF3
+    size: 83 MB
+    md5: dd5b3ab0c43953160656a9015bea9c72
+stats:
+- param: Genome size
+  value: 5,180,130,439 bases
+- param: Total Number of chromosome scaffolds
+  value: '30'
+- param: Total Number of contigs
+  value: 5,569
+- param: Largest scaffold
+  value: 413,096,176 bases
+- param: GC content
+  value: 35.87%
+- param: N50
+  value: 218,401,579 bases
+- param: L50
+  value: '9'
+- param: N90
+  value: 76,540,371 bases
+- param: L90
+  value: '25'
+- param: '% of bases in chromosomes'
+  value: 96.09%
+- param: Total length of scaffolded chromosomes
+  value: 4,977,408,424 bases
+- param: Number of gaps
+  value: 5,061
+- param: BUSCO metazoa_odb10
+  value: C:94.4%[S:93.6%,D:0.8%],F:3.5%,M:2.1%,n:954
+- param: Number of genes
+  value: TBD

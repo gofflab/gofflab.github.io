@@ -1,201 +1,66 @@
 {% extends "base.html" %}
-
-{% block title %}
-	Octopus chierchiae genome assembly
-{% endblock title %}
-
+{% import '_macros.html' as m with context %}
 {% block content %}
-<body class="is-preload">
-<div id="page-wrapper">
-	{% include 'header.html' %}
-	<!-- Main -->
-		<div id="main" class="wrapper style1">
-			<div class="container">
-				<header class="major"> 
-					<h2>Octopus chierchiae genome assembly</h2>
-				</header>
-				<!-- Content -->
-				<section id="content">				
-					<div class="box alt">
-						<img src="images/ochier_genome/Och1.jpeg" alt="Octopus chierchiae" class="image left">
-						<img src="images/ochier_genome/Och2.jpeg" alt="Octopus chierchiae" class="image left">
-						<img src="images/ochier_genome/Och3.jpeg" alt="Octopus chierchiae" class="image left">
-					</div>
-						<h3>Workflow</h3>
-						<img src="images/ochier_genome/ochier_assembly_workflow_20230208.png" alt="Workflow diagram" class="rounded mx-auto d-block center" style="width:50%;height:50%;">
-						<h3>Downloads</h3>
-						<h4>GENOME</h4>
-						<table>
-							<tr>
-								<th>File</th>
-								<th>URL</th>
-								<th>Type</th>
-								<th>Size</th>
-								<th>MD5</th>
-							</tr>
-							<tr>
-								<td>Haplotype-resolved Assembled Genome (chromosomes only, hap1)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/b5xhmdji66tmm9g/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom.fa.gz</a></td>
-								<td>Gzipped FASTA</td>
-								<td>1.3 GB</td>
-								<td>91bf2620fa15267a2ee6154c475f6978</td>
-							</tr>
-							<tr>
-								<td>Unscaffolded contigs (hap1)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/qyhhielqzijklb1/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_scaffolds.fa.gz</a></td>
-								<td>Gzipped FASTA</td>
-								<td>39 MB</td>
-								<td>e4d69881d05137ed2848342fc44393f4</td>
-							</tr>
-							<tr>
-								<td>Repeatmasker-masked assembly (primary chromosomes only)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/9ix5svkfeuqb3ch/Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom_masked.fa.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230204_scaffolds_final_chrom_masked.fa.gz</a></td>
-								<td>Gzipped FASTA</td>
-								<td>410 MB</td>
-								<td>948832d9d2dd2ff20649ce47ef792122</td>
-							</tr>
-							<tr>
-								<td>Hi-C contact matrix</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/y8fb90ctbxc24k3/hap1_contact_map.hic" target="_blank">hap1_contact_map.hic</a></td>
-								<td>HIC</td>
-								<td>2.5 GB</td>
-								<td>444dc4579cb209ebebd68a6b32c9d9d9</td>
-							</tr>
-							<tr>
-								<td>RepeatModeler 2.0 output (learned from O.chierchiae hap1 scaffolded assembly)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/gmb6fby0g181phl/ochierchiae-families.fa" target="_blank">ochierchiae-families.fa</a></td>
-								<td>Fasta</td>
-								<td>3.0 MB</td>
-								<td>a9f4d3718bb2d914dd5c649f9711750d</td>
-							</tr>
-							<tr>
-								<td>Repeat Annotation (against O.chierchiae hap1 scaffolded assembly)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/12la16tmbs1yayi/Ochierchiae_hap1_scaffold_v1.0_20230221_repeatmasker_features.bed.gz" target="_blank">Ochierchiae_hap1_scaffold_v1.0_20230221_repeatmasker_features.bed.gz</a></td>
-								<td>Gzipped BED</td>
-								<td>663.3 MB</td>
-								<td>3b2e2064a2ed45e1e8076dcab164664f</td>
-							</tr>
-						</table>
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow"><a href="cephalopods.html" style="color:inherit;text-decoration:none">Cephalopods</a> / Genome resource</span>
+    <h1><em>Octopus chierchiae</em> genome assembly</h1>
+    <nav class="subnav" aria-label="On this page">
+      <a href="#workflow">Workflow</a>
+      <a href="#downloads">Downloads</a>
+      <a href="#stats">Stats</a>
+    </nav>
+  </div>
+</header>
 
-						<h4>TRANSCRIPTOME</h4>
-						<table>
-							<tr>
-								<th>File</th>
-								<th>url</th>
-								<th>Type</th>
-								<th>Size</th>
-								<th>MD5</th>
-							</tr>
-							<tr>
-								<td>Assembled reference transcriptome (stringtie, unannotated)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/ajscr4jzb1kkn6o/Ochier_stringtie_merged_assembly_20230207.gtf" target="_blank">Ochier_stringtie_merged_assembly_20230207.gtf</a></td>
-								<td>GTF</td>
-								<td>52 MB</td>
-								<td>9db68ca97be46682d12619760d747c75</td>
-							</tr>
-							<tr>
-								<td>Assembled reference transcriptome sequences (stringtie)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/qzdtbpjxz1mzc4e/Ochier_stringtie_merged_assembly_20230207.fa.gz" target="_blank">Ochier_stringtie_merged_assembly_20230207.fa.gz</a></td>
-								<td>Gzipped FASTA</td>
-								<td>32 MB</td>
-								<td>66524aeca6a845ebee08be0d4f162dd2</td>
-							</tr>
-							<tr>
-								<td>Assembled reference transcriptome sequence annotations (stringtie)</td>
-								<td><a href="https://www.dropbox.com/scl/fi/jrud32fspmlolxtsyph6f/stringtie_merged_assembly_annotation_20230505.xlsx?dl=0&rlkey=go2cfi00ws6lg7b3hn5wafr96" target="_blank">stringtie_merged_assembly_annotation_20230505.xlsx</a></td>
-								<td>Gzipped FASTA</td>
-								<td>32 MB</td>
-								<td>66524aeca6a845ebee08be0d4f162dd2</td>
-							</tr>
-							<tr>
-								<td>O.bimaculoides transcriptome liftoff</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/a4cb0buuz01bvag/Ochier_liftoff_from_Obimac_20230207.gff3" target="_blank">Ochier_liftoff_from_Obimac_20230207.gff3</a></td>
-								<td>GFF3</td>
-								<td>25 MB</td>
-								<td>255427d6f9e72fb3b3529961c24614df</td>
-							</tr>
-							<tr>
-								<td><em>de novo</em> Transcriptome assembly sequence (Trinity, unannotated)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/yg9qa2ljf159ha9/Ochierchiae.Trinity.fa.gz" target="_blank">Ochierchiae.Trinity.fa.gz</a></td>
-								<td>Gzipped FASTA</td>
-								<td>96 MB</td>
-								<td>b6022ca6e1f5464be6137a8fc86d858e</td>
-							</tr>
-							<tr>
-								<td><em>de novo</em> Transcriptome assembly alignment to reference genome (Trinity, unannotated)</td>
-								<td><a href="https://dl.dropboxusercontent.com/s/r9kmsp5x64jfaij/Trinity_aln_to_ref_hap1.gff3.gz" target="_blank">Trinity_aln_to_ref_hap1.gff3.gz</a></td>
-								<td>Gzipped GFF3</td>
-								<td>83 MB</td>
-								<td>dd5b3ab0c43953160656a9015bea9c72</td>
-							</tr>
-						</table>
-						<h3>Stats</h3>
-						<img src="images/ochier_genome/nxplot.png" alt="N(x) plot" class="image left">
-						<img src="images/ochier_genome/cum_assembly.png" alt="Cumulative Assembly Length" class="image left">
-						<table>
-							<tr>
-								<th>Param</th>
-								<th>Value</th>
-							</tr>
-							<tr>
-								<td>Genome size</td>
-								<td> 5,180,130,439 bases</td>
-							</tr>
-							<tr>
-								<td>Total Number of chromosome scaffolds</td>
-								<td>30</td>
-							</tr>
-							<tr>
-								<td>Total Number of contigs</td>
-								<td>5,569</td>
-							</tr>
-							<tr>
-								<td>Largest scaffold</td>
-								<td>413,096,176 bases</td>
-							</tr>
-							<tr>
-								<td>GC content</td>
-								<td> 35.87%</td>
-							</tr>
-							<tr>
-								<td>N50</td>
-								<td>218,401,579 bases</td>
-							</tr>
-							<tr>
-								<td>L50</td>
-								<td>9</td>
-							</tr>
-							<tr>
-								<td>N90</td>
-								<td>76,540,371 bases</td>
-							</tr>
-							<tr>
-								<td>L90</td>
-								<td>25</td>
-							</tr>
-							<tr>
-								<td>% of bases in chromosomes</td>
-								<td>96.09%</td>
-							</tr>
-							<tr>
-								<td>Total length of scaffolded chromosomes</td>
-								<td>4,977,408,424 bases</td>
-							</tr>
-							<tr>
-								<td>Number of gaps</td>
-								<td> 5,061 </td>
-							</tr>
-							<tr>
-								<td>BUSCO metazoa_odb10</td>
-								<td>C:94.4%[S:93.6%,D:0.8%],F:3.5%,M:2.1%,n:954</td>
-							</tr>
-							<tr>
-								<td>Number of genes</td>
-								<td>TBD</td>
-							</tr>
-						</table>
-					</section>
-			</div>
-		</div>
-</div>
-{% endblock content %}
+<section class="section">
+  <div class="wrap">
+    <div class="grid grid-3">
+    {% for p in genome.photos %}
+      <div class="media-frame" style="aspect-ratio: 3 / 2">{{ m.img(p.src, p.alt, 900) }}</div>
+    {% endfor %}
+    </div>
+
+    <h2 id="workflow" style="margin-top: 4rem">Workflow</h2>
+    <div class="figure"><a href="images/{{ genome.workflow_image.src }}" title="Open full-size workflow diagram">{{ m.img(genome.workflow_image.src, genome.workflow_image.alt, 1800) }}</a></div>
+
+    <h2 id="downloads">Downloads</h2>
+    {% for section, rows in genome.downloads.items() %}
+    <h3>{{ section|upper }}</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>File</th><th>URL</th><th>Type</th><th>Size</th><th>MD5</th></tr></thead>
+        <tbody>
+        {% for r in rows %}
+          <tr>
+            <td>{{ r.description }}</td>
+            <td><a href="{{ r.url }}" rel="noopener">{{ r.file }}</a></td>
+            <td>{{ r.type }}</td>
+            <td style="white-space:nowrap">{{ r.size }}</td>
+            <td class="mono">{{ r.md5 }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
+
+    <h2 id="stats">Stats</h2>
+    <div class="grid grid-2">
+    {% for i in genome.stats_images %}
+      <div class="figure" style="margin:0">{{ m.img(i.src, i.alt, 900) }}</div>
+    {% endfor %}
+    </div>
+    <div class="table-wrap narrow" style="margin-top: 2rem">
+      <table class="stats-table">
+        <thead><tr><th>Param</th><th>Value</th></tr></thead>
+        <tbody>
+        {% for s in genome.stats %}
+          <tr><td>{{ s.param }}</td><td>{{ s.value }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,162 @@
+# Publications and preprints shown on publications.html.
+# Add a paper: append its PMID under 'papers'. Add a preprint: append its bioRxiv DOI suffix under 'preprints'.
+# The build fetches metadata from PubMed / bioRxiv and caches it in data/cache/.
+# 'themes' (DRAFT) link papers to the past research themes defined in data/research.yaml.
+
+papers:
+  - pmid: '22991327'   # Computational analysis of noncoding RNAs.
+    themes: [lncrna]
+  - pmid: '22197703'   # Expression profiling of synaptic microRNAs from the adult rat brain id
+  - pmid: '20348442'   # Differential regulation of microRNA stability.
+  - pmid: '19784364'   # Ago2 immunoprecipitation identifies predicted microRNAs in human embry
+  - pmid: '19257808'   # Rapid induction of genes associated with tissue protection and neural 
+  - pmid: '18814314'   # Functional differentiation of a clone resembling embryonic cortical in
+  - pmid: '18657893'   # Differentiating human multipotent mesenchymal stromal cells regulate m
+  - pmid: '18004940'   # MicroRNA expression pattern of undifferentiated and differentiated hum
+  - pmid: '17916793'   # Bioinformatic analysis of neural stem cell differentiation.
+  - pmid: '17114923'   # Rational probe optimization and enhanced detection strategy for microR
+  - pmid: '15469607'   # Evaluation of sense-strand mRNA amplification by comparative quantitat
+  - pmid: '23222703'   # Differential analysis of gene regulation at transcript resolution with
+    themes: [methods]
+  - pmid: '22383036'   # Differential gene and transcript expression analysis of RNA-seq experi
+    themes: [methods]
+  - pmid: '21890647'   # Integrative annotation of human large intergenic noncoding RNAs reveal
+    themes: [lncrna]
+  - pmid: '23401553'   # Long noncoding RNAs regulate adipogenesis.
+    themes: [lncrna]
+  - pmid: '23623381'   # The microRNA miR-181 is a critical cellular metabolic rheostat essenti
+  - pmid: '24107992'   # DNMT1-interacting RNAs block gene-specific DNA methylation.
+    themes: [lncrna]
+  - pmid: '24304912'   # Poly-combing the genome for RNA.
+    themes: [lncrna]
+  - pmid: '24381249'   # Multiple knockout mouse models reveal lincRNAs are required for life a
+    themes: [lncrna]
+  - pmid: '24393486'   # RNase-mediated protein footprint sequencing reveals protein-binding si
+  - pmid: '24463464'   # Topological organization of multichromosomal regions by the long inter
+    themes: [lncrna]
+  - pmid: '24714615'   # A positive feedback mechanism that regulates expression of miR-9 durin
+    themes: [fate]
+  - pmid: '24997765'   # Gene co-regulation by Fezf2 selects neurotransmitter identity and conn
+    themes: [fate]
+  - pmid: '25556833'   # DeCoN: genome-wide analysis of in vivo transcriptional dynamics during
+    themes: [fate]
+  - pmid: '26034286'   # Spatiotemporal expression and transcriptional perturbations by long no
+    themes: [lncrna]
+  - pmid: '26430155'   # Linking RNA biology to lncRNAs.
+    themes: [lncrna]
+  - pmid: '26694805'   # Creation and characterization of an airway epithelial cell line for st
+  - pmid: '27296516'   # Long noncoding RNAs: Central to nervous system development.
+    themes: [lncrna]
+  - pmid: '27479747'   # Investigating long noncoding RNAs using animal models.
+    themes: [lncrna]
+  - pmid: '27525555'   # The long non-coding RNA Morrbid regulates Bim and short-lived myeloid 
+    themes: [lncrna]
+  - pmid: '27801893'   # The DPYSL2 gene connects mTOR and schizophrenia.
+  - pmid: '27999180'   # A ketogenic diet rescues hippocampal memory defects in a mouse model o
+    themes: [disease]
+  - pmid: '28821643'   # Changes in the Excitability of Neocortical Neurons in a Mouse Model of
+    themes: [disease]
+  - pmid: '28930659'   # Group 1 Innate Lymphoid Cell Lineage Identity Is Determined by a cis-R
+    themes: [lncrna]
+  - pmid: '29320739'   # Variation in Activity State, Axonal Projection, and Position Define th
+    themes: [variation]
+  - pmid: '29499164'   # Single-Cell RNA-Seq of Mouse Dopaminergic Neurons Informs Candidate Ge
+    themes: [variation, disease]
+  - pmid: '30143323'   # Enter the Matrix: Factorization Uncovers Knowledge from Omics.
+    themes: [methods]
+  - pmid: '30188322'   # Transcriptional and epigenomic landscapes of CNS and non-CNS vascular 
+  - pmid: '30866806'   # Linear models enable powerful differential activity analysis in massiv
+    themes: [methods]
+  - pmid: '30988181'   # Hypoxia tolerance in the Norrin-deficient retina and the chronically h
+    themes: [disease]
+  - pmid: '31128945'   # Single-Cell RNA-Seq Analysis of Retinal Development Identifies NFI Fac
+    themes: [fate]
+  - pmid: '31121116'   # Decomposing Cell Identity for Transfer Learning across Cellular Measur
+    themes: [methods]
+  - pmid: '31337651'   # Differential Variation Analysis Enables Detection of Tumor Heterogenei
+    themes: [variation, methods]
+  - pmid: '32829096'   # Screening non-MAPT genes of the Chr17q21 H1 haplotype in Parkinson's d
+    themes: [disease]
+  - pmid: '32386599'   # Single-Cell Analysis of Human Retina Identifies Evolutionarily Conserv
+    themes: [fate]
+  - pmid: '32243843'   # Mitoregulin Controls beta-Oxidation in Human and Mouse Adipocytes.
+  - pmid: '32167521'   # projectR: an R/Bioconductor package for transfer learning via PCA, NMF
+    themes: [methods]
+  - pmid: '31843893'   # Comprehensive analysis of a mouse model of spontaneous uveoretinitis u
+  - pmid: '31581148'   # Increased expression of anion transporter SLC26A9 delays diabetes onse
+  - pmid: '31503409'   # A screen of 1,049 schizophrenia and 30 Alzheimer's-associated variants
+    themes: [disease]
+  - pmid: '31465303'   # Precocious neuronal differentiation and disrupted oxygen responses in 
+    themes: [disease]
+  - pmid: '33084572'   # Developmental, cellular, and behavioral phenotypes in a mouse model of
+  - pmid: '33113347'   # Parallel Social Information Processing Circuits Are Differentially Imp
+  - pmid: '33277430'   # Striking heterogeneity of somatic L1 retrotransposition in single norm
+    themes: [variation]
+  - pmid: '33446502'   # An in vivo screen of noncoding loci reveals that Daedalus is a gatekee
+    themes: [lncrna]
+  - pmid: '34266896'   # Differential Expression Levels of Sox9 in Early Neocortical Radial Gli
+    themes: [fate]
+  - pmid: '35148175'   # Follistatin promotes LIN28B-mediated supporting cell reprogramming and
+  - pmid: '35101061'   # Universal prediction of cell-cycle position using transfer learning.
+    themes: [methods]
+  - pmid: '35263579'   # Potter mosquito AgOr2
+  - pmid: '35463747'   # MacFarlane Smad3 heart
+  - pmid: '35998637'   # Kolodkin Tbx5 Direction selectivity
+    themes: [fate]
+  - pmid: '37316665'   # Psychadelics reopen the social critical period
+  - pmid: '37585461'   # HSCR PNAS paper
+    themes: [fate]
+  - pmid: '37812717'   # Sjogren's syndrome
+  - pmid: '37989764'   # CoGAPS Notebooks
+    themes: [methods]
+  - pmid: '37885016'   # RNA velocity Genome Biology Paper
+    themes: [methods]
+  - pmid: '38108810'   # eLife MENS paper
+    themes: [fate]
+  - pmid: '38969603'   # CFTR paper with Cutting Lab
+  - pmid: '39271675'   # BRN1/2 paper with Uli Nat Comm.
+    themes: [fate]
+  - pmid: '39495936'   # RGC paper with Kolodkin lab
+    themes: [fate]
+  - pmid: '40164771'   # Bergles OPC scRNA-Seq
+  - pmid: '40457480'   # MNSF paper with Kasper
+    themes: [methods]
+  - pmid: '40844876'   # L6 Consensus cell types (w/ Brown lab)
+    themes: [variation]
+  - pmid: '40286269'   # Margolis heat stress neurons
+    themes: [disease]
+  - pmid: '41284876'   # Rroid2 paper
+    themes: [lncrna]
+  - pmid: '41686445'   # Johnston lab fovea paper
+    themes: [fate]
+  - pmid: '41889203'   # Bergles Glia paper
+
+preprints:
+  - id: '157149'
+  - id: '148049'
+  - id: '196394'
+  - id: '196915'
+  - id: '378950'
+  - id: '395004'
+  - id: '479287'
+  - id: '447557'
+  - id: '484410'
+  - id: '726547'
+  - id: '779694'
+  - id: '2020.03.13.990549'
+  - id: '2020.07.23.218586'
+  - id: '2020.08.25.262832'
+  - id: '2020.12.09.417931'
+  - id: '2021.04.06.438463'
+  - id: '2021.08.25.457650'
+  - id: '2021.12.27.473694'   # Lindsay Hayes
+  - id: '2021.12.28.474390'   # HSCR Manuscript
+  - id: '2022.10.07.511381'   # Pantr2 study
+  - id: '2022.06.19.494717'   # RNA Velocity Study
+  - id: '2022.07.09.499398'   # Genevieve GenePattern Notebooks
+  - id: '2023.11.18.567662'   # Sema6a with A.Kolodkin
+  - id: '2023.11.02.565322'   # Uli Brn1/2
+  - id: '2024.07.01.599554'   # mNSF
+  - id: '2023.01.28.526051'   # Fovea preprint from Johnston lab
+  - id: '2024.10.27.620502'   # Bergles OPC preprint
+  - id: '2024.11.04.621933'

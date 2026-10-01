@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% import '_macros.html' as m with context %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Cephalopods</span>
+    <h1>Cephalopods</h1>
+    {{ m.draft(cephalopods.intro) }}
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Resources</h2>
+    <div class="grid grid-2" style="margin-top: 2rem">
+    {% for r in cephalopods.resources %}
+      <a class="card" href="{{ r.href }}" style="text-decoration:none;color:inherit;padding:0;overflow:hidden">
+        <div style="aspect-ratio: 3 / 2">{{ m.img(r.image.src, r.image.alt, 1000, cls='') }}</div>
+        <div style="padding: 24px 28px">
+          {% if r.draft_flag %}<span class="draft-badge"></span>{% endif %}
+          <h3>{{ r.title }}</h3>
+          <p class="muted">{{ r.text }}</p>
+          <span class="link-arrow" style="color:var(--accent-strong)">Downloads and assembly stats</span>
+        </div>
+      </a>
+    {% endfor %}
+    </div>
+    {{ m.draft(cephalopods.more) }}
+  </div>
+</section>
+{% endblock %}

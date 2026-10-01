@@ -1,0 +1,13 @@
+# Cephalopods hub page (new).
+intro:
+  draft: "Introduction to the lab's cephalopod work: species, why cephalopods, what makes them hard for standard assays."
+
+resources:
+  - title: <em>Octopus chierchiae</em> genome assembly
+    href: octopus_genome.html
+    image: {src: ochier_genome/Och1.jpeg, alt: Octopus chierchiae hatchling}
+    draft_flag: true   # new summary wording, built from the genome page download list
+    text: Haplotype-resolved, chromosome-scale assembly with reference transcriptome, repeat annotation, and Hi-C contact map downloads.
+
+more:
+  draft: "Other species, datasets, protocols, or husbandry resources to list here."

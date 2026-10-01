@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% import '_macros.html' as m with context %}
+{% block content %}
+<header class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Tools &amp; Data</span>
+    <h1>Tools &amp; Data</h1>
+    <nav class="subnav" aria-label="On this page">
+      <a href="#software">Software</a>
+      <a href="#datasets">Datasets</a>
+      <a href="#snippets">Lab Resources, Snippets, Tips, and Micro-Projects</a>
+      <a href="octopus_genome.html"><em>O. chierchiae</em> genome</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section" id="software">
+  <div class="wrap">
+    <h2>Software</h2>
+    {% for s in tools.software %}
+    <article class="tool">
+      <a href="{{ s.url }}" rel="noopener">{{ m.img(s.image, s.name ~ ' logo', 240, cls='tool-logo') }}</a>
+      <div>
+        <h3><a href="{{ s.url }}" rel="noopener">{{ s.name }}</a></h3>
+        {% if s.author %}<p class="by">Author: {{ s.author }}</p>{% endif %}
+        <p>{{ s.description }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--alt" id="datasets">
+  <div class="wrap">
+    <h2>Datasets</h2>
+    <ul class="link-list">
+      <li><a href="octopus_genome.html"><em>Octopus chierchiae</em> genome assembly</a></li>
+    {% for d in tools.datasets %}
+      <li><a href="{{ d.url }}" rel="noopener">{{ d.title }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="snippets">
+  <div class="wrap">
+    <h2>Lab Resources, Snippets, Tips, and Micro-Projects</h2>
+    <ul class="link-list">
+    {% for r in tools.snippets %}
+      <li><a href="{{ r.url }}" rel="noopener">{{ r.text }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

@@ -198,6 +198,30 @@ def web_image(src, width):
     return dict(path=f'assets/img/{out.name}', w=w, h=h)
 
 
+def site_icons(logo_src):
+    """Favicons and a link-preview image from the lab logo (regenerated only if missing)."""
+    icons = ROOT / 'assets' / 'icons'
+    icons.mkdir(parents=True, exist_ok=True)
+    bg = (11, 16, 22, 255)  # --bg in site.css
+    with Image.open(IMAGES / logo_src) as logo:
+        logo = logo.convert('RGBA')
+        for name, size, pad, opaque in [('favicon-32.png', 32, 0, False), ('favicon-192.png', 192, 8, False),
+                                        ('apple-touch-icon.png', 180, 18, True)]:
+            out = icons / name
+            if out.exists():
+                continue
+            canvas = Image.new('RGBA', (size, size), bg if opaque else (0, 0, 0, 0))
+            mark = logo.resize((size - 2 * pad, size - 2 * pad), Image.LANCZOS)
+            canvas.alpha_composite(mark, (pad, pad))
+            canvas.save(out, optimize=True)
+        out = icons / 'social-card.png'
+        if not out.exists():
+            canvas = Image.new('RGBA', (1200, 630), bg)
+            mark = logo.resize((540, 540), Image.LANCZOS)
+            canvas.alpha_composite(mark, (330, 45))
+            canvas.convert('RGB').save(out, optimize=True)
+
+
 ##########################
 # Posters
 ##########################
@@ -255,6 +279,7 @@ def main():
     if args.no_analytics:
         site['ga4_id'] = None
     papers, preprints = publications(args.offline)
+    site_icons(site['logo']['src'])
 
     env = Environment(loader=FileSystemLoader(ROOT / 'templates'), trim_blocks=True, lstrip_blocks=True)
     env.filters['authors'] = author_list

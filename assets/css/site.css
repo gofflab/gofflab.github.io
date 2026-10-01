@@ -87,15 +87,15 @@ em { font-style: italic; }
 }
 .site-header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 
-.brand { display: flex; align-items: baseline; gap: 12px; color: var(--text); text-decoration: none; white-space: nowrap; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; white-space: nowrap; }
+.brand-mark { width: 40px; height: 40px; flex: none; }
 .brand-name { font: 600 1.3rem/1 var(--font-serif); letter-spacing: -0.01em; }
-.brand-sub { font: 500 .68rem/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .brand:hover { color: var(--text); }
 
 .nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; }
 .nav a {
   display: block; padding: 8px 12px; border-radius: 6px;
-  color: var(--text-2); text-decoration: none; font-size: .93rem; font-weight: 500;
+  color: var(--text-2); text-decoration: none; font-size: .93rem; font-weight: 500; white-space: nowrap;
 }
 .nav a:hover { color: var(--text); background: var(--surface); }
 .nav a[aria-current="page"] { color: var(--text); box-shadow: inset 0 -2px 0 var(--accent); border-radius: 6px 6px 0 0; }
@@ -107,7 +107,6 @@ em { font-style: italic; }
   cursor: pointer;
 }
 
-@media (max-width: 1080px) { .brand-sub { display: none; } }
 
 @media (max-width: 900px) {
   .nav-toggle { display: block; }
@@ -343,7 +342,8 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
 
 .site-footer { border-top: 1px solid var(--line); background: var(--bg-2); padding: 3.5rem 0 2.5rem; font-size: .92rem; color: var(--muted); }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
-.footer-brand { font: 600 1.25rem var(--font-serif); color: var(--text); margin-bottom: .4rem; }
+.footer-brand { display: flex; align-items: center; gap: 14px; font: 600 1.25rem var(--font-serif); color: var(--text); margin-bottom: .8rem; }
+.footer-mark { width: 72px; height: 72px; flex: none; }
 .site-footer h2 { font: 500 .72rem var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .8rem; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; }
 .site-footer li { margin-bottom: .4rem; }

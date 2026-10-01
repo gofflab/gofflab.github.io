@@ -4,6 +4,9 @@ tagline: Single Cell and Spatial Transcriptomics in Cephalopod Neural Developmen
 affiliation: Departments of Neuroscience & Genetic Medicine, Johns Hopkins University School of Medicine
 url: https://www.gofflab.org
 
+# Lab logo (supplied artwork, transparent background). Used in header, footer, favicons, link previews.
+logo: {src: logo/gofflab_octopus.webp, alt: Goff Lab logo, an octopus holding a DNA double helix}
+
 # Google Analytics 4 measurement ID (added to <head> of every page).
 # Pass --no-analytics to the build script for local previews.
 ga4_id: G-X36CPG7L73

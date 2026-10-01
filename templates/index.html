@@ -80,7 +80,7 @@
   <div class="wrap split">
     <div>
       <span class="eyebrow">Join us</span>
-      <h2>Training in the Goff Lab</h2>
+      <h2>{{ home.join.heading }}</h2>
       <p class="lede">{{ home.join.text }}</p>
       <div class="actions">
         <a class="btn" href="join.html">Opportunities</a>
@@ -88,8 +88,8 @@
       </div>
     </div>
     <div>
-      <span class="eyebrow">Support</span>
-      <p class="muted">We are proud to be supported by the following organizations</p>
+      <span class="eyebrow">Funding</span>
+      <p class="muted">Our research is supported by</p>
       <ul class="funders" style="grid-template-columns: repeat(2, minmax(0, 1fr))">
       {% for f in site.funders %}
         <li>{{ f.name }}{% if f.note %}<span>{{ f.note }}</span>{% endif %}</li>

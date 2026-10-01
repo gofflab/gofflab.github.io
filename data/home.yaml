@@ -13,11 +13,11 @@ approach:
   kicker: Computational and experimental molecular neuroscience
   pillars:
     - title: Develop
-      text: New single cell and spatial transcriptomics assays, and computational tools for their analysis.
+      text: New single cell and spatial transcriptomics assays, and the computational tools to analyze them.
     - title: Apply
-      text: These tools in challenging biological contexts in which off-the-shelf assays routinely struggle.
+      text: These tools to challenging biological systems where off-the-shelf assays routinely struggle.
     - title: Extend
-      text: To non-traditional model organisms, including cephalopods.
+      text: Our methods beyond traditional model organisms, with a focus on cephalopods.
 
 # Genome spotlight: shown only when data/genome_ochier.yaml has unlisted: false.
 spotlight:
@@ -36,5 +36,5 @@ directions:
   draft: "Future directions teaser (2 to 4 projects), linking to the Research page."
 
 join:
-  # Verbatim from join.html.
-  text: The Goff lab trains graduate students from the <a href="http://humangenetics.jhmi.edu/">Human Genetics</a>, BCMB, and <a href="http://neuroscience.jhu.edu/graduate-program">Neuroscience</a> graduate training programs at Johns Hopkins.
+  heading: Train with us
+  text: We train graduate students from the <a href="http://humangenetics.jhmi.edu/">Human Genetics</a>, BCMB, and <a href="http://neuroscience.jhu.edu/graduate-program">Neuroscience</a> programs at Johns Hopkins.

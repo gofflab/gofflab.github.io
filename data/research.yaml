@@ -7,25 +7,25 @@ approach:
 directions:
   draft: "Future lab directions and projects (titles, one-paragraph summaries, optional image per project)."
 
-# Past research themes. Text below is carried over verbatim from the previous homepage where it existed.
+# Past research themes. Text adapted from the previous homepage (copy-edited Oct 2026).
 # Papers attach to a theme via 'themes:' tags in data/publications.yaml (DRAFT tagging).
 past_themes:
   - id: variation
     title: Transcriptional variation as a cellular phenotype
-    question: How does inter- and Intra-cell type heterogeneity contribute to cellular function?
+    question: How does variation within and between cell types shape what a cell does?
     text:
-      - Every cell in the brain is unique. Gene expression differences between cells of discrete types help define how they integrate and function in the nervous sytem. However, continuous sources of variation across cells, including spatial position, activity state, and responses to injury or inflammation, can have diverse functional consequences for cellular activities.
-      - By measuring the gene expression content of single cells in their native environment we can learn how properties like regional localization, cellular morphology, axonal targets, and integration within the circuitry of the brain, contribute to observable, cell-type-specific changes in the dynamic mammalian nervous system.
+      - Every cell in the brain is unique. Differences in gene expression between discrete cell types help define how those cells function and connect within the nervous system. Continuous sources of variation matter as well. Spatial position, activity state, and responses to injury or inflammation all change how an individual cell behaves.
+      - By measuring gene expression in single cells within their native tissue, we have asked how regional position, morphology, axonal targets, and circuit integration shape cell type-specific states in the mammalian nervous system.
   - id: fate
     title: Cell fate specification during neural development
-    question: How are different cell types created from a single parental cell type in the developing nervous system?
+    question: How does a handful of progenitors generate the many cell types of the nervous system?
     text:
-      - The staggering diversity of cell types in the mammalian brain and enteric nervous system is established by only a handful of different precursor cell types. Our lab wants to understand how cells know or are instructed to become a particular cell type. This involves cataloging and identifying different cell types and their features, learning how they are integrated with each other during development to form a function nervous system, and identifying patterns of gene and gene networks that regulate choices in cell fate.
+      - Only a few precursor cell types give rise to the striking diversity of cells in the mammalian brain and enteric nervous system. We have worked to understand how a cell comes to adopt a particular fate. That work includes cataloging cell types and their features, following how they assemble into a functioning nervous system during development, and identifying the genes and gene networks that govern fate decisions.
   - id: disease
-    title: Celltype-specific responses in health and disease
-    question: What makes certain cell types more vulnerable to degeneration in the brain?
+    title: Cell type-specific responses in health and disease
+    question: Why are some cell types more vulnerable to degeneration than others?
     text:
-      - Neurodegenerative disorders are characterized by the targeted loss of specific cellular populations in the brain. In many cases, different neurodegenerative disorders differ only in the specific neuronal populations or brain regions which are affected. We use single-cell measurements to reconstruct how different neuronal populations respond and succumb to disease-associated variants or conditions. Understanding these processes to learn why different neuronal cell types are selectively vulnerable or spared in neurodegenerative disorders provides insight into potential therapeutic options for these debilitating disorders.
+      - Neurodegenerative disorders destroy specific populations of cells, and different disorders are often distinguished only by which neurons or brain regions they affect. We have used single cell measurements to reconstruct how neuronal populations respond to, and succumb to, disease-associated variants and conditions. Learning why some cell types are vulnerable while others are spared points toward therapeutic options for these debilitating disorders.
   - id: lncrna
     title: Long noncoding RNAs
     draft: "Theme summary (no existing text on the old site)."

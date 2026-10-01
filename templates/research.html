@@ -31,7 +31,7 @@
 <section class="section" id="past">
   <div class="wrap">
     <span class="eyebrow">Past research</span>
-    <h2>Themes and selected papers</h2>
+    <h2>Themes from our earlier work</h2>
     {% for t in research.past_themes %}
     {% set refs = papers | selectattr('themes') | selectattr('themes', 'contains', t.id) | list %}
     <article class="theme" id="{{ t.id }}">

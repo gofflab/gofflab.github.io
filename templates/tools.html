@@ -8,7 +8,7 @@
     <nav class="subnav" aria-label="On this page">
       <a href="#software">Software</a>
       <a href="#datasets">Datasets</a>
-      <a href="#snippets">Lab Resources, Snippets, Tips, and Micro-Projects</a>
+      <a href="#snippets">Lab code and utilities</a>
       {% if not genome.unlisted %}<a href="octopus_genome.html"><em>O. chierchiae</em> genome</a>{% endif %}
     </nav>
   </div>
@@ -44,7 +44,7 @@
 
 <section class="section" id="snippets">
   <div class="wrap">
-    <h2>Lab Resources, Snippets, Tips, and Micro-Projects</h2>
+    <h2>Lab code and utilities</h2>
     <ul class="link-list">
     {% for r in tools.snippets %}
       <li><a href="{{ r.url }}" rel="noopener">{{ r.text }}</a></li>

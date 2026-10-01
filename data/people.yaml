@@ -1,4 +1,4 @@
-# Lab members. Text is carried over verbatim from the previous site.
+# Lab members. Carried over from the previous site (PI bio updated, typos fixed Oct 2026).
 # Text fields may contain inline HTML (links, <em>).
 # 'bio_hidden' = text that was commented out on the old site (not shown).
 # 'hidden: true' = whole entry not shown.
@@ -9,7 +9,7 @@ current:
   photo: Goff_color.jpg
   alt: Loyal Goff, PI
   email: loyalgoff@jhmi.edu
-  bio: Dr. Goff is an Associate Professor of Neuroscience & Genetic Medicine in the <a href="https://igm.jhmi.edu/">McKusick-Nathans Department of Genetic Medicine</a> at Johns Hopkins University School of Medicine. His postdoctoral work was conducted under the joint mentorship of Drs. John Rinn (Harvard, SCRB) and Manolis Kellis (MIT, CSAIL) and involved the discovery, annotation, and characterization of long non-coding RNAs in a variety of cellular and developmental contexts. The Goff Lab is currently focused on developing and adapting single cell gene expression measurement systems to explore how cells in the developing and degenerating mammalian nervous system vary in response to genetic or other disease-associated insults.
+  bio: Dr. Goff is an Associate Professor in the Departments of Neuroscience and <a href="https://igm.jhmi.edu/">Genetic Medicine</a> at the Johns Hopkins University School of Medicine. His postdoctoral work, under the joint mentorship of Drs. John Rinn (Harvard, SCRB) and Manolis Kellis (MIT, CSAIL), focused on the discovery, annotation, and characterization of long noncoding RNAs across a range of cellular and developmental contexts. The Goff Lab develops single cell and spatial transcriptomics assays and computational tools, and applies them to neural development in cephalopods.
 - name: Jared Slosberg
   role: Human Genetics Graduate Program
   photo: jared_slosberg.jpg
@@ -44,7 +44,7 @@ alumni:
   photo: Genevieve.jpg
   alt: Genevieve Stein-O'Brien
   email: gsteinobrien@gmail.com
-  bio: Dr. Stein-O'Brien is a post doctoral fellow in Oncology Biostatics and Bioinformatics and Neuroscience Departments at Johns Hopkins University with affiliations in the McKusick-Nathans Institute of Genomics Medicine and Institute for Data Intensive Engineering and Science. In 2017, she received a PhD in Human Genetics from Johns Hopkins School of Medicine and a MHS in Biostatistics from Johns Hopkins School of Public Health. Dr. Stein-O'Brien's research is focused on the stochastic processes underlying gene regulation in dynamic biological systems. Specifically, she develops computational and statistical methods for pattern detection and data integration in high-throughput genomics.
+  bio: Dr. Stein-O'Brien is a postdoctoral fellow in the Departments of Oncology Biostatistics and Bioinformatics and of Neuroscience at Johns Hopkins University with affiliations in the McKusick-Nathans Institute of Genetic Medicine and Institute for Data Intensive Engineering and Science. In 2017, she received a PhD in Human Genetics from Johns Hopkins School of Medicine and a MHS in Biostatistics from Johns Hopkins School of Public Health. Dr. Stein-O'Brien's research is focused on the stochastic processes underlying gene regulation in dynamic biological systems. Specifically, she develops computational and statistical methods for pattern detection and data integration in high-throughput genomics.
 - name: Jonathan Augustin
   role: Ph.D., Biochemistry, Cellular and Molecular Biology Graduate Program; NSF Graduate Fellow
   photo: jaugustin.jpg
@@ -54,7 +54,7 @@ alumni:
   role: 'Ph.D. Candidate, Human Genetics Graduate Program, Current: Postdoc with the Beier & Shendure Labs at UW/Seattle Children''s Hospital'
   photo: Elizabeth_Vincent_2.jpg
   email: liz.vincent92@gmail.com
-  bio: Liz joined the Human Genetics program in August 2015 after receiving her B.A. in Chemistry from Yale University. Her undergraduate thesis involved a genetic study of a trio of individuals to identify a causal variant for a specific neurological disorder. She brings with her experience in both experimental and computation biology. Her thesis project includes a characterization of newborn enteric neurons in a mouse model of Hirschsprung Disease, and identifying the specific role(s) for the receptor tyrosine kinase RET in regulating neural fate specification in the mammalian gut.
+  bio: Liz joined the Human Genetics program in August 2015 after receiving her B.A. in Chemistry from Yale University. Her undergraduate thesis involved a genetic study of a trio of individuals to identify a causal variant for a specific neurological disorder. She brings with her experience in both experimental and computational biology. Her thesis project includes a characterization of newborn enteric neurons in a mouse model of Hirschsprung Disease, and identifying the specific role(s) for the receptor tyrosine kinase RET in regulating neural fate specification in the mammalian gut.
 - name: Kenji Johnson, Ph.D.
   role: Postdoctoral Fellow
   photo: kenji.jpg

@@ -17,6 +17,9 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} | {{ site.tagline }}{% endif %}</title>
   <meta name="description" content="{% block description %}{{ site.name }}: {{ site.tagline }}. {{ site.affiliation }}.{% endblock %}">
+{% if page == 'octopus_genome.html' and genome.unlisted %}
+  <meta name="robots" content="noindex, nofollow">
+{% endif %}
   <link rel="canonical" href="{{ site.url }}/{{ page if page != 'index.html' else '' }}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ site.name }}">

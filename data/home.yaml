@@ -6,7 +6,6 @@ hero:
   image: {src: ochier_genome/Och3.jpeg, alt: Octopus chierchiae hatchling}
   actions:
     - {label: Our research, href: research.html}
-    - {label: Cephalopod resources, href: cephalopods.html}
 
 approach:
   # DRAFT wording taken directly from the refresh brief; to be rewritten together.
@@ -20,6 +19,7 @@ approach:
     - title: Extend
       text: To non-traditional model organisms, including cephalopods.
 
+# Genome spotlight: shown only when data/genome_ochier.yaml has unlisted: false.
 spotlight:
   image: {src: ochier_genome/Och2.jpeg, alt: Octopus chierchiae hatchling}
   title: <em>Octopus chierchiae</em> genome assembly

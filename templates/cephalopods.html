@@ -9,11 +9,13 @@
   </div>
 </header>
 
+{% set listed = cephalopods.resources | rejectattr('genome') | list if genome.unlisted else cephalopods.resources %}
 <section class="section">
   <div class="wrap">
+    {% if listed %}
     <h2>Resources</h2>
     <div class="grid grid-2" style="margin-top: 2rem">
-    {% for r in cephalopods.resources %}
+    {% for r in listed %}
       <a class="card" href="{{ r.href }}" style="text-decoration:none;color:inherit;padding:0;overflow:hidden">
         <div style="aspect-ratio: 3 / 2">{{ m.img(r.image.src, r.image.alt, 1000, cls='') }}</div>
         <div style="padding: 24px 28px">
@@ -25,6 +27,7 @@
       </a>
     {% endfor %}
     </div>
+    {% endif %}
     {{ m.draft(cephalopods.more) }}
   </div>
 </section>

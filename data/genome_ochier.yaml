@@ -2,6 +2,11 @@
 # Download links point at Dropbox for now; swap 'url' values once the assembly is deposited.
 # NOTE: the stringtie annotation .xlsx row repeats the type/size/MD5 of the row above it on the old site (needs correct values).
 
+# Unlisted until the assembly is published: the page still builds at octopus_genome.html,
+# but nothing on the site links to it and search engines are asked not to index it.
+# Set to false at publication to restore the homepage spotlight, Cephalopods card, and Tools links.
+unlisted: true
+
 species: Octopus chierchiae
 title: Octopus chierchiae genome assembly
 photos:

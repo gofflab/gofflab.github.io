@@ -50,7 +50,7 @@ REDIRECTS = {
     'software.html': 'tools.html#software',
     'datasets.html': 'tools.html#datasets',
     'lab_resources.html': 'tools.html#snippets',
-    'octopus.html': 'octopus_genome.html',
+    'octopus.html': 'octopus_genome.html',  # cephalopods.html while the genome is unlisted
 }
 
 
@@ -297,6 +297,8 @@ def main():
         depth = out.count('/')
         drafts += render(env, template, out, page=out, title=title, root='../' * depth, **common)
     for old, new in REDIRECTS.items():
+        if new == 'octopus_genome.html' and common['genome'].get('unlisted'):
+            new = 'cephalopods.html'
         render(env, '_redirect.html', old, target=new, root='', **common)
 
     for stale in WEB_IMG.glob('*.webp'):

@@ -4,6 +4,7 @@ intro:
 
 resources:
   - title: <em>Octopus chierchiae</em> genome assembly
+    genome: true   # hidden while data/genome_ochier.yaml has unlisted: true
     href: octopus_genome.html
     image: {src: ochier_genome/Och1.jpeg, alt: Octopus chierchiae hatchling}
     draft_flag: true   # new summary wording, built from the genome page download list

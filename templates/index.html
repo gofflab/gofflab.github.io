@@ -32,6 +32,8 @@
   </div>
 </section>
 
+{% set show_genome = not genome.unlisted %}
+{% if show_genome %}
 <section class="section section--alt">
   <div class="wrap split">
     <div class="media-frame">{{ m.img(home.spotlight.image.src, home.spotlight.image.alt, 1100) }}</div>
@@ -48,8 +50,9 @@
     </div>
   </div>
 </section>
+{% endif %}
 
-<section class="section">
+<section class="section{% if not show_genome %} section--alt{% endif %}">
   <div class="wrap">
     <div class="section-head">
       <div><span class="eyebrow">Looking ahead</span><h2>Future directions</h2></div>
@@ -59,7 +62,7 @@
   </div>
 </section>
 
-<section class="section section--alt">
+<section class="section{% if show_genome %} section--alt{% endif %}">
   <div class="wrap">
     <div class="section-head">
       <div><span class="eyebrow">Publications</span><h2>Recent papers</h2></div>
@@ -73,7 +76,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section{% if not show_genome %} section--alt{% endif %}">
   <div class="wrap split">
     <div>
       <span class="eyebrow">Join us</span>

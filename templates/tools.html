@@ -9,7 +9,7 @@
       <a href="#software">Software</a>
       <a href="#datasets">Datasets</a>
       <a href="#snippets">Lab Resources, Snippets, Tips, and Micro-Projects</a>
-      <a href="octopus_genome.html"><em>O. chierchiae</em> genome</a>
+      {% if not genome.unlisted %}<a href="octopus_genome.html"><em>O. chierchiae</em> genome</a>{% endif %}
     </nav>
   </div>
 </header>
@@ -34,7 +34,7 @@
   <div class="wrap">
     <h2>Datasets</h2>
     <ul class="link-list">
-      <li><a href="octopus_genome.html"><em>Octopus chierchiae</em> genome assembly</a></li>
+      {% if not genome.unlisted %}<li><a href="octopus_genome.html"><em>Octopus chierchiae</em> genome assembly</a></li>{% endif %}
     {% for d in tools.datasets %}
       <li><a href="{{ d.url }}" rel="noopener">{{ d.title }}</a></li>
     {% endfor %}

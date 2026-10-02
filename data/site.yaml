@@ -16,7 +16,7 @@ ga4_id: G-X36CPG7L73
 # background-position / background-size; opacity is optional.
 accents:
   research.html:     {src: spatial/ebe_section_3.webp, position: 100% 38%, size: 120% auto}
-  cephalopods.html:  {src: spatial/ebe_section_1.webp, position: 100% 50%, size: 115% auto}
+  cephalopods.html:  {src: photos/ebe_sand_adobestock.jpg, position: 100% 62%, size: 72% auto, opacity: .9}   # Adobe Stock (licensed)
   publications.html: {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
   tools.html:        {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
   people.html:       {src: spatial/ebe_section_3.webp, position: 0% 70%, size: 150% auto}

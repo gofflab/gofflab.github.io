@@ -1,11 +1,32 @@
 # Research page content.
-# Anything under a 'draft:' key renders as a visible DRAFT box (to be written together before launch).
+# 'draft_flag: true' shows a small DRAFT badge: text written for review, not yet approved.
 
 approach:
-  draft: "Lab approach: computational + experimental molecular neuroscience; developing single cell and spatial transcriptomics assays and analysis tools; applying them where off-the-shelf assays struggle, including cephalopods."
+  draft_flag: true
+  heading: How we work
+  text:
+    - We are a computational and experimental molecular neuroscience lab. We develop single cell and spatial transcriptomics assays, along with the computational tools to analyze the data they produce, and we apply them to biological systems where off-the-shelf assays routinely struggle.
+    - Cephalopods are a prime example. Standard single cell protocols assume mammalian cells and well-annotated genomes, and cephalopods offer neither. We have optimized our methods for cephalopod cells, from tissue preparation through analysis, working closely with the Marine Biological Laboratory in Woods Hole.
+    - Our software, including projectR, TRICycle, and pySeq2501, is open source and listed under <a href="tools.html">Tools &amp; Data</a>.
 
-directions:
-  draft: "Future lab directions and projects (titles, one-paragraph summaries, optional image per project)."
+# Research interests: the biological questions the lab is pursuing now.
+interests:
+  draft_flag: true
+  heading: Research interests
+  intro: Cephalopods and vertebrates last shared a common ancestor more than 500 million years ago, yet both evolved large, centralized brains that support complex behavior. Comparing how these brains develop can reveal which principles of neural development are universal and which are particular to one lineage.
+  items:
+    - title: Brain organization
+      question: How is a cephalopod brain organized at the level of cell types?
+      text: The cephalopod central brain is divided into dozens of lobes with distinct roles in learning, vision, and motor control. We combine single nucleus RNA-seq with spatial transcriptomics to map cell types and their molecular signatures across these lobes in the pygmy zebra octopus (<em>Octopus chierchiae</em>) and the hummingbird bobtail squid (<em>Euprymna berryi</em>).
+    - title: Neurogenesis after hatching
+      question: Where are new neurons born in the growing brain, and what becomes of them?
+      text: A hatchling's brain is a fraction of its adult size, so new neurons must keep arriving long after hatching. By labeling newly divided cells in juvenile squid and reading out their positions and gene expression with spatial transcriptomics, we are mapping neurogenic zones and following the fates of the cells they produce.
+    - title: Progenitor commitment and fate specification
+      question: When do neural progenitors commit to a fate, and which programs specify neuronal identity?
+      text: Many transcription factors that control neurogenesis in vertebrates, including Ascl1, Sox2, and Pax6, have cephalopod counterparts. We ask whether they play similar roles in a brain that evolved independently, and use cross-species transfer learning to compare fate-specifying programs with those we have studied in the mouse cortex, retina, and gut.
+    - title: Neuropeptides and lineage-specific genes
+      question: Which molecular innovations distinguish cephalopod neurons?
+      text: Neuropeptides account for much of the transcriptional diversity we see across the octopus brain, and several cephalopod gene families have expanded far beyond their counterparts in other animals. We study how these lineage-specific genes contribute to neural cell type identity and to the evolution of a complex brain.
 
 # Past research themes. Text adapted from the previous homepage (copy-edited Oct 2026).
 # Papers attach to a theme via 'themes:' tags in data/publications.yaml (DRAFT tagging).
@@ -28,7 +49,13 @@ past_themes:
       - Neurodegenerative disorders destroy specific populations of cells, and different disorders are often distinguished only by which neurons or brain regions they affect. We have used single cell measurements to reconstruct how neuronal populations respond to, and succumb to, disease-associated variants and conditions. Learning why some cell types are vulnerable while others are spared points toward therapeutic options for these debilitating disorders.
   - id: lncrna
     title: Long noncoding RNAs
-    draft: "Theme summary (no existing text on the old site)."
+    question: What do long noncoding RNAs do in the developing brain?
+    draft_flag: true
+    text:
+      - Building on Dr. Goff's postdoctoral work annotating thousands of human long intergenic noncoding RNAs, we mapped lncRNA expression across the developing mouse brain, characterized knockout mouse models showing that some lincRNAs are required for viability and brain development, and studied how individual lncRNAs such as Pantr2 shape the potential of neural progenitors.
   - id: methods
     title: Computational methods for single cell and spatial data
-    draft: "Theme summary (no existing text on the old site)."
+    question: How can patterns learned in one dataset inform the next?
+    draft_flag: true
+    text:
+      - Single cell and spatial assays produce data that standard pipelines were not designed to handle. We develop methods that carry information across datasets, species, and assays. projectR transfers patterns learned in one dataset to another, TRICycle estimates each cell's position in the cell cycle, and mNSF finds spatial patterns shared across tissue samples. We have also written practical guides to matrix factorization and to interpreting RNA velocity, and earlier built tools for transcript-level RNA-seq analysis.

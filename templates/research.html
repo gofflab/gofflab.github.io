@@ -8,7 +8,7 @@
     <h1>Research</h1>
     <nav class="subnav" aria-label="On this page">
       <a href="#approach">Approach</a>
-      <a href="#directions">Future directions</a>
+      <a href="#interests">Research interests</a>
       <a href="#past">Past research</a>
     </nav>
   </div>
@@ -16,16 +16,30 @@
 
 <section class="section" id="approach">
   <div class="wrap narrow">
+    {% if research.approach.draft_flag %}<span class="draft-badge"></span>{% endif %}
     <span class="eyebrow">Approach</span>
-    {{ m.draft(research.approach) }}
+    <h2>{{ research.approach.heading }}</h2>
+    {% for para in research.approach.text %}<p{% if loop.first %} class="lede"{% endif %}>{{ para }}</p>{% endfor %}
   </div>
 </section>
 
-<section class="section section--alt" id="directions">
-  <div class="wrap narrow">
-    <span class="eyebrow">Looking ahead</span>
-    <h2>Future directions</h2>
-    {{ m.draft(research.directions) }}
+<section class="section section--alt" id="interests">
+  <div class="wrap">
+    <div class="narrow">
+      {% if research.interests.draft_flag %}<span class="draft-badge"></span>{% endif %}
+      <span class="eyebrow">Current work</span>
+      <h2>{{ research.interests.heading }}</h2>
+      <p class="lede">{{ research.interests.intro }}</p>
+    </div>
+    <div class="grid grid-2 interests">
+    {% for it in research.interests['items'] %}
+      <article class="interest" id="interest-{{ loop.index }}">
+        <h3>{{ it.title }}</h3>
+        <p class="question">{{ it.question }}</p>
+        <p>{{ it.text }}</p>
+      </article>
+    {% endfor %}
+    </div>
   </div>
 </section>
 
@@ -37,6 +51,7 @@
     {% set refs = papers | selectattr('themes') | selectattr('themes', 'contains', t.id) | list %}
     <article class="theme" id="{{ t.id }}">
       <div class="theme-body">
+        {% if t.draft_flag %}<span class="draft-badge"></span>{% endif %}
         <h3>{{ t.title }}</h3>
         {% if t.question %}<p class="question">{{ t.question }}</p>{% endif %}
         {% for para in t.text or [] %}<p>{{ para }}</p>{% endfor %}

@@ -32,8 +32,6 @@ spotlight:
     - {value: "94.4%", label: BUSCO complete (metazoa)}
   link: {label: Genome resources and downloads, href: octopus_genome.html}
 
-directions:
-  draft: "Future directions teaser (2 to 4 projects), linking to the Research page."
 
 join:
   heading: Train with us

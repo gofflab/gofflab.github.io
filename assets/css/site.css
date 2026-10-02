@@ -398,3 +398,18 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
   }
 }
 @media print { .accent { display: none; } }
+
+/* ---------- Research interests ---------- */
+
+.interests { margin-top: 2.5rem; }
+.interest { border-top: 2px solid var(--accent); padding-top: 1.25rem; }
+.interest h3 { font-family: var(--font-serif); font-size: 1.45rem; margin-bottom: .35rem; }
+.interest .question { color: var(--accent-strong); font-style: italic; }
+.interest p:last-child { color: var(--text-2); }
+
+.question-list { list-style: none; margin: 0; padding: 0; max-width: 760px; }
+.question-list li { border-top: 1px solid var(--line); }
+.question-list a { display: grid; gap: .3rem; padding: 1.1rem 0; text-decoration: none; }
+.question-list .q-topic { font: 500 .72rem var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+.question-list .q-text { font-family: var(--font-serif); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.35; color: var(--text); }
+.question-list a:hover .q-text { color: var(--accent-strong); }

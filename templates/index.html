@@ -57,10 +57,14 @@
   {{ m.accent('home_directions') }}
   <div class="wrap">
     <div class="section-head">
-      <div><span class="eyebrow">Looking ahead</span><h2>Future directions</h2></div>
-      <a class="link-arrow" href="research.html">Research</a>
+      <div>{% if research.interests.draft_flag %}<span class="draft-badge"></span>{% endif %}<span class="eyebrow">Research interests</span><h2>Current questions</h2></div>
+      <a class="link-arrow" href="research.html#interests">Research</a>
     </div>
-    {{ m.draft(home.directions) }}
+    <ol class="question-list">
+    {% for it in research.interests['items'] %}
+      <li><a href="research.html#interest-{{ loop.index }}"><span class="q-topic">{{ it.title }}</span><span class="q-text">{{ it.question }}</span></a></li>
+    {% endfor %}
+    </ol>
   </div>
 </section>
 

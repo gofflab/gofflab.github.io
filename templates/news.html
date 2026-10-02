@@ -26,7 +26,7 @@
       {% for it in group %}
         <li class="news-item{% if it.image %} news-item--image{% endif %}">
           <div>
-            <p class="news-meta">{% if it.when %}<time datetime="{{ it.iso }}">{{ it.when }}</time>{% endif %}{% if it.tag %}<span class="news-tag">{{ it.tag }}</span>{% endif %}</p>
+            <p class="news-meta">{% if it.draft_flag %}<span class="draft-badge"></span>{% endif %}{% if it.when %}<time datetime="{{ it.iso }}">{{ it.when }}</time>{% endif %}{% if it.tag %}<span class="news-tag">{{ it.tag }}</span>{% endif %}</p>
             <h2 class="news-title">{% if it.link %}<a href="{{ it.link }}"{% if '://' in it.link %} rel="noopener"{% endif %}>{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h2>
             {% if it.paper %}<p class="pub-venue">{{ (it.paper.journal.split('.')[0] if it.paper.journal else (it.paper.server or 'bioRxiv') ~ ' preprint')|biorxiv }}, {{ it.paper.year }}</p>{% endif %}
             {% if it.text %}<p class="news-text">{{ it.text }}</p>{% endif %}

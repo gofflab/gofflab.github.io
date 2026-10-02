@@ -7,6 +7,7 @@
 #   link:   URL for the headline (a pmid/doi item links to the paper by default)
 #   pmid:   or doi: ties the item to a paper or preprint already on the Publications page
 #   image:  optional photo, {src: path under images/, alt: description}
+#   draft_flag: true marks an item as awaiting review
 #
 # Example:
 #   - date: 2026-01-15
@@ -16,4 +17,10 @@
 
 draft: News items to come. Add entries to data/news.yaml.
 
-items: []
+items:
+  - date: 2026-09-01
+    tag: Award
+    draft_flag: true
+    title: Loyal Goff named a Kavli Scholar
+    text: Loyal has been named a Kavli Scholar by The Kavli Foundation. The award, which begins September 1, 2026, will support the lab's work on cephalopod neural development.
+    link: https://www.kavlifoundation.org/kavli-scholars

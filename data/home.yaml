@@ -2,8 +2,8 @@
 # Anything under a 'draft:' key renders as a visible DRAFT box (to be written together before launch).
 
 hero:
-  # Placeholder: existing O. chierchiae photo from the genome page. Replace once new photography is chosen.
-  image: {src: ochier_genome/Och3.jpeg, alt: Octopus chierchiae hatchling}
+  # Decorative background: E. berryi portrait (Adobe Stock, licensed). Empty alt on purpose.
+  image: {src: photos/ebe_portrait_adobestock.jpg, alt: ""}
   actions:
     - {label: Our research, href: research.html}
 

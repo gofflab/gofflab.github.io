@@ -11,6 +11,19 @@ logo: {src: logo/gofflab_octopus.webp, alt: Goff Lab logo, an octopus holding a 
 # Pass --no-analytics to the build script for local previews.
 ga4_id: G-X36CPG7L73
 
+# Decorative image accents: lab spatial transcriptomics images (E. berryi), cropped, masked,
+# and faded in CSS as texture. Not figures, so no captions. position/size are CSS
+# background-position / background-size; opacity is optional.
+accents:
+  research.html:     {src: spatial/ebe_section_3.webp, position: 100% 38%, size: 120% auto}
+  cephalopods.html:  {src: spatial/ebe_section_1.webp, position: 100% 50%, size: 115% auto}
+  publications.html: {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
+  tools.html:        {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
+  people.html:       {src: spatial/ebe_section_3.webp, position: 0% 70%, size: 150% auto}
+  join.html:         {src: spatial/ebe_section_4.webp, position: 20% 40%, size: 140% auto}
+  contact.html:      {src: spatial/ebe_section_2.webp, position: 100% 75%, size: 130% auto}
+  home_approach:     {src: spatial/ebe_section_3.webp, position: 100% 50%, size: auto 135%, opacity: .42}
+
 nav:
   - {label: Research, href: research.html}
   - {label: Cephalopods, href: cephalopods.html}

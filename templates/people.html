@@ -6,7 +6,8 @@
 {% block content %}
 {% set members = people.current | rejectattr('hidden') | list %}
 {% set pi = members[0] %}
-<header class="page-head">
+<header class="page-head has-accent">
+  {{ m.accent(page) }}
   <div class="wrap">
     <span class="eyebrow">People</span>
     <h1>Lab Members</h1>

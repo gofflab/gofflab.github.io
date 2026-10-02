@@ -5,6 +5,12 @@
 <img src="{{ root }}{{ i.path }}" width="{{ i.w }}" height="{{ i.h }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
 {%- endmacro %}
 
+{# Decorative texture layer from site.accents[key]; place as the first child of a positioned block. #}
+{% macro accent(key) -%}
+{%- set a = site.accents.get(key) if site.accents else None -%}
+{%- if a %}{% set i = webimg(a.src, 1600) %}<div class="accent" aria-hidden="true" style="background-image:url('{{ root }}{{ i.path }}');background-position:{{ a.position or 'center' }};background-size:{{ a.size or 'cover' }};{% if a.opacity %}--accent-opacity:{{ a.opacity }};{% endif %}"></div>{% endif -%}
+{%- endmacro %}
+
 {# Visible placeholder for content still to be written. Remove all before launch. #}
 {% macro draft(obj) -%}
 {% if obj and obj.draft %}<div class="draft">{{ obj.draft }}</div>{% endif %}

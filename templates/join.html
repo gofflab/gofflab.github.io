@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% import '_macros.html' as m with context %}
 {% block content %}
-<header class="page-head">
+<header class="page-head has-accent">
+  {{ m.accent(page) }}
   <div class="wrap">
     <span class="eyebrow">Join</span>
     <h1>Join the lab</h1>

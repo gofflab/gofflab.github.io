@@ -10,16 +10,6 @@ current:
   alt: Loyal Goff, PI
   email: loyalgoff@jhmi.edu
   bio: Dr. Goff is an Associate Professor in the Departments of Neuroscience and <a href="https://igm.jhmi.edu/">Genetic Medicine</a> at the Johns Hopkins University School of Medicine. His postdoctoral work, under the joint mentorship of Drs. John Rinn (Harvard, SCRB) and Manolis Kellis (MIT, CSAIL), focused on the discovery, annotation, and characterization of long noncoding RNAs across a range of cellular and developmental contexts. The Goff Lab develops single cell and spatial transcriptomics assays and computational tools, and applies them to neural development in cephalopods.
-- name: Jared Slosberg
-  role: Human Genetics Graduate Program
-  photo: jared_slosberg.jpg
-  email: jslosbe1@jhmi.edu
-  bio: Jared joined the Human Genetics graduate program in 2019. He graduated from The George Washington University with a B.S. in Biomedical Engineering, and a minor in Biophysics. He is interested in developing computational methods to interrogate changes in gene expression associated with developmental processes, particularly in the context of single-cell transcriptomics. His current work involves characterizing the emergence and roles of a sub-population of neurons in the enteric nervous system.
-- name: Alina Spiegel
-  role: MD/PhD Program, Neuroscience
-  photo: alina_spiegel.jpg
-  email: aspiege4@jhmi.edu
-  bio: Alina did her undergraduate training in chemistry at Princeton University. After additional research opportunities in Germany and China (as a Fulbright Scholar), she joined the Johns Hopkins MD/PhD program in the Department of Neuroscience. She is jointly mentored by Dr. Goff and Dr. Solange Brown (JHU Neuroscience). Alina is currently involved in several projects including the development of a novel assay to measure neuronal connectivity, a deep dive into the cellular processes affected in C9orf72 disease (ALS), and an exploration of synaptic transcriptional variation in the cortex.
 - name: Chaichontat (Richard) Sriworarat
   role: Neuroscience Graduate Program
   photo: richard.jpg
@@ -39,6 +29,16 @@ current:
   photo: Alyson_Hally.jpg
   email: ahally1@jhmi.edu
 alumni:
+- name: Jared Slosberg
+  role: Human Genetics Graduate Program
+  photo: jared_slosberg.jpg
+  email: jslosbe1@jhmi.edu
+  bio: Jared joined the Human Genetics graduate program in 2019. He graduated from The George Washington University with a B.S. in Biomedical Engineering, and a minor in Biophysics. He is interested in developing computational methods to interrogate changes in gene expression associated with developmental processes, particularly in the context of single-cell transcriptomics. His current work involves characterizing the emergence and roles of a sub-population of neurons in the enteric nervous system.
+- name: Alina Spiegel
+  role: MD/PhD Program, Neuroscience
+  photo: alina_spiegel.jpg
+  email: aspiege4@jhmi.edu
+  bio: Alina did her undergraduate training in chemistry at Princeton University. After additional research opportunities in Germany and China (as a Fulbright Scholar), she joined the Johns Hopkins MD/PhD program in the Department of Neuroscience. She is jointly mentored by Dr. Goff and Dr. Solange Brown (JHU Neuroscience). Alina is currently involved in several projects including the development of a novel assay to measure neuronal connectivity, a deep dive into the cellular processes affected in C9orf72 disease (ALS), and an exploration of synaptic transcriptional variation in the cortex.
 - name: Genevieve Stein-O'Brien, Ph.D.
   role: <a href="https://kavlijhu.org/" target="_blank">Kavli NDI</a> Postdoctoral Fellow
   photo: Genevieve.jpg

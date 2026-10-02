@@ -20,6 +20,7 @@ accents:
   publications.html: {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
   tools.html:        {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
   people.html:       {src: spatial/ebe_section_3.webp, position: 0% 70%, size: 150% auto}
+  news.html:         {src: spatial/ebe_section_1.webp, position: 0% 44%, size: 133% auto}
   join.html:         {src: photos/ebe_eye_adobestock.jpg, position: 100% 38%, size: 70% auto, opacity: .9}   # Adobe Stock (licensed)
   contact.html:      {src: spatial/ebe_section_2.webp, position: 100% 75%, size: 130% auto}
   home_directions:   {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 55%, size: auto 118%, opacity: .5}   # Adobe Stock (licensed)
@@ -31,6 +32,7 @@ nav:
   - {label: Publications, href: publications.html}
   - {label: Tools & Data, href: tools.html}
   - {label: People, href: people.html}
+  - {label: News, href: news.html}
   - {label: Join, href: join.html}
   - {label: Contact, href: contact.html}
 

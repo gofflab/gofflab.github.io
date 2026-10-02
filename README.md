@@ -15,6 +15,7 @@ Content lives in `data/*.yaml`. Edit the YAML, then rebuild.
 | `data/genome_ochier.yaml` | *O. chierchiae* genome downloads and stats |
 | `data/publications.yaml` | PMIDs and bioRxiv IDs (metadata is fetched automatically) |
 | `data/people.yaml` | Current members, alumni, rotation students |
+| `data/news.yaml` | News items (format notes at the top of the file) |
 | `data/tools.yaml` | Software, datasets, code snippets |
 | `data/contact.yaml` | Addresses and phone numbers |
 

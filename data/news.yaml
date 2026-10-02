@@ -1,0 +1,19 @@
+# Lab news, shown on news.html grouped by year, newest first (the build sorts by date).
+#
+#   date:   YYYY-MM-DD, or YYYY-MM when the day doesn't matter
+#   tag:    short label, e.g. Paper, People, Award, Talk, Funding
+#   title:  headline; may be left out for a pmid/doi item (the paper's title is used)
+#   text:   a sentence or two; HTML links are fine
+#   link:   URL for the headline (a pmid/doi item links to the paper by default)
+#   pmid:   or doi: ties the item to a paper or preprint already on the Publications page
+#   image:  optional photo, {src: path under images/, alt: description}
+#
+# Example:
+#   - date: 2026-01-15
+#     tag: Paper
+#     pmid: 40000000
+#     text: One-line summary of the finding.
+
+draft: News items to come. Add entries to data/news.yaml.
+
+items: []

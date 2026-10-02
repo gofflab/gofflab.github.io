@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import '_macros.html' as m with context %}
+{% block content %}
+{% set years = news['items'] | groupby('year') | reverse | list %}
+<header class="page-head has-accent">
+  {{ m.accent(page) }}
+  <div class="wrap">
+    <span class="eyebrow">News</span>
+    <h1>News</h1>
+    {% if news.intro %}<p class="lede">{{ news.intro }}</p>{% endif %}
+    {% if years|length > 1 %}
+    <nav class="subnav" aria-label="Jump to year">
+      {% for year, _ in years %}<a href="#y{{ year }}">{{ year }}</a>{% endfor %}
+    </nav>
+    {% endif %}
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap news">
+    {% if not years %}{{ m.draft(news) }}{% endif %}
+    {% for year, group in years %}
+    <div class="year-group" id="y{{ year }}">
+      <div class="year-label">{{ year }}</div>
+      <ol class="news-list">
+      {% for it in group %}
+        <li class="news-item{% if it.image %} news-item--image{% endif %}">
+          <div>
+            <p class="news-meta">{% if it.when %}<time datetime="{{ it.iso }}">{{ it.when }}</time>{% endif %}{% if it.tag %}<span class="news-tag">{{ it.tag }}</span>{% endif %}</p>
+            <h2 class="news-title">{% if it.link %}<a href="{{ it.link }}"{% if '://' in it.link %} rel="noopener"{% endif %}>{{ it.title }}</a>{% else %}{{ it.title }}{% endif %}</h2>
+            {% if it.paper %}<p class="pub-venue">{{ (it.paper.journal.split('.')[0] if it.paper.journal else (it.paper.server or 'bioRxiv') ~ ' preprint')|biorxiv }}, {{ it.paper.year }}</p>{% endif %}
+            {% if it.text %}<p class="news-text">{{ it.text }}</p>{% endif %}
+          </div>
+          {% if it.image %}{{ m.img(it.image.src, it.image.alt or '', 480, cls='news-image') }}{% endif %}
+        </li>
+      {% endfor %}
+      </ol>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

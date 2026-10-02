@@ -38,6 +38,7 @@ PAGES = [
     ('publications.html', 'publications.html', 'Publications'),
     ('tools.html', 'tools.html', 'Tools & Data'),
     ('people.html', 'people.html', 'People'),
+    ('news.html', 'news.html', 'News'),
     ('join.html', 'join.html', 'Join'),
     ('contact.html', 'contact.html', 'Contact'),
     ('teaching.html', 'teaching.html', 'Teaching'),
@@ -246,6 +247,43 @@ def posters():
 
 
 ##########################
+# News
+##########################
+
+MONTHS = 'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split()
+
+
+def news(papers, preprints):
+    """Items from data/news.yaml, newest first. A pmid/doi item borrows the paper's title and link."""
+    data = load_yaml('news') or {}
+    by_pmid = {str(p['pmid']): p for p in papers}
+    by_doi = {p['doi'].lower(): p for p in papers + preprints if p.get('doi')}
+    items = []
+    for raw in data.get('items') or []:
+        it = dict(raw)
+        d = it.get('date')
+        if isinstance(d, datetime.date):
+            parts = [d.year, d.month, d.day]
+        else:
+            parts = [int(x) for x in str(d or '0').split('-')[:3]]
+        year, month, day = (parts + [0, 0])[:3]
+        it.update(year=year, sort=(year, month, day),
+                  iso='-'.join(f'{x:02d}' for x in parts),
+                  when=' '.join(filter(None, [MONTHS[month - 1] if month else '', str(day) if day else ''])))
+        paper = by_pmid.get(str(it['pmid'])) if it.get('pmid') else by_doi.get(str(it.get('doi', '')).lower())
+        if (it.get('pmid') or it.get('doi')) and not paper:
+            log(f'\tnews: no paper on the Publications page for {it.get("pmid") or it.get("doi")}')
+        if paper:
+            it['paper'] = paper
+            it.setdefault('title', paper['title'])
+            it.setdefault('link', f'https://doi.org/{paper["doi"]}' if paper.get('doi')
+                          else f'https://pubmed.ncbi.nlm.nih.gov/{paper["pmid"]}/')
+        items.append(it)
+    items.sort(key=lambda i: i['sort'], reverse=True)
+    return dict(data, items=items)
+
+
+##########################
 # Filters
 ##########################
 
@@ -301,7 +339,8 @@ def main():
         site=site, year=datetime.date.today().year,
         home=load_yaml('home'), research=load_yaml('research'), cephalopods=load_yaml('cephalopods'),
         people=load_yaml('people'), tools=load_yaml('tools'), contact=load_yaml('contact'),
-        genome=load_yaml('genome_ochier'), papers=papers, preprints=preprints, posters=posters())
+        genome=load_yaml('genome_ochier'), papers=papers, preprints=preprints, posters=posters(),
+        news=news(papers, preprints))
 
     drafts = 0
     for template, out, title in PAGES:

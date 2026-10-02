@@ -421,7 +421,10 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
 .pub-metric img { max-width: none; }
 /* Altmetric draws its score in dark text inside a transparent donut image; a light disc
    behind the image keeps the score readable on the dark page. */
-.pub-metric .altmetric-embed img { background: var(--text); border-radius: 50%; }
+.pub-metric .altmetric-embed img {
+  /* Disc at ~90% of the badge so it stays tucked behind the donut's outer edge. */
+  background: radial-gradient(circle closest-side, var(--text) 89%, transparent 90%);
+}
 @media (max-width: 560px) { .pub { grid-template-columns: 1fr; } .pub-metric { margin-top: .6rem; } }
 
 /* bioRxiv wordmark */

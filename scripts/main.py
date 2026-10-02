@@ -202,7 +202,7 @@ def site_icons(logo_src):
     """Favicons and a link-preview image from the lab logo (regenerated only if missing)."""
     icons = ROOT / 'assets' / 'icons'
     icons.mkdir(parents=True, exist_ok=True)
-    bg = (11, 16, 22, 255)  # --bg in site.css
+    bg = (5, 7, 10, 255)  # --bg in site.css
     with Image.open(IMAGES / logo_src) as logo:
         logo = logo.convert('RGBA')
         for name, size, pad, opaque in [('favicon-32.png', 32, 0, False), ('favicon-192.png', 192, 8, False),

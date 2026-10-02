@@ -262,7 +262,6 @@ em { font-style: italic; }
 .pub details { margin-top: .55rem; }
 .pub summary { cursor: pointer; color: var(--accent-strong); font-size: .85rem; width: max-content; }
 .pub details p { margin-top: .75rem; font-size: .93rem; color: var(--text-2); max-width: 78ch; }
-.altmetric-embed { float: right; margin: 0 0 8px 16px; }
 
 .compact-pubs { list-style: none; margin: 0; padding: 0; }
 .compact-pubs li { padding: .9rem 0; border-top: 1px solid var(--line); }
@@ -413,3 +412,16 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
 .question-list .q-topic { font: 500 .72rem var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
 .question-list .q-text { font-family: var(--font-serif); font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.35; color: var(--text); }
 .question-list a:hover .q-text { color: var(--accent-strong); }
+
+/* ---------- Publication extras ---------- */
+
+.pub { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 24px; align-items: start; }
+.pub-metric { min-width: 0; }
+.pub-metric .altmetric-embed { line-height: 0; }
+.pub-metric img { max-width: none; }
+@media (max-width: 560px) { .pub { grid-template-columns: 1fr; } .pub-metric { margin-top: .6rem; } }
+
+/* bioRxiv wordmark */
+.biorxiv { white-space: nowrap; font-style: normal; }
+.biorxiv .bx-r { color: #e5484d; }
+.biorxiv .bx-chi { font-style: italic; font-size: .85em; position: relative; top: .18em; margin: 0 .02em 0 .03em; }

@@ -260,6 +260,16 @@ def author_list(authors):
     return ', '.join(out)
 
 
+BIORXIV = re.compile(r'\bbiorxiv\b', re.I)
+BIORXIV_MARK = ('<span class="biorxiv"><span aria-hidden="true">bio<span class="bx-r">R</span>'
+                '<i class="bx-chi">&chi;</i>iv</span><span class="visually-hidden">bioRxiv</span></span>')
+
+
+def biorxiv_mark(text):
+    """Render 'bioRxiv' as its wordmark (red R, italic chi), as on the previous site."""
+    return BIORXIV.sub(BIORXIV_MARK, text or '')
+
+
 def render(env, template, out, **ctx):
     target = ROOT / out
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -283,6 +293,7 @@ def main():
 
     env = Environment(loader=FileSystemLoader(ROOT / 'templates'), trim_blocks=True, lstrip_blocks=True)
     env.filters['authors'] = author_list
+    env.filters['biorxiv'] = biorxiv_mark
     env.globals['webimg'] = web_image
     env.tests['contains'] = lambda seq, item: item in (seq or [])
 

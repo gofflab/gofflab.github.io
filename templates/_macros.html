@@ -20,47 +20,56 @@
 <a href="https://doi.org/{{ doi }}" rel="noopener">doi:{{ doi }}</a>
 {%- endmacro %}
 
+{# Altmetric donut, filled in by Altmetric's embed script; hidden when an item has no mentions. #}
+{% macro altmetric(attr, value) -%}
+<div class="pub-metric"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-link-target="_blank" data-{{ attr }}="{{ value }}"></div></div>
+{%- endmacro %}
+
 {% macro paper(p) -%}
 <li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.journal ~ ' ' ~ p.year)|lower|e }}">
-  <p class="pub-title">{{ p.title }}</p>
-  <p class="pub-authors">{{ p.authors|authors }}</p>
-  <p class="pub-venue">{{ p.journal }}</p>
-  <div class="pub-links">
-    {% if p.doi %}{{ doi_link(p.doi) }}{% endif %}
-    <a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/" rel="noopener">PubMed {{ p.pmid }}</a>
+  <div class="pub-body">
+    <p class="pub-title">{{ p.title }}</p>
+    <p class="pub-authors">{{ p.authors|authors }}</p>
+    <p class="pub-venue">{{ p.journal|biorxiv }}</p>
+    <div class="pub-links">
+      {% if p.doi %}{{ doi_link(p.doi) }}{% endif %}
+      <a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/" rel="noopener">PubMed {{ p.pmid }}</a>
+    </div>
+    {% if p.abstract %}
+    <details>
+      <summary>Abstract</summary>
+      <p>{{ p.abstract }}</p>
+    </details>
+    {% endif %}
   </div>
-  {% if p.abstract %}
-  <details>
-    <summary>Abstract</summary>
-    <div class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-pmid="{{ p.pmid }}"></div>
-    <p>{{ p.abstract }}</p>
-  </details>
-  {% endif %}
+  {{ altmetric('pmid', p.pmid) }}
 </li>
 {%- endmacro %}
 
 {% macro preprint(p) -%}
 <li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.year ~ ' preprint biorxiv')|lower|e }}">
-  <p class="pub-title">{{ p.title }}</p>
-  <p class="pub-authors">{{ p.authors|authors }}</p>
-  <p class="pub-venue">bioRxiv preprint, {{ p.year }}</p>
-  <div class="pub-links">
-    {{ doi_link(p.doi) }}
-    {% if p.published %}<span class="pub-note">Published</span><a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.published.pmid }}/" rel="noopener">{{ p.published.journal.split('.')[0] }}, {{ p.published.year }}</a>{% endif %}
+  <div class="pub-body">
+    <p class="pub-title">{{ p.title }}</p>
+    <p class="pub-authors">{{ p.authors|authors }}</p>
+    <p class="pub-venue">{{ (p.server or 'bioRxiv')|biorxiv }} preprint, {{ p.year }}</p>
+    <div class="pub-links">
+      {{ doi_link(p.doi) }}
+      {% if p.published %}<span class="pub-note">Published</span><a href="https://pubmed.ncbi.nlm.nih.gov/{{ p.published.pmid }}/" rel="noopener">{{ p.published.journal.split('.')[0] }}, {{ p.published.year }}</a>{% endif %}
+    </div>
+    {% if p.abstract %}
+    <details>
+      <summary>Abstract</summary>
+      <p>{{ p.abstract }}</p>
+    </details>
+    {% endif %}
   </div>
-  {% if p.abstract %}
-  <details>
-    <summary>Abstract</summary>
-    <div class="altmetric-embed" data-badge-type="donut" data-hide-no-mentions="true" data-doi="{{ p.doi }}"></div>
-    <p>{{ p.abstract }}</p>
-  </details>
-  {% endif %}
+  {{ altmetric('doi', p.doi) }}
 </li>
 {%- endmacro %}
 
 {% macro compact(p) -%}
 <li>
   <a href="{% if p.doi %}https://doi.org/{{ p.doi }}{% else %}https://pubmed.ncbi.nlm.nih.gov/{{ p.pmid }}/{% endif %}" rel="noopener">{{ p.title }}</a>
-  <p class="pub-venue">{{ p.journal.split('.')[0] }}, {{ p.year }}</p>
+  <p class="pub-venue">{{ p.journal.split('.')[0]|biorxiv }}, {{ p.year }}</p>
 </li>
 {%- endmacro %}

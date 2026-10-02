@@ -27,16 +27,5 @@
       count.textContent = terms.length ? shown + ' matching' : initial;
     });
   }
-
-  // Load the Altmetric badge script only once someone opens an abstract.
-  var loaded = false;
-  document.addEventListener('toggle', function (e) {
-    if (loaded || !e.target.querySelector || !e.target.querySelector('.altmetric-embed')) return;
-    loaded = true;
-    var s = document.createElement('script');
-    s.src = 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js';
-    s.async = true;
-    document.body.appendChild(s);
-  }, true);
 })();
 

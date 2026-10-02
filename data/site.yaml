@@ -20,8 +20,9 @@ accents:
   publications.html: {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
   tools.html:        {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
   people.html:       {src: spatial/ebe_section_3.webp, position: 0% 70%, size: 150% auto}
-  join.html:         {src: spatial/ebe_section_4.webp, position: 20% 40%, size: 140% auto}
+  join.html:         {src: photos/ebe_eye_adobestock.jpg, position: 100% 38%, size: 70% auto, opacity: .9}   # Adobe Stock (licensed)
   contact.html:      {src: spatial/ebe_section_2.webp, position: 100% 75%, size: 130% auto}
+  home_directions:   {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 55%, size: auto 118%, opacity: .5}   # Adobe Stock (licensed)
   home_approach:     {src: spatial/ebe_section_3.webp, position: 100% 50%, size: auto 135%, opacity: .42}
 
 nav:

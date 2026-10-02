@@ -53,7 +53,8 @@
 </section>
 {% endif %}
 
-<section class="section{% if not show_genome %} section--alt{% endif %}">
+<section class="section has-accent accent-band{% if not show_genome %} section--alt{% endif %}">
+  {{ m.accent('home_directions') }}
   <div class="wrap">
     <div class="section-head">
       <div><span class="eyebrow">Looking ahead</span><h2>Future directions</h2></div>

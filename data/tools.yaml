@@ -6,6 +6,8 @@ software:
 # 2024-06, first commit
 - name: CephExplorer
   url: https://cephexplorer.gofflab.org/
+  image: cephexplorer_logo.png
+  image_bg: dark
   author: Loyal Goff
   draft_flag: true
   description: An interactive atlas of gene families across cephalopod species, built on <a href="https://github.com/davidemms/OrthoFinder">OrthoFinder</a> results. Browse orthogroups and their descriptions, search for a gene to jump to its orthogroup, and inspect each family's gene tree, with controls that keep dense trees readable. CephExplorer makes it easier to spot gene family expansions, track orthologs across species, and support annotation work.
@@ -26,6 +28,8 @@ software:
 # 2021-02, first commit
 - name: HCRProbeDesign
   url: https://www.gofflab.org/HCRProbeDesign/
+  image: hcrprobedesign_logo.png
+  image_bg: dark
   author: Loyal Goff
   draft_flag: true
   description: A command-line tool and Python package for designing HCR v3.0 split-initiator probe pairs from a target sequence. It tiles the target, filters candidate probes by GC content, melting temperature, homopolymers, and hairpins, and can use Bowtie2 to keep only probes that are unique in the genome. Install it with <code>pip install hcrprobedesign</code>.

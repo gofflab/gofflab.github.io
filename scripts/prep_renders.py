@@ -6,7 +6,7 @@ coloured cells sit on the site's dark background, then crops to the subject.
 
     python scripts/prep_renders.py image SRC NAME [--pale]
         -> images/renders/NAME.webp
-    python scripts/prep_renders.py movie SRC NAME [--start SECONDS] [--keep-backdrop]
+    python scripts/prep_renders.py movie SRC NAME [--start SECONDS] [--keep-backdrop [--crop X0,X1]]
         -> assets/video/NAME.mp4 and NAME.webm, plus images/renders/NAME_start.webp and NAME_end.webp
 
 --pale also keeps subjects lighter than the backdrop (e.g. beige cells on grey), which have
@@ -68,8 +68,10 @@ def frames(src, start, w, h):
     proc.wait()
 
 
-def movie_as_rendered(src, name, start=0.0):
-    """Encode a movie at full resolution with its backdrop: MP4 (listed first) and a WebM fallback."""
+def movie_as_rendered(src, name, start=0.0, crop=None):
+    """Encode a movie at full resolution with its backdrop: MP4 (listed first) and a WebM fallback.
+    crop=(x0, x1) keeps only that horizontal span, as fractions of the frame width."""
+    vf = ['-vf', 'crop=trunc(iw*{w}/2)*2:ih:trunc(iw*{x}/2)*2:0'.format(w=crop[1] - crop[0], x=crop[0])] if crop else []
     VIDEO.mkdir(parents=True, exist_ok=True)
     RENDERS.mkdir(parents=True, exist_ok=True)
     codecs = {
@@ -78,12 +80,12 @@ def movie_as_rendered(src, name, start=0.0):
     }
     for ext, args in codecs.items():
         dest = VIDEO / f'{name}.{ext}'
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start), '-i', str(src), '-pix_fmt', 'yuv420p', '-an']
-                       + args + [str(dest)], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', str(start), '-i', str(src)] + vf
+                       + ['-pix_fmt', 'yuv420p', '-an'] + args + [str(dest)], check=True)
         print(dest.relative_to(ROOT), f'{dest.stat().st_size / 1e6:.1f} MB')
     for label, seek in (('start', ['-ss', str(start)]), ('end', ['-sseof', '-0.1'])):
         png = RENDERS / f'{name}_{label}.png'
-        subprocess.run(['ffmpeg', '-v', 'error', '-y'] + seek + ['-i', str(src), '-frames:v', '1', str(png)], check=True)
+        subprocess.run(['ffmpeg', '-v', 'error', '-y'] + seek + ['-i', str(src)] + vf + ['-frames:v', '1', str(png)], check=True)
         Image.open(png).convert('RGB').save(RENDERS / f'{name}_{label}.webp', 'WEBP', quality=88)
         png.unlink()
 
@@ -140,11 +142,13 @@ def main():
     ap.add_argument('--pale', action='store_true', help='also keep subjects lighter than the backdrop')
     ap.add_argument('--start', type=float, default=0.0, help='movie: seconds to trim from the start')
     ap.add_argument('--keep-backdrop', action='store_true', help='movie: encode as rendered, full resolution')
+    ap.add_argument('--crop', help='movie with --keep-backdrop: horizontal span to keep, e.g. 0.10,0.86')
     args = ap.parse_args()
     if args.kind == 'image':
         image(args.src, args.name, args.pale)
     elif args.keep_backdrop:
-        movie_as_rendered(args.src, args.name, args.start)
+        movie_as_rendered(args.src, args.name, args.start,
+                          tuple(float(v) for v in args.crop.split(',')) if args.crop else None)
     else:
         movie(args.src, args.name, args.start)
 

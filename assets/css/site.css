@@ -418,6 +418,8 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
 .accent--video video { position: absolute; max-width: none; display: none; }
 .accent--video.is-playing { background-image: none !important; }
 .accent--video.is-playing video { display: block; }
+/* On small screens the still fills the header, so no image edge shows. */
+@media (max-width: 760px) { .accent--video { background-size: cover !important; background-position: 75% 40% !important; } }
 @media print { .accent { display: none; } }
 
 /* ---------- Research interests ---------- */

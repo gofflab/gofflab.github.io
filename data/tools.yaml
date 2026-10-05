@@ -3,9 +3,10 @@
 
 software:
 # image is optional; leave it out when a tool has no logo.
-- name: Cephexplorer
-  url: https://cephexplorer.gofflab.org
-  draft: "Description to come: what Cephexplorer contains and what visitors can do with it."
+- name: CephExplorer
+  url: https://cephexplorer.gofflab.org/
+  draft_flag: true
+  description: An interactive atlas of gene families across cephalopod species, built on <a href="https://github.com/davidemms/OrthoFinder">OrthoFinder</a> results. Browse orthogroups and their descriptions, search for a gene to jump to its orthogroup, and inspect each family's gene tree, with controls that keep dense trees readable. CephExplorer makes it easier to spot gene family expansions, track orthologs across species, and support annotation work.
 - name: pyroNMF
   url: https://github.com/gofflab/pyro_NMF
   author: Kyla Woyshner

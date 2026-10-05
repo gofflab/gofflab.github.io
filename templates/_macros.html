@@ -32,7 +32,7 @@
 {%- endmacro %}
 
 {% macro paper(p) -%}
-<li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.journal ~ ' ' ~ p.year)|lower|e }}">
+<li class="pub">
   <div class="pub-body">
     <p class="pub-title">{{ p.title }}</p>
     <p class="pub-authors">{{ p.authors|authors }}</p>
@@ -53,7 +53,7 @@
 {%- endmacro %}
 
 {% macro preprint(p) -%}
-<li class="pub" data-search="{{ (p.title ~ ' ' ~ p.authors|join(' ') ~ ' ' ~ p.year ~ ' preprint biorxiv')|lower|e }}">
+<li class="pub">
   <div class="pub-body">
     <p class="pub-title">{{ p.title }}</p>
     <p class="pub-authors">{{ p.authors|authors }}</p>

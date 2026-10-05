@@ -43,6 +43,7 @@ body {
 }
 
 img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }   /* beats layout rules like .pub { display: grid } */
 
 a { color: var(--accent-strong); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--text); }
@@ -241,7 +242,7 @@ em { font-style: italic; }
 
 .pub-list { list-style: none; margin: 0; padding: 0; }
 .pub { padding: 0 0 1.4rem; }
-.pub + .pub { padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.pub:not([hidden]) ~ .pub { padding-top: 1.4rem; border-top: 1px solid var(--line); }   /* divider only after a visible entry */
 .pub-title { font-weight: 600; font-size: 1.04rem; line-height: 1.45; color: var(--text); margin: 0 0 .35rem; }
 .pub-authors { font-size: .9rem; color: var(--text-2); margin: 0 0 .25rem; }
 .pub-authors .self { color: var(--text); font-weight: 600; }

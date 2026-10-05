@@ -11,19 +11,23 @@
 
   var search = document.getElementById('pub-search');
   if (search) {
-    var items = Array.prototype.slice.call(document.querySelectorAll('.pub[data-search]'));
+    // Match against everything shown for an entry: title, authors, venue, DOI/PMID and abstract.
+    var items = Array.prototype.slice.call(document.querySelectorAll('.pub'));
+    items.forEach(function (li) { li.searchText = li.textContent.replace(/\s+/g, ' ').toLowerCase(); });
     var groups = document.querySelectorAll('[data-year-group]');
+    var sections = document.querySelectorAll('[data-pub-section]');
     var count = document.getElementById('pub-count');
     var initial = count.textContent;
     search.addEventListener('input', function () {
       var terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
       var shown = 0;
       items.forEach(function (li) {
-        var hit = terms.every(function (t) { return li.dataset.search.indexOf(t) !== -1; });
+        var hit = terms.every(function (t) { return li.searchText.indexOf(t) !== -1; });
         li.hidden = !hit;
         if (hit) shown++;
       });
       groups.forEach(function (g) { g.hidden = !g.querySelector('.pub:not([hidden])'); });
+      sections.forEach(function (s) { s.hidden = !s.querySelector('.pub:not([hidden])'); });
       count.textContent = terms.length ? shown + ' matching' : initial;
     });
   }

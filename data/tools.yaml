@@ -14,7 +14,7 @@ software:
   url: https://github.com/gofflab/mkprobes
   image: mkprobes_logo.png
   image_bg: dark
-  author: Chaichontat Sriworarat
+  author: Chaichontat Sriworarat, Loyal Goff
   draft_flag: true
   links:
   - {label: Documentation, url: "https://www.gofflab.org/mkprobes/"}

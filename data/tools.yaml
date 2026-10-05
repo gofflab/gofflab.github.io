@@ -7,6 +7,19 @@ software:
 # Newest first, by first release. image is optional; leave it out when a tool has no logo.
 # links (optional) adds a row of extra links, e.g. documentation and source code.
 # status (optional) shows a badge: Active, Under development, Stable, Deprecated or Archived.
+# 2026-08, first commit (extracted from fishtools)
+- name: mkprobes
+  hidden: true   # pre-release
+  status: Under development
+  url: https://github.com/gofflab/mkprobes
+  image: mkprobes_logo.png
+  image_bg: dark
+  author: Chaichontat Sriworarat
+  draft_flag: true
+  links:
+  - {label: Documentation, url: "https://www.gofflab.org/mkprobes/"}
+  - {label: GitHub, url: "https://github.com/gofflab/mkprobes"}
+  description: mkprobes designs probesets for SOLAR, the lab's splint/padlock, STARmap-style combinatorial FISH assay, from a species' transcriptome. One command-line workflow covers reference preparation (including genome and annotation ingestion for non-traditional model species), target selection, candidate generation with off-target screening, codebook construction, panel QC, and assembly into an orderable oligo pool.
 # 2024-06, first commit
 - name: CephExplorer
   status: Under development
@@ -28,6 +41,16 @@ software:
   author: Kyla Woyshner
   draft_flag: true
   description: PyroNMF performs probabilistic non-negative matrix factorization, built on <a href="https://pyro.ai">Pyro</a>, to find patterns in single cell and spatial transcriptomics data. It reads and writes <a href="https://anndata.readthedocs.io">AnnData</a> objects directly, supports unsupervised runs and semi-supervised runs with fixed genes or fixed samples, and uses a GPU (CUDA or Apple Silicon) when one is available. A joint project of the Goff Lab and the Stein-O'Brien Lab.
+# 2023-04, first commit
+- name: fishtools
+  hidden: true   # pre-release
+  status: Under development
+  url: https://github.com/chaichontat/fishtools
+  image: fishtools_logo.png
+  image_bg: dark
+  author: Chaichontat Sriworarat
+  draft_flag: true
+  description: Command-line tools for processing combinatorial FISH imaging data, from raw microscope images to spots and segmented cells. fishtools compresses raw images to JPEG XL, corrects uneven illumination, deconvolves, registers and stitches tiles across imaging rounds, calls spots, and segments cells.
 # 2021-11, first commit
 - name: pySeq 2501
   status: Deprecated

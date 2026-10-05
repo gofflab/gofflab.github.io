@@ -2,42 +2,50 @@
 # Text copy-edited Oct 2026. Fields may contain inline HTML.
 
 software:
-# image is optional; leave it out when a tool has no logo.
+# Newest first, by first release. image is optional; leave it out when a tool has no logo.
+# 2024-06, first commit
 - name: CephExplorer
   url: https://cephexplorer.gofflab.org/
   draft_flag: true
   description: An interactive atlas of gene families across cephalopod species, built on <a href="https://github.com/davidemms/OrthoFinder">OrthoFinder</a> results. Browse orthogroups and their descriptions, search for a gene to jump to its orthogroup, and inspect each family's gene tree, with controls that keep dense trees readable. CephExplorer makes it easier to spot gene family expansions, track orthologs across species, and support annotation work.
-- name: pyroNMF
+# 2024-05, first commit
+- name: PyroNMF
   url: https://github.com/gofflab/pyro_NMF
   author: Kyla Woyshner
   draft_flag: true
-  description: pyroNMF performs probabilistic non-negative matrix factorization, built on <a href="https://pyro.ai">Pyro</a>, to find patterns in single cell and spatial transcriptomics data. It reads and writes <a href="https://anndata.readthedocs.io">AnnData</a> objects directly, supports unsupervised runs and semi-supervised runs with fixed genes or fixed samples, and uses a GPU (CUDA or Apple Silicon) when one is available.
-- name: HCRProbeDesign
-  url: https://www.gofflab.org/HCRProbeDesign/
-  author: Loyal Goff
-  draft_flag: true
-  description: A command-line tool and Python package for designing HCR v3.0 split-initiator probe pairs from a target sequence. It tiles the target, filters candidate probes by GC content, melting temperature, homopolymers, and hairpins, and can use Bowtie2 to keep only probes that are unique in the genome. Install it with <code>pip install hcrprobedesign</code>.
+  description: PyroNMF performs probabilistic non-negative matrix factorization, built on <a href="https://pyro.ai">Pyro</a>, to find patterns in single cell and spatial transcriptomics data. It reads and writes <a href="https://anndata.readthedocs.io">AnnData</a> objects directly, supports unsupervised runs and semi-supervised runs with fixed genes or fixed samples, and uses a GPU (CUDA or Apple Silicon) when one is available. A joint project of the Goff Lab and the Stein-O'Brien Lab.
+# 2021-11, first commit
 - name: pySeq 2501
   url: https://github.com/chaichontat/pyseq2501
   image: pyseq.png
   author: Chaichontat Sriworarat
   description: <em><b>Control your HiSeq 2000/2500 with ease.</b></em> pyseq2501 adapts and refactors the <a href="https://github.com/nygctech/PySeq2500" target="_blank">PySeq2500</a> controller software, turning an aging, unsupported HiSeq 2500 into a flexible fluidics and microscopy platform for custom workflows.
+# 2021-02, first commit
+- name: HCRProbeDesign
+  url: https://www.gofflab.org/HCRProbeDesign/
+  author: Loyal Goff
+  draft_flag: true
+  description: A command-line tool and Python package for designing HCR v3.0 split-initiator probe pairs from a target sequence. It tiles the target, filters candidate probes by GC content, melting temperature, homopolymers, and hairpins, and can use Bowtie2 to keep only probes that are unique in the genome. Install it with <code>pip install hcrprobedesign</code>.
+# 2021-02, first commit
 - name: TRICycle
   url: https://github.com/hansenlab/tricycle
   image: tricycle_sticker.png
   description: TRICycle (Transferable Representation and Inference of Cell Cycle) is an R package for fast, universal annotation of cell cycle state in large single cell datasets. Building on projectR, it projects new single cell RNA-seq, ATAC-seq, or other data into a reference latent space and estimates each cell's continuous position along the cell cycle. It is fast and memory-efficient, needs minimal preprocessing, and requires no <em>a priori</em> cell annotations, so cell cycle dynamics can be explored in atlas-scale datasets.
+# 2016-09, first commit
 - name: projectR
   url: https://github.com/genesofeve/projectR
   image: projectR.png
   description: projectR is a regression-based transfer learning tool for single cell analysis. It embeds any high-throughput molecular assay into latent spaces learned from a source dataset, so that cell types and biological features annotated in one dataset can be identified in another. Because projection preserves relative distances between samples, biologically meaningful factors stratify new data according to their underlying processes. We have used projectR to transfer cell type and state labels across datasets without prior annotation, to identify a species-specific signature of microglia, and to find a previously undescribed subpopulation of neurosecretory cells in the lung.
-- name: CummeRbund
-  url: http://compbio.mit.edu/cummeRbund
-  image: cummeRbund_gold.png
-  description: An R/Bioconductor package for storing, manipulating, analyzing, and visualizing Cufflinks RNA-seq results. Differential expression analyses produce large, highly interrelated datasets that can be hard to navigate. CummeRbund loads the output of a cuffdiff run into an indexed SQLite database that records the relationships between genes, transcripts, transcription start sites, and coding sequences. Data for any feature, across any number of samples or conditions, can then be retrieved quickly, whether you are exploring a single gene, its isoforms, or an entire gene set.
+# 2015, publication
 - name: DeCoN
   url: http://decon.fas.harvard.edu/
   image: decon.png
   description: The Developing Cortical Neuron Transcriptional Resource. DeCoN is a web resource for exploring deep RNA-seq profiles of sorted mouse cortical projection neurons, with isoform, gene, and gene set-level expression for callosal, subcerebral, and corticothalamic projection neurons across corticogenesis.
+# 2012, publication
+- name: CummeRbund
+  url: http://compbio.mit.edu/cummeRbund
+  image: cummeRbund_gold.png
+  description: An R/Bioconductor package for storing, manipulating, analyzing, and visualizing Cufflinks RNA-seq results. Differential expression analyses produce large, highly interrelated datasets that can be hard to navigate. CummeRbund loads the output of a cuffdiff run into an indexed SQLite database that records the relationships between genes, transcripts, transcription start sites, and coding sequences. Data for any feature, across any number of samples or conditions, can then be retrieved quickly, whether you are exploring a single gene, its isoforms, or an entire gene set.
 datasets:
 - title: Developing mouse cortical neuron resource
   url: https://decon.fas.harvard.edu

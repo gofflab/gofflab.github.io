@@ -3,6 +3,7 @@
 
 software:
 # Newest first, by first release. image is optional; leave it out when a tool has no logo.
+# links (optional) adds a row of extra links, e.g. documentation and source code.
 # 2024-06, first commit
 - name: CephExplorer
   url: https://cephexplorer.gofflab.org/
@@ -14,6 +15,9 @@ software:
 # 2024-05, first commit
 - name: PyroNMF
   url: https://github.com/gofflab/pyro_NMF
+  links:
+  - {label: Documentation, url: "https://www.gofflab.org/pyro_NMF/"}
+  - {label: GitHub, url: "https://github.com/gofflab/pyro_NMF"}
   image: pyronmf_logo.png
   image_bg: dark   # white lettering; shown on a dark tile
   author: Kyla Woyshner

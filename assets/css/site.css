@@ -320,6 +320,9 @@ details.disclosure summary { cursor: pointer; font-family: var(--font-serif); fo
 .tool h3 a { color: var(--text); text-decoration: none; }
 .tool h3 a:hover { color: var(--accent-strong); }
 .tool p { color: var(--text-2); font-size: .95rem; }
+.tool .tool-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: .4rem 0 0; font-size: .88rem; }
+.tool .tool-links a { text-decoration: none; }
+.tool .tool-links a:hover { text-decoration: underline; }
 .tool .by { font-size: .85rem; color: var(--muted); margin: -.2rem 0 .6rem; }
 @media (max-width: 560px) { .tool { grid-template-columns: 1fr; } .tool-logo { width: 88px; height: 88px; } .tool-logo-slot { display: none; } }
 

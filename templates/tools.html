@@ -25,6 +25,7 @@
         <h3><a href="{{ s.url }}" rel="noopener">{{ s.name }}</a></h3>
         {% if s.author %}<p class="by">Author: {{ s.author }}</p>{% endif %}
         {% if s.description %}<p>{{ s.description }}</p>{% endif %}
+        {% if s.links %}<p class="tool-links">{% for l in s.links %}<a href="{{ l.url }}" rel="noopener">{{ l.label }}</a>{% endfor %}</p>{% endif %}
         {{ m.draft(s) }}
       </div>
     </article>

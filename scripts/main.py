@@ -11,6 +11,7 @@ Rendered pages are written to the repository root (served by GitHub Pages).
 import argparse
 import datetime
 import difflib
+import hashlib
 import json
 import re
 import sys
@@ -333,6 +334,10 @@ def main():
     env.filters['authors'] = author_list
     env.filters['biorxiv'] = biorxiv_mark
     env.globals['webimg'] = web_image
+    # Fingerprint of the stylesheet and script, appended to their URLs so browsers fetch new
+    # versions instead of reusing cached ones.
+    env.globals['asset_version'] = hashlib.sha1(b''.join(
+        (ROOT / 'assets' / p).read_bytes() for p in ('css/site.css', 'js/site.js'))).hexdigest()[:10]
     env.tests['contains'] = lambda seq, item: item in (seq or [])
 
     common = dict(

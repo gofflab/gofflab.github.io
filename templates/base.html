@@ -35,7 +35,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="{{ root }}assets/css/site.css">
+  <link rel="stylesheet" href="{{ root }}assets/css/site.css?v={{ asset_version }}">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -87,7 +87,7 @@
       <p class="legal">&copy; {{ year }} {{ site.name }}, Johns Hopkins University. All rights reserved.</p>
     </div>
   </footer>
-  <script src="{{ root }}assets/js/site.js" defer></script>
+  <script src="{{ root }}assets/js/site.js?v={{ asset_version }}" defer></script>
 {% block scripts %}{% endblock %}
 </body>
 </html>

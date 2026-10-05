@@ -5,10 +5,16 @@
 <img src="{{ root }}{{ i.path }}" width="{{ i.w }}" height="{{ i.h }}" alt="{{ alt }}"{% if cls %} class="{{ cls }}"{% endif %} {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
 {%- endmacro %}
 
-{# Decorative texture layer from site.accents[key]; place as the first child of a positioned block. #}
+{# Decorative texture layer from site.accents[key]; place as the first child of a positioned block.
+   An accent with `video: NAME` shows the last frame of assets/video/NAME.mp4 (made by scripts/prep_renders.py)
+   as a still; on wide screens without reduced motion, site.js plays the movie once over it. #}
 {% macro accent(key) -%}
 {%- set a = site.accents.get(key) if site.accents else None -%}
-{%- if a %}{% set i = webimg(a.src, 1600) %}<div class="accent" aria-hidden="true" style="background-image:url('{{ root }}{{ i.path }}');background-position:{{ a.position or 'center' }};background-size:{{ a.size or 'cover' }};{% if a.opacity %}--accent-opacity:{{ a.opacity }};{% endif %}"></div>{% endif -%}
+{%- if a and a.video -%}
+{%- set first = webimg('renders/' ~ a.video ~ '_start.webp', 1280) %}{% set last = webimg('renders/' ~ a.video ~ '_end.webp', 1280) -%}
+{%- set pos = (a.position or '50% 50%').split() %}{% set size = (a.size or '100% auto').split() -%}
+<div class="accent accent--video" aria-hidden="true" style="background-image:url('{{ root }}{{ last.path }}');background-position:{{ a.position or 'center' }};background-size:{{ a.size or 'cover' }};{% if a.opacity %}--accent-opacity:{{ a.opacity }};{% endif %}"><video muted playsinline{% if a.loop %} loop{% endif %} preload="none" width="{{ first.w }}" height="{{ first.h }}" poster="{{ root }}{{ first.path }}" style="left:{{ pos[0] }};top:{{ pos[1] }};width:{{ size[0] }};height:{{ size[1] }};transform:translate(-{{ pos[0] }},-{{ pos[1] }})"><source data-src="{{ root }}assets/video/{{ a.video }}.mp4" type="video/mp4"><source data-src="{{ root }}assets/video/{{ a.video }}.webm" type="video/webm"></video></div>
+{%- elif a %}{% set i = webimg(a.src, 1600) %}<div class="accent" aria-hidden="true" style="background-image:url('{{ root }}{{ i.path }}');background-position:{{ a.position or 'center' }};background-size:{{ a.size or 'cover' }};{% if a.opacity %}--accent-opacity:{{ a.opacity }};{% endif %}"></div>{% endif -%}
 {%- endmacro %}
 
 {# Visible placeholder for content still to be written. Remove all before launch. #}

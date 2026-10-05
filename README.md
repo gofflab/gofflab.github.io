@@ -20,6 +20,10 @@ Content lives in `data/*.yaml`. Edit the YAML, then rebuild.
 | `data/contact.yaml` | Addresses and phone numbers |
 
 Photos go in `images/`; the build makes resized WebP copies in `assets/img/`.
+Page-header background images are set under `accents` in `data/site.yaml`. 3D renders on a grey
+backdrop, and render movies, need a one-time prep first:
+`python scripts/prep_renders.py image|movie SRC NAME` keys the backdrop to black and writes
+`images/renders/` (and `assets/video/` for movies); see the script header for options.
 Posters dropped into `posters/` are listed automatically.
 
 ## Building

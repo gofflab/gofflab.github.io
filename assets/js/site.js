@@ -1,4 +1,4 @@
-// Goff Lab site behaviour: mobile menu, publication search, lazy Altmetric badges.
+// Goff Lab site behaviour: mobile menu, publication search, accent movies.
 (function () {
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('site-nav');
@@ -27,5 +27,17 @@
       count.textContent = terms.length ? shown + ' matching' : initial;
     });
   }
-})();
 
+  // Accent movies play only on wide screens with motion allowed; otherwise the still stays and nothing downloads.
+  if (window.matchMedia('(min-width: 761px) and (prefers-reduced-motion: no-preference)').matches) {
+    document.querySelectorAll('.accent--video').forEach(function (accent) {
+      var v = accent.querySelector('video');
+      v.querySelectorAll('source[data-src]').forEach(function (s) { s.src = s.dataset.src; });
+      v.muted = true;
+      v.load();
+      accent.classList.add('is-playing');
+      var playing = v.play();
+      if (playing) playing.catch(function () { accent.classList.remove('is-playing'); });
+    });
+  }
+})();

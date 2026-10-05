@@ -11,20 +11,24 @@ logo: {src: logo/gofflab_octopus.webp, alt: Goff Lab logo, an octopus holding a 
 # Pass --no-analytics to the build script for local previews.
 ga4_id: G-X36CPG7L73
 
-# Decorative image accents: lab spatial transcriptomics images (E. berryi), cropped, masked,
-# and faded in CSS as texture. Not figures, so no captions. position/size are CSS
-# background-position / background-size; opacity is optional.
+# Decorative image accents: lab spatial transcriptomics images and squid photos (E. berryi), and
+# 3D renders of cells (images/renders, prepared with scripts/prep_renders.py), cropped, masked and
+# faded in CSS as texture. Not figures, so no captions. position/size are CSS background-position /
+# background-size; opacity is optional. `video: NAME` plays assets/video/NAME.mp4 once (loop: true repeats).
 accents:
-  research.html:     {src: spatial/ebe_section_3.webp, position: 100% 38%, size: 120% auto}
-  cephalopods.html:  {src: photos/ebe_sand_adobestock.jpg, position: 100% 62%, size: 72% auto, opacity: .9}   # Adobe Stock (licensed)
-  publications.html: {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
-  tools.html:        {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
-  people.html:       {src: spatial/ebe_section_3.webp, position: 0% 70%, size: 150% auto}
-  news.html:         {src: spatial/ebe_section_1.webp, position: 0% 44%, size: 133% auto}
-  join.html:         {src: photos/ebe_eye_adobestock.jpg, position: 100% 38%, size: 70% auto, opacity: .9}   # Adobe Stock (licensed)
-  contact.html:      {src: spatial/ebe_section_2.webp, position: 100% 75%, size: 130% auto}
-  home_directions:   {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 55%, size: auto 118%, opacity: .5}   # Adobe Stock (licensed)
-  home_approach:     {src: spatial/ebe_section_3.webp, position: 100% 50%, size: auto 135%, opacity: .42}
+  research.html:      {src: spatial/ebe_section_3.webp, position: 100% 38%, size: 120% auto}
+  cephalopods.html:   {src: photos/ebe_sand_adobestock.jpg, position: 100% 62%, size: 72% auto, opacity: .9}   # Adobe Stock (licensed)
+  publications.html:  {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
+  tools.html:         {video: cell_flux_velocity, position: 100% 42%, size: 78% auto, opacity: .9}
+  people.html:        {src: renders/cells_gradient.webp, position: 100% 32%, size: 80% auto, opacity: .55}
+  news.html:          {src: spatial/ebe_section_1.webp, position: 0% 44%, size: 133% auto}
+  join.html:          {src: photos/ebe_eye_adobestock.jpg, position: 100% 38%, size: 70% auto, opacity: .9}   # Adobe Stock (licensed)
+  contact.html:       {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
+  teaching.html:      {src: renders/membrane_proteins.webp, position: 100% 40%, size: 80% auto, opacity: .65}
+  posters/index.html: {src: renders/cells_trajectories.webp, position: 100% 50%, size: 75% auto}
+  home_directions:    {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 55%, size: auto 118%, opacity: .5}   # Adobe Stock (licensed)
+  home_approach:      {src: renders/cells_pale.webp, position: 100% 50%, size: auto 110%, opacity: .3}
+  research_past:      {src: renders/cells_cloud.webp, position: 100% -120px, size: 40% auto, opacity: .55}   # section header, not page header
 
 nav:
   - {label: Research, href: research.html}

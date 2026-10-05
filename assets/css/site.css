@@ -414,6 +414,18 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
             mask-image: linear-gradient(200deg, #000 0%, transparent 70%);
   }
 }
+/* Section header: the image sits top right and fades out to the left and downward. */
+.accent-top .accent {
+  -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 80%), linear-gradient(180deg, #000 0, #000 120px, transparent 340px);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(90deg, transparent 30%, #000 80%), linear-gradient(180deg, #000 0, #000 120px, transparent 340px);
+          mask-composite: intersect;
+}
+/* Movie accent: positioned like a background image. Its last frame is the background still;
+   site.js swaps in the movie (.is-playing) on wide screens when motion is allowed. */
+.accent--video video { position: absolute; max-width: none; display: none; }
+.accent--video.is-playing { background-image: none !important; }
+.accent--video.is-playing video { display: block; }
 @media print { .accent { display: none; } }
 
 /* ---------- Research interests ---------- */

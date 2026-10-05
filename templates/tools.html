@@ -19,11 +19,13 @@
     <h2>Software</h2>
     {% for s in tools.software %}
     <article class="tool">
-      <a href="{{ s.url }}" rel="noopener">{{ m.img(s.image, s.name ~ ' logo', 240, cls='tool-logo') }}</a>
+      {% if s.image %}<a href="{{ s.url }}" rel="noopener">{{ m.img(s.image, s.name ~ ' logo', 240, cls='tool-logo') }}</a>{% else %}<div class="tool-logo-slot" aria-hidden="true"></div>{% endif %}
       <div>
+        {% if s.draft_flag %}<span class="draft-badge"></span>{% endif %}
         <h3><a href="{{ s.url }}" rel="noopener">{{ s.name }}</a></h3>
         {% if s.author %}<p class="by">Author: {{ s.author }}</p>{% endif %}
-        <p>{{ s.description }}</p>
+        {% if s.description %}<p>{{ s.description }}</p>{% endif %}
+        {{ m.draft(s) }}
       </div>
     </article>
     {% endfor %}

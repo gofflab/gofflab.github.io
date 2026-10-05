@@ -2,6 +2,20 @@
 # Text copy-edited Oct 2026. Fields may contain inline HTML.
 
 software:
+# image is optional; leave it out when a tool has no logo.
+- name: Cephexplorer
+  url: https://cephexplorer.gofflab.org
+  draft: "Description to come: what Cephexplorer contains and what visitors can do with it."
+- name: pyroNMF
+  url: https://github.com/gofflab/pyro_NMF
+  author: Kyla Woyshner
+  draft_flag: true
+  description: pyroNMF performs probabilistic non-negative matrix factorization, built on <a href="https://pyro.ai">Pyro</a>, to find patterns in single cell and spatial transcriptomics data. It reads and writes <a href="https://anndata.readthedocs.io">AnnData</a> objects directly, supports unsupervised runs and semi-supervised runs with fixed genes or fixed samples, and uses a GPU (CUDA or Apple Silicon) when one is available.
+- name: HCRProbeDesign
+  url: https://www.gofflab.org/HCRProbeDesign/
+  author: Loyal Goff
+  draft_flag: true
+  description: A command-line tool and Python package for designing HCR v3.0 split-initiator probe pairs from a target sequence. It tiles the target, filters candidate probes by GC content, melting temperature, homopolymers, and hairpins, and can use Bowtie2 to keep only probes that are unique in the genome. Install it with <code>pip install hcrprobedesign</code>.
 - name: pySeq 2501
   url: https://github.com/chaichontat/pyseq2501
   image: pyseq.png
@@ -41,5 +55,3 @@ snippets:
   text: <strong>TileIt:</strong> a simple Python utility for designing tiled oligos along FASTA sequences
 - url: https://github.com/gofflab/biolib
   text: '<strong>Biolib:</strong> a Python library of computational biology utilities accumulated over the years. Author: Loyal Goff'
-- url: https://github.com/gofflab/HCRProbeDesign
-  text: '<strong>HCRProbeDesign:</strong> a Python utility for selecting and designing optimized HCR v3.0 probes. Author: Loyal Goff'

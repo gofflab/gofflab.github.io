@@ -320,7 +320,7 @@ details.disclosure summary { cursor: pointer; font-family: var(--font-serif); fo
 .tool h3 a:hover { color: var(--accent-strong); }
 .tool p { color: var(--text-2); font-size: .95rem; }
 .tool .by { font-size: .85rem; color: var(--muted); margin: -.2rem 0 .6rem; }
-@media (max-width: 560px) { .tool { grid-template-columns: 1fr; } .tool-logo { width: 88px; height: 88px; } }
+@media (max-width: 560px) { .tool { grid-template-columns: 1fr; } .tool-logo { width: 88px; height: 88px; } .tool-logo-slot { display: none; } }
 
 .link-list { list-style: none; margin: 0; padding: 0; }
 .link-list li { padding: .85rem 0; border-top: 1px solid var(--line); }

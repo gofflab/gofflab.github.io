@@ -26,10 +26,19 @@ backdrop, and render movies, need a one-time prep first:
 `images/renders/` (and `assets/video/` for movies); see the script header for options.
 Posters dropped into `posters/` are listed automatically.
 
+## Previewing your edits
+
+```bash
+pip install -r scripts/requirements.txt   # once
+scripts/preview.sh                        # build, serve at http://localhost:8000, open the browser
+```
+
+Press Ctrl-C to stop. The preview leaves out Google Analytics; stopping it rebuilds the pages
+with analytics, so they are safe to commit.
+
 ## Building
 
 ```bash
-pip install -r scripts/requirements.txt
 python scripts/main.py                 # fetch PubMed/bioRxiv, render all pages
 python scripts/main.py --offline       # render from data/cache only
 python scripts/main.py --no-analytics  # local preview without the GA4 tag

@@ -19,7 +19,7 @@ accents:
   research.html:      {src: spatial/ebe_section_3.webp, position: 100% 38%, size: 120% auto}
   cephalopods.html:   {src: photos/ebe_sand_adobestock.jpg, position: 100% 62%, size: 72% auto, opacity: .9}   # Adobe Stock (licensed)
   publications.html:  {src: spatial/ebe_section_2.webp, position: 100% 30%, size: 125% auto}
-  tools.html:         {video: cell_flux_velocity, position: 100% 42%, size: 78% auto, opacity: .9}
+  tools.html:         {video: cell_flux_velocity, position: 50% 42%, size: 100% auto, opacity: .6}
   people.html:        {src: renders/cells_gradient.webp, position: 100% 32%, size: 80% auto, opacity: .55}
   news.html:          {src: spatial/ebe_section_1.webp, position: 0% 44%, size: 133% auto}
   join.html:          {src: photos/ebe_eye_adobestock.jpg, position: 100% 38%, size: 70% auto, opacity: .9}   # Adobe Stock (licensed)

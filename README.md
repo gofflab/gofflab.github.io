@@ -19,6 +19,10 @@ Content lives in `data/*.yaml`. Edit the YAML, then rebuild.
 | `data/tools.yaml` | Software, datasets, code snippets |
 | `data/contact.yaml` | Addresses and phone numbers |
 
+To keep an entry off the site without deleting it (a pre-release tool, a person who prefers not
+to be listed), add `hidden: true` to it in `data/tools.yaml` (software, datasets, snippets) or
+`data/people.yaml`. The build log lists what it hid. The YAML itself is public on GitHub.
+
 Photos go in `images/`; the build makes resized WebP copies in `assets/img/`.
 Page-header background images are set under `accents` in `data/site.yaml`. 3D renders on a grey
 backdrop, and render movies, need a one-time prep first:

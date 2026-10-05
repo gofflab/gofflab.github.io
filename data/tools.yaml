@@ -1,5 +1,7 @@
 # Software, datasets, and lab code snippets (merged from software.html, datasets.html, lab_resources.html).
 # Text copy-edited Oct 2026. Fields may contain inline HTML.
+# Add `hidden: true` to any software, dataset or snippet entry to leave it off the site
+# (e.g. before release). Note: this file is public on GitHub, so hidden entries are still readable here.
 
 software:
 # Newest first, by first release. image is optional; leave it out when a tool has no logo.

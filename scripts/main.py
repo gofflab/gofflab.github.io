@@ -318,6 +318,18 @@ def render(env, template, out, **ctx):
     return html.count('class="draft"')
 
 
+def tools_data():
+    """data/tools.yaml without entries marked `hidden: true` (pre-release items stay off the site)."""
+    tools = load_yaml('tools')
+    for key in ('software', 'datasets', 'snippets'):
+        items = tools.get(key) or []
+        hidden = [i.get('name') or i.get('title') or i.get('url') for i in items if i.get('hidden')]
+        tools[key] = [i for i in items if not i.get('hidden')]
+        if hidden:
+            log(f'Hidden in tools.yaml {key}: {", ".join(map(str, hidden))}')
+    return tools
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--offline', action='store_true', help='skip PubMed/bioRxiv fetch; use data/cache')
@@ -343,7 +355,7 @@ def main():
     common = dict(
         site=site, year=datetime.date.today().year,
         home=load_yaml('home'), research=load_yaml('research'), cephalopods=load_yaml('cephalopods'),
-        people=load_yaml('people'), tools=load_yaml('tools'), contact=load_yaml('contact'),
+        people=load_yaml('people'), tools=tools_data(), contact=load_yaml('contact'),
         genome=load_yaml('genome_ochier'), papers=papers, preprints=preprints, posters=posters(),
         news=news(papers, preprints))
 

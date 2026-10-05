@@ -6,6 +6,7 @@
 software:
 # Newest first, by first release. image is optional; leave it out when a tool has no logo.
 # links (optional) adds a row of extra links, e.g. documentation and source code.
+# status (optional) shows a badge: Active, Under development, Stable, Deprecated or Archived.
 # 2024-06, first commit
 - name: CephExplorer
   url: https://cephexplorer.gofflab.org/

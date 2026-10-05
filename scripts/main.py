@@ -318,6 +318,11 @@ def render(env, template, out, **ctx):
     return html.count('class="draft"')
 
 
+# Software status badges with their own color (see .status-- rules in site.css). Others show in grey.
+TOOL_STATUSES = {'active': 'Active', 'under-development': 'Under development', 'stable': 'Stable',
+                 'deprecated': 'Deprecated', 'archived': 'Archived'}
+
+
 def tools_data():
     """data/tools.yaml without entries marked `hidden: true` (pre-release items stay off the site)."""
     tools = load_yaml('tools')
@@ -327,6 +332,12 @@ def tools_data():
         tools[key] = [i for i in items if not i.get('hidden')]
         if hidden:
             log(f'Hidden in tools.yaml {key}: {", ".join(map(str, hidden))}')
+    for tool in tools['software']:
+        if tool.get('status'):
+            tool['status_class'] = re.sub(r'[^a-z]+', '-', tool['status'].lower()).strip('-')
+            if tool['status_class'] not in TOOL_STATUSES:
+                log(f'NOTE: {tool["name"]} has status "{tool["status"]}"; known statuses get colors: '
+                    + ', '.join(TOOL_STATUSES.values()))
     return tools
 
 

@@ -320,6 +320,17 @@ details.disclosure summary { cursor: pointer; font-family: var(--font-serif); fo
 .tool h3 a { color: var(--text); text-decoration: none; }
 .tool h3 a:hover { color: var(--accent-strong); }
 .tool p { color: var(--text-2); font-size: .95rem; }
+/* Software status badges: outlined so they read differently from the solid DRAFT badge. */
+.status {
+  display: inline-block; margin-left: 12px; padding: 3px 8px; border: 1px solid currentColor; border-radius: 999px;
+  font: 500 .66rem/1.2 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; vertical-align: 3px;
+  color: var(--muted);
+}
+.status--active { color: var(--accent-strong); }
+.status--under-development { color: #a9b8ff; }
+.status--stable { color: #9fd3a8; }
+.status--deprecated { color: #e79a8f; }
+.status--archived { color: var(--muted); }
 .tool .tool-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: .4rem 0 0; font-size: .88rem; }
 .tool .tool-links a { text-decoration: none; }
 .tool .tool-links a:hover { text-decoration: underline; }

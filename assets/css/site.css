@@ -316,6 +316,7 @@ details.disclosure summary { cursor: pointer; font-family: var(--font-serif); fo
 
 .tool { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding: 1.75rem 0; border-top: 1px solid var(--line); }
 .tool-logo { width: 120px; height: 120px; object-fit: contain; background: #f4f6f8; border-radius: 8px; padding: 10px; }
+.tool-logo--dark { background: var(--surface-2); border: 1px solid var(--line-strong); }
 .tool h3 a { color: var(--text); text-decoration: none; }
 .tool h3 a:hover { color: var(--accent-strong); }
 .tool p { color: var(--text-2); font-size: .95rem; }

@@ -6,11 +6,14 @@ software:
 # 2024-06, first commit
 - name: CephExplorer
   url: https://cephexplorer.gofflab.org/
+  author: Loyal Goff
   draft_flag: true
   description: An interactive atlas of gene families across cephalopod species, built on <a href="https://github.com/davidemms/OrthoFinder">OrthoFinder</a> results. Browse orthogroups and their descriptions, search for a gene to jump to its orthogroup, and inspect each family's gene tree, with controls that keep dense trees readable. CephExplorer makes it easier to spot gene family expansions, track orthologs across species, and support annotation work.
 # 2024-05, first commit
 - name: PyroNMF
   url: https://github.com/gofflab/pyro_NMF
+  image: pyronmf_logo.png
+  image_bg: dark   # white lettering; shown on a dark tile
   author: Kyla Woyshner
   draft_flag: true
   description: PyroNMF performs probabilistic non-negative matrix factorization, built on <a href="https://pyro.ai">Pyro</a>, to find patterns in single cell and spatial transcriptomics data. It reads and writes <a href="https://anndata.readthedocs.io">AnnData</a> objects directly, supports unsupervised runs and semi-supervised runs with fixed genes or fixed samples, and uses a GPU (CUDA or Apple Silicon) when one is available. A joint project of the Goff Lab and the Stein-O'Brien Lab.

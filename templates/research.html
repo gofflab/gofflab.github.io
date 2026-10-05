@@ -4,7 +4,6 @@
 <header class="page-head has-accent">
   {{ m.accent(page) }}
   <div class="wrap">
-    <span class="eyebrow">Research</span>
     <h1>Research</h1>
     <nav class="subnav" aria-label="On this page">
       <a href="#approach">Approach</a>
@@ -17,7 +16,6 @@
 <section class="section" id="approach">
   <div class="wrap narrow">
     {% if research.approach.draft_flag %}<span class="draft-badge"></span>{% endif %}
-    <span class="eyebrow">Approach</span>
     <h2>{{ research.approach.heading }}</h2>
     {% for para in research.approach.text %}<p{% if loop.first %} class="lede"{% endif %}>{{ para }}</p>{% endfor %}
   </div>
@@ -27,7 +25,6 @@
   <div class="wrap">
     <div class="narrow">
       {% if research.interests.draft_flag %}<span class="draft-badge"></span>{% endif %}
-      <span class="eyebrow">Current work</span>
       <h2>{{ research.interests.heading }}</h2>
       <p class="lede">{{ research.interests.intro }}</p>
     </div>
@@ -46,7 +43,6 @@
 <section class="section has-accent accent-top" id="past">
   {{ m.accent('research_past') }}
   <div class="wrap">
-    <span class="eyebrow">Past research</span>
     <h2>Themes from our earlier work</h2>
     {% for t in research.past_themes %}
     {% set refs = papers | selectattr('themes') | selectattr('themes', 'contains', t.id) | list %}

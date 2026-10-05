@@ -64,15 +64,6 @@ em { font-style: italic; }
 .skip { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 6px; }
 .skip:focus { left: 16px; }
 
-.eyebrow {
-  display: block;
-  margin: 0 0 1rem;
-  font: 500 .75rem/1.4 var(--font-mono);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
 .lede { font-size: 1.2rem; line-height: 1.6; color: var(--text-2); max-width: 46ch; }
 .muted { color: var(--muted); }
 .mono { font-family: var(--font-mono); }

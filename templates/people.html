@@ -9,7 +9,6 @@
 <header class="page-head has-accent">
   {{ m.accent(page) }}
   <div class="wrap">
-    <span class="eyebrow">People</span>
     <h1>Lab Members</h1>
     <nav class="subnav" aria-label="On this page">
       <a href="#current">Current members</a>
@@ -24,8 +23,8 @@
     <article class="pi person">
       {{ m.img(pi.photo, pi.alt or pi.name, 600, cls='portrait') }}
       <div>
-        <span class="eyebrow">{{ pi.role }}</span>
         <h2>{{ name_link(pi) }}</h2>
+        <p class="role">{{ pi.role }}</p>
         <p class="bio" style="font-size:1.02rem">{{ pi.bio }}</p>
       </div>
     </article>

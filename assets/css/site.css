@@ -455,7 +455,7 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
 /* ---------- Publication extras ---------- */
 
 .pub { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0 24px; align-items: start; }
-.pub-metric { min-width: 0; }
+.pub-metric { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .pub-metric .altmetric-embed { line-height: 0; }
 .pub-metric img { max-width: none; }
 /* Altmetric draws its score in dark text inside a transparent donut image; a light disc
@@ -464,7 +464,7 @@ address strong { color: var(--text); display: block; margin-bottom: .25rem; }
   /* Disc at ~90% of the badge so it stays tucked behind the donut's outer edge. */
   background: radial-gradient(circle closest-side, var(--text) 89%, transparent 90%);
 }
-@media (max-width: 560px) { .pub { grid-template-columns: 1fr; } .pub-metric { margin-top: .6rem; } }
+@media (max-width: 560px) { .pub { grid-template-columns: 1fr; } .pub-metric { margin-top: .6rem; flex-direction: row; } }
 
 /* bioRxiv wordmark */
 .biorxiv { white-space: nowrap; font-style: normal; }

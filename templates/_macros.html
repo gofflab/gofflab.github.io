@@ -26,9 +26,12 @@
 <a href="https://doi.org/{{ doi }}" rel="noopener">doi:{{ doi }}</a>
 {%- endmacro %}
 
-{# Altmetric donut, filled in by Altmetric's embed script; hidden when an item has no mentions. #}
-{% macro altmetric(attr, value) -%}
-<div class="pub-metric"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-link-target="_blank" data-{{ attr }}="{{ value }}"></div></div>
+{# Altmetric donut and Dimensions citation badge, filled in by each service's embed script
+   (loaded on publications.html). Each hides itself when an item has no mentions or citations.
+   Dimensions looks papers up by DOI, falling back to PubMed ID. #}
+{% macro metrics(attr, value, doi=None, pmid=None) -%}
+<div class="pub-metric"><div class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-link-target="_blank" data-{{ attr }}="{{ value }}"></div>
+{%- if doi or pmid %}<span class="__dimensions_badge_embed__" {% if doi %}data-doi="{{ doi }}"{% else %}data-pmid="{{ pmid }}"{% endif %} data-style="small_circle" data-legend="hover-left" data-hide-zero-citations="true"></span>{% endif %}</div>
 {%- endmacro %}
 
 {% macro paper(p) -%}
@@ -48,7 +51,7 @@
     </details>
     {% endif %}
   </div>
-  {{ altmetric('pmid', p.pmid) }}
+  {{ metrics('pmid', p.pmid, doi=p.doi, pmid=p.pmid) }}
 </li>
 {%- endmacro %}
 
@@ -69,7 +72,7 @@
     </details>
     {% endif %}
   </div>
-  {{ altmetric('doi', p.doi) }}
+  {{ metrics('doi', p.doi, doi=p.doi) }}
 </li>
 {%- endmacro %}
 

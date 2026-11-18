@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import '_macros.html' as m with context %}
+{# GitHub Pages serves this for any missing address, at that address, so every link here is
+   root-relative (root is "/" for this page). #}
+{% block content %}
+<header class="page-head has-accent">
+  {{ m.accent(page) }}
+  <div class="wrap">
+    <h1>Page not found</h1>
+    <p class="lede">This page doesn't exist, or it moved when the site was redesigned in 2026. Older pages, including the lab blog, were retired then.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap narrow">
+    <h2>Try one of these</h2>
+    <ul class="link-list">
+      <li><a href="{{ root }}index.html">Home</a></li>
+    {% for item in site.nav %}
+      <li><a href="{{ root }}{{ item.href }}">{{ item.label }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

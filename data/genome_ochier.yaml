@@ -1,6 +1,6 @@
 # O. chierchiae genome resource page (octopus_genome.html). Carried over verbatim.
 # Download links point at Dropbox for now; swap 'url' values once the assembly is deposited.
-# NOTE: the stringtie annotation .xlsx row repeats the type/size/MD5 of the row above it on the old site (needs correct values).
+# NOTE: the stringtie annotation .xlsx row still needs its size and MD5 (see that row).
 
 # Unlisted until the assembly is published: the page still builds at octopus_genome.html,
 # but nothing on the site links to it and search engines are asked not to index it.
@@ -78,9 +78,11 @@ downloads:
   - description: Assembled reference transcriptome sequence annotations (stringtie)
     file: stringtie_merged_assembly_annotation_20230505.xlsx
     url: https://www.dropbox.com/scl/fi/jrud32fspmlolxtsyph6f/stringtie_merged_assembly_annotation_20230505.xlsx?dl=0&rlkey=go2cfi00ws6lg7b3hn5wafr96
-    type: Gzipped FASTA
-    size: 32 MB
-    md5: 66524aeca6a845ebee08be0d4f162dd2
+    type: Excel spreadsheet
+    # size and md5 still needed: the old site repeated the row above's values here. On a downloaded
+    # copy: `ls -lh FILE` for size, `md5 FILE` (macOS) or `md5sum FILE` (Linux) for the checksum.
+    size:
+    md5:
   - description: O.bimaculoides transcriptome liftoff
     file: Ochier_liftoff_from_Obimac_20230207.gff3
     url: https://dl.dropboxusercontent.com/s/a4cb0buuz01bvag/Ochier_liftoff_from_Obimac_20230207.gff3

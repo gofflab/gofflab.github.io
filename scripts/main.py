@@ -44,6 +44,7 @@ PAGES = [
     ('contact.html', 'contact.html', 'Contact'),
     ('teaching.html', 'teaching.html', 'Teaching'),
     ('posters.html', 'posters/index.html', 'Posters'),
+    ('404.html', '404.html', 'Page not found'),   # served by GitHub Pages for any missing address
 ]
 
 # Old URLs kept alive as redirects so external links and bookmarks still work.
@@ -341,6 +342,27 @@ def tools_data():
     return tools
 
 
+def write_sitemap(site, common):
+    """sitemap.xml (pages meant to be found) and robots.txt pointing to it. No dates, so the
+    weekly rebuild doesn't change these files unless pages are added or removed."""
+    in_menu = {item['href'] for item in site['nav']}
+    skip = {'404.html'}
+    if common['genome'].get('unlisted'):
+        skip.add('octopus_genome.html')
+    if 'teaching.html' not in in_menu:
+        skip.add('teaching.html')   # draft page, not linked yet
+    urls = []
+    for _, out, _ in PAGES:
+        if out in skip:
+            continue
+        path = '' if out == 'index.html' else out.replace('index.html', '')
+        urls.append(f'  <url><loc>{site["url"]}/{path}</loc></url>')
+    (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
+                                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+                                      + '\n'.join(urls) + '\n</urlset>\n')
+    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\n\nSitemap: {site["url"]}/sitemap.xml\n')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--offline', action='store_true', help='skip PubMed/bioRxiv fetch; use data/cache')
@@ -372,12 +394,15 @@ def main():
 
     drafts = 0
     for template, out, title in PAGES:
-        depth = out.count('/')
-        drafts += render(env, template, out, page=out, title=title, root='../' * depth, **common)
+        # The 404 page is served at whatever address was requested, so its links must be root-relative.
+        root = '/' if out == '404.html' else '../' * out.count('/')
+        drafts += render(env, template, out, page=out, title=title, root=root, **common)
     for old, new in REDIRECTS.items():
         if new == 'octopus_genome.html' and common['genome'].get('unlisted'):
             new = 'cephalopods.html'
         render(env, '_redirect.html', old, target=new, root='', **common)
+
+    write_sitemap(site, common)
 
     for stale in WEB_IMG.glob('*.webp'):
         if stale.name not in USED_IMAGES:

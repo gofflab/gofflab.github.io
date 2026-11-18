@@ -35,9 +35,9 @@
           <tr>
             <td>{{ r.description }}</td>
             <td><a href="{{ r.url }}" rel="noopener">{{ r.file }}</a></td>
-            <td>{{ r.type }}</td>
-            <td style="white-space:nowrap">{{ r.size }}</td>
-            <td class="mono">{{ r.md5 }}</td>
+            <td>{{ r.type or '' }}</td>
+            <td style="white-space:nowrap">{{ r.size or '' }}</td>
+            <td class="mono">{{ r.md5 or '' }}</td>
           </tr>
         {% endfor %}
         </tbody>

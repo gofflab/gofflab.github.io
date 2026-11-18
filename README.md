@@ -51,5 +51,9 @@ python -m http.server                  # then open http://localhost:8000
 
 Layout is in `templates/` (Jinja2), styles in `assets/css/site.css`.
 
+The build also writes `sitemap.xml` and `robots.txt` (public pages only: not the 404 page, the
+unlisted genome page, or Teaching until it is in the menu), and `404.html`, which GitHub Pages
+shows for any address that doesn't exist.
+
 The `Rebuild site` GitHub Action re-runs the build weekly, on demand, and whenever
 site sources change on `master`, committing the refreshed pages.

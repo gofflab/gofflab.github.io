@@ -26,6 +26,7 @@ accents:
   contact.html:       {src: spatial/ebe_section_4.webp, position: 100% 55%, size: 120% auto}
   teaching.html:      {src: renders/membrane_proteins.webp, position: 100% 40%, size: 80% auto, opacity: .65}
   posters/index.html: {src: renders/cells_trajectories.webp, position: 100% 50%, size: 75% auto}
+  404.html:           {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 50%, size: 70% auto, opacity: .8}   # Adobe Stock (licensed)
   home_directions:    {src: photos/ebe_rimlit_adobestock.jpg, position: 100% 55%, size: auto 118%, opacity: .5}   # Adobe Stock (licensed)
   home_approach:      {src: renders/cells_pale.webp, position: 100% 50%, size: auto 110%, opacity: .3}
   research_past:      {src: renders/cells_cloud.webp, position: 100% -120px, size: 40% auto, opacity: .55}   # section header, not page header

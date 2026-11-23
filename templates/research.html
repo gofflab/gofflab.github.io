@@ -56,7 +56,7 @@
       </div>
       <div class="theme-refs">
         {% if refs %}
-        <h4>Papers{% if refs %} ({{ refs|length }}){% endif %} <span class="draft-badge" title="Theme tagging is a draft"></span></h4>
+        <h4>Papers{% if refs %} ({{ refs|length }}){% endif %}</h4>
         <ul class="compact-pubs">
         {% for p in refs %}{{ m.compact(p) }}{% endfor %}
         </ul>

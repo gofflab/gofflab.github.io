@@ -17,9 +17,9 @@ papers:
   - pmid: '17114923'   # Rational probe optimization and enhanced detection strategy for microR
   - pmid: '15469607'   # Evaluation of sense-strand mRNA amplification by comparative quantitat
   - pmid: '23222703'   # Differential analysis of gene regulation at transcript resolution with
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '22383036'   # Differential gene and transcript expression analysis of RNA-seq experi
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '21890647'   # Integrative annotation of human large intergenic noncoding RNAs reveal
     themes: [lncrna]
   - pmid: '23401553'   # Long noncoding RNAs regulate adipogenesis.
@@ -32,6 +32,7 @@ papers:
   - pmid: '24381249'   # Multiple knockout mouse models reveal lincRNAs are required for life a
     themes: [lncrna]
   - pmid: '24393486'   # RNase-mediated protein footprint sequencing reveals protein-binding si
+    themes: [experimental_methods]
   - pmid: '24463464'   # Topological organization of multichromosomal regions by the long inter
     themes: [lncrna]
   - pmid: '24714615'   # A positive feedback mechanism that regulates expression of miR-9 durin
@@ -63,26 +64,27 @@ papers:
   - pmid: '29499164'   # Single-Cell RNA-Seq of Mouse Dopaminergic Neurons Informs Candidate Ge
     themes: [variation, disease]
   - pmid: '30143323'   # Enter the Matrix: Factorization Uncovers Knowledge from Omics.
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '30188322'   # Transcriptional and epigenomic landscapes of CNS and non-CNS vascular 
   - pmid: '30866806'   # Linear models enable powerful differential activity analysis in massiv
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '30988181'   # Hypoxia tolerance in the Norrin-deficient retina and the chronically h
     themes: [disease]
   - pmid: '31128945'   # Single-Cell RNA-Seq Analysis of Retinal Development Identifies NFI Fac
     themes: [fate]
   - pmid: '31121116'   # Decomposing Cell Identity for Transfer Learning across Cellular Measur
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '31337651'   # Differential Variation Analysis Enables Detection of Tumor Heterogenei
-    themes: [variation, methods]
+    themes: [variation, computational_methods]
   - pmid: '32829096'   # Screening non-MAPT genes of the Chr17q21 H1 haplotype in Parkinson's d
     themes: [disease]
   - pmid: '32386599'   # Single-Cell Analysis of Human Retina Identifies Evolutionarily Conserv
     themes: [fate]
   - pmid: '32243843'   # Mitoregulin Controls beta-Oxidation in Human and Mouse Adipocytes.
   - pmid: '32167521'   # projectR: an R/Bioconductor package for transfer learning via PCA, NMF
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '31843893'   # Comprehensive analysis of a mouse model of spontaneous uveoretinitis u
+    themes: [disease]
   - pmid: '31581148'   # Increased expression of anion transporter SLC26A9 delays diabetes onse
   - pmid: '31503409'   # A screen of 1,049 schizophrenia and 30 Alzheimer's-associated variants
     themes: [disease]
@@ -90,6 +92,7 @@ papers:
     themes: [disease]
   - pmid: '33084572'   # Developmental, cellular, and behavioral phenotypes in a mouse model of
   - pmid: '33113347'   # Parallel Social Information Processing Circuits Are Differentially Imp
+    themes: [singlecell, disease]
   - pmid: '33277430'   # Striking heterogeneity of somatic L1 retrotransposition in single norm
     themes: [variation]
   - pmid: '33446502'   # An in vivo screen of noncoding loci reveals that Daedalus is a gatekee
@@ -97,30 +100,37 @@ papers:
   - pmid: '34266896'   # Differential Expression Levels of Sox9 in Early Neocortical Radial Gli
     themes: [fate]
   - pmid: '35148175'   # Follistatin promotes LIN28B-mediated supporting cell reprogramming and
+    themes: [development]
   - pmid: '35101061'   # Universal prediction of cell-cycle position using transfer learning.
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '35263579'   # Potter mosquito AgOr2
+    themes: [model_organisms]
   - pmid: '35463747'   # MacFarlane Smad3 heart
+    themes: [development]
   - pmid: '35998637'   # Kolodkin Tbx5 Direction selectivity
     themes: [fate]
   - pmid: '37316665'   # Psychadelics reopen the social critical period
+    themes: [psychadelics]
   - pmid: '37585461'   # HSCR PNAS paper
     themes: [fate]
   - pmid: '37812717'   # Sjogren's syndrome
+    themes: [disease]
   - pmid: '37989764'   # CoGAPS Notebooks
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '37885016'   # RNA velocity Genome Biology Paper
     themes: [methods]
   - pmid: '38108810'   # eLife MENS paper
     themes: [fate]
   - pmid: '38969603'   # CFTR paper with Cutting Lab
+    themes: [disease]
   - pmid: '39271675'   # BRN1/2 paper with Uli Nat Comm.
     themes: [fate]
   - pmid: '39495936'   # RGC paper with Kolodkin lab
     themes: [fate]
   - pmid: '40164771'   # Bergles OPC scRNA-Seq
+    themes: [fate]
   - pmid: '40457480'   # MNSF paper with Kasper
-    themes: [methods]
+    themes: [computational_methods]
   - pmid: '40844876'   # L6 Consensus cell types (w/ Brown lab)
     themes: [variation]
   - pmid: '40286269'   # Margolis heat stress neurons
@@ -130,6 +140,7 @@ papers:
   - pmid: '41686445'   # Johnston lab fovea paper
     themes: [fate]
   - pmid: '41889203'   # Bergles Glia paper
+    themes: [fate]
 
 preprints:
   - id: '157149'

@@ -5,7 +5,8 @@
 #   scripts/preview.sh 8080     # use another port
 #
 # Builds from the cached publication data without Google Analytics (so your own visits
-# aren't counted), serves the repo root, and opens your browser. Press Ctrl-C to stop;
+# aren't counted), serves the repo root as GitHub Pages would (any missing address shows
+# the site's 404 page), and opens your browser. Press Ctrl-C to stop;
 # the normal build, with analytics, is then restored so the pages are safe to commit.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -17,4 +18,4 @@ trap 'echo; echo "Restoring the normal build (with analytics)..."; python3 scrip
 url="http://localhost:$port/"
 echo "Previewing at $url  (Ctrl-C to stop)"
 ( sleep 1; open "$url" 2>/dev/null || xdg-open "$url" 2>/dev/null || true ) &
-python3 -m http.server "$port" --bind 127.0.0.1
+python3 scripts/serve.py "$port"   # like GitHub Pages: missing addresses show 404.html

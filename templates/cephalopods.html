@@ -1,17 +1,80 @@
 {% extends "base.html" %}
 {% import '_macros.html' as m with context %}
+{# Text lives in data/cephalopods.yaml. [@key] citations become linked (Author, Year) via the cite filter. #}
+{% macro badge(obj) %}{% if obj and obj.draft_flag %}<span class="draft-badge"></span>{% endif %}{% endmacro %}
 {% block content %}
+{% set c = cephalopods %}
 <header class="page-head has-accent">
   {{ m.accent(page) }}
   <div class="wrap">
     <h1>Cephalopods</h1>
-    {{ m.draft(cephalopods.intro) }}
+    {{ badge(c.intro) }}
+    {% if c.intro.text %}<p class="lede">{{ c.intro.text|cite }}</p>{% endif %}
+    <nav class="subnav" aria-label="On this page">
+      {% for s in c.sections %}<a href="#{{ s.id }}">{{ s.nav }}</a>{% endfor %}
+      {% for s in [c.frontier, c.reading] if s %}<a href="#{{ s.id }}">{{ s.nav }}</a>{% endfor %}
+      {% if c.cited %}<a href="#references">References</a>{% endif %}
+    </nav>
   </div>
 </header>
 
-{% set listed = cephalopods.resources | rejectattr('genome') | list if genome.unlisted else cephalopods.resources %}
-<section class="section">
+{# Backgrounds alternate: prose sections, then open questions (shaded), reading list, resources (shaded), references. #}
+{% for s in c.sections %}
+<section class="section{% if loop.index is even %} section--alt{% endif %}" id="{{ s.id }}">
+  <div class="wrap narrow">
+    {{ badge(s) }}
+    <h2>{{ s.heading }}</h2>
+    {% for para in s.text %}<p>{{ para|cite }}</p>{% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+{% if c.frontier %}
+<section class="section section--alt" id="{{ c.frontier.id }}">
   <div class="wrap">
+    <div class="narrow">
+      {{ badge(c.frontier) }}
+      <h2>{{ c.frontier.heading }}</h2>
+      {% if c.frontier.intro %}<p>{{ c.frontier.intro|cite }}</p>{% endif %}
+    </div>
+    <div class="grid grid-2 interests">
+    {% for it in c.frontier['items'] %}
+      <article class="interest">
+        <h3>{{ it.title }}</h3>
+        <p class="question">{{ it.question }}</p>
+        <p>{{ it.text|cite }}</p>
+      </article>
+    {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if c.reading %}
+<section class="section" id="{{ c.reading.id }}">
+  <div class="wrap narrow">
+    {{ badge(c.reading) }}
+    <h2>{{ c.reading.heading }}</h2>
+    {% if c.reading.intro %}<p>{{ c.reading.intro|cite }}</p>{% endif %}
+    <ul class="reading-list">
+    {% for it in c.reading['items'] if it.paper %}
+      {% set r = it.paper %}
+      <li>
+        <a class="reading-title" href="https://doi.org/{{ r.doi }}" rel="noopener">{{ r.title }}</a>
+        <p class="pub-authors">{{ r.authors }}</p>
+        <p class="pub-venue">{{ r.journal }}, {{ r.year }}</p>
+        {% if it.note %}<p class="reading-note">{{ it.note }}</p>{% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+{% set listed = c.resources | rejectattr('genome') | list if genome.unlisted else c.resources %}
+{% if listed or (c.more and c.more.draft) %}
+<section class="section section--alt" id="resources">
+  <div class="wrap{% if not listed %} narrow{% endif %}">
     {% if listed %}
     <h2>Resources</h2>
     <div class="grid grid-2" style="margin-top: 2rem">
@@ -28,7 +91,21 @@
     {% endfor %}
     </div>
     {% endif %}
-    {{ m.draft(cephalopods.more) }}
+    {{ m.draft(c.more) }}
   </div>
 </section>
+{% endif %}
+
+{% if c.cited %}
+<section class="section" id="references">
+  <div class="wrap narrow">
+    <h2>References</h2>
+    <ul class="references">
+    {% for r in c.cited %}
+      <li id="ref-{{ r.key }}">{{ r.authors }} ({{ r.year }}). {{ r.title }}. <em>{{ r.journal }}</em> {{ r.volume }}. <a href="https://doi.org/{{ r.doi }}" rel="noopener">doi:{{ r.doi }}</a></li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
 {% endblock %}

@@ -11,7 +11,7 @@ Content lives in `data/*.yaml`. Edit the YAML, then rebuild.
 | `data/site.yaml` | Lab name, tagline, menu, footer links, funders, GA4 ID |
 | `data/home.yaml` | Homepage sections |
 | `data/research.yaml` | Research page (approach, future directions, past themes) |
-| `data/cephalopods.yaml` | Cephalopods hub page |
+| `data/cephalopods.yaml` | Cephalopods page: text, open questions, reading list, references |
 | `data/genome_ochier.yaml` | *O. chierchiae* genome downloads and stats |
 | `data/publications.yaml` | PMIDs and bioRxiv IDs (metadata is fetched automatically) |
 | `data/people.yaml` | Current members, alumni, rotation students |
@@ -22,6 +22,10 @@ Content lives in `data/*.yaml`. Edit the YAML, then rebuild.
 To keep an entry off the site without deleting it (a pre-release tool, a person who prefers not
 to be listed), add `hidden: true` to it in `data/tools.yaml` (software, datasets, snippets) or
 `data/people.yaml`. The build log lists what it hid. The YAML itself is public on GitHub.
+
+On the Cephalopods page, cite with `[@key]` (or `[@key1; @key2]`) in any text; each key must be
+listed under `references` in `data/cephalopods.yaml`. Citations render as linked (Author, Year),
+and the reference list shows only what the text cites. The build warns about unknown keys.
 
 Photos go in `images/`; the build makes resized WebP copies in `assets/img/`.
 Page-header background images are set under `accents` in `data/site.yaml`. 3D renders on a grey

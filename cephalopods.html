@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
-  <link rel="stylesheet" href="assets/css/site.css?v=2bfeff9cc5">
+  <link rel="stylesheet" href="assets/css/site.css?v=f1e263a4ee">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -59,12 +59,167 @@
   <div class="accent" aria-hidden="true" style="background-image:url('assets/img/photos__ebe_sand_adobestock-1600.webp');background-position:100% 62%;background-size:72% auto;--accent-opacity:0.9;"></div>
   <div class="wrap">
     <h1>Cephalopods</h1>
-    <div class="draft">Introduction to the lab's cephalopod current focus.</div>
+    <span class="draft-badge"></span>
+<p class="lede">Octopuses, squid, and cuttlefish have the largest nervous systems of any invertebrate, built on a body plan very different from our own. We study how these brains develop, and what they can teach us about how complex nervous systems evolve. This page offers a short introduction to cephalopods in neuroscience and a reading list for anyone new to the field.</p>    <nav class="subnav" aria-label="On this page">
+<a href="#about">About</a><a href="#history">History</a><a href="#models">Model organisms</a><a href="#frontier">Open questions</a><a href="#reading">Papers worth reading</a><a href="#references">References</a>    </nav>
   </div>
 </header>
-<section class="section">
+<section class="section" id="about">
+  <div class="wrap narrow">
+    <span class="draft-badge"></span>
+    <h2>About cephalopods</h2>
+<p>Cephalopods are marine mollusks, related to snails and clams. The living species fall into two groups. The nautiluses keep an external shell. The coleoids, which include octopuses, squid, and cuttlefish, have reduced or lost the shell and depend instead on speed, camouflage, and a large brain. All cephalopods are predators, and most coleoids live only one or two years.</p><p>Coleoids have the largest nervous systems of any invertebrate, with neuron numbers comparable to those of small mammals <span class="cite">(<a href="#ref-deryckere2021">Deryckere et al., 2021</a>; <a href="#ref-lassnig2026">Lassnig et al., 2026</a>)</span>. Much of this nervous system lies outside the brain. The arms of an octopus contain neural networks that can drive complex movements with little direction from the brain <span class="cite">(<a href="#ref-sumbre2001">Sumbre et al., 2001</a>)</span>. These animals learn and remember, use tools, and change the color and pattern of their skin to blend into their surroundings <span class="cite">(<a href="#ref-elagoz2024">Elagoz et al., 2024</a>)</span>.</p><p>Cephalopods and vertebrates last shared a common ancestor about 580 million years ago <span class="cite">(<a href="#ref-elagoz2024">Elagoz et al., 2024</a>)</span>. Their large brains, camera-type eyes, and complex behaviors evolved independently <span class="cite">(<a href="#ref-napoli2022">Napoli et al., 2022</a>)</span>. Cephalopods therefore offer a rare natural experiment, a second and separate solution to the problem of building a large and capable brain.</p>  </div>
+</section>
+<section class="section section--alt" id="history">
+  <div class="wrap narrow">
+    <span class="draft-badge"></span>
+    <h2>Cephalopods in the history of neuroscience</h2>
+<p>Cephalopods have shaped neuroscience for nearly a century. In 1936, J. Z. Young recognized that the giant nerve fibers of the squid, up to about a millimeter across, are single axons <span class="cite">(<a href="#ref-keynes2005">Keynes, 2005</a>)</span>. Their size made it possible to thread electrodes inside a living axon. Hodgkin and Huxley used the squid giant axon to measure the ionic currents behind the action potential and to describe them in a mathematical model still in use today <span class="cite">(<a href="#ref-hodgkin1952">Hodgkin &amp; Huxley, 1952</a>)</span>. The work earned them a share of the 1963 Nobel Prize.</p><p>The squid giant synapse did the same for synaptic transmission. Katz and Miledi used it to show that depolarizing the presynaptic terminal releases transmitter even when action potentials are blocked <span class="cite">(<a href="#ref-katz1967">Katz &amp; Miledi, 1967</a>)</span>. Squid axons also gave cell biologists a view of the interior of a neuron. Axoplasm squeezed from the giant axon let researchers watch organelles travel along microtubules, work that led to the discovery of the motor protein kinesin <span class="cite">(<a href="#ref-vale1985">Vale et al., 1985</a>)</span>.</p><p>The octopus, meanwhile, became a model for learning and memory. Boycott and Young identified brain regions required for memory, including the vertical lobe <span class="cite">(<a href="#ref-boycott1955">Boycott &amp; Young, 1955</a>)</span>. Decades later, recordings from the vertical lobe revealed long-term potentiation, the activity-dependent strengthening of synapses thought to underlie memory in the vertebrate hippocampus <span class="cite">(<a href="#ref-hochner2003">Hochner et al., 2003</a>)</span>.</p><p>Genomics brought new surprises. The first octopus genome revealed large expansions of two gene families, the protocadherins, which regulate neuronal development, and the C2H2 zinc-finger transcription factors. Both were previously thought to be greatly enlarged only in vertebrates <span class="cite">(<a href="#ref-albertin2015">Albertin et al., 2015</a>)</span>. Coleoids also recode many neural proteins through A-to-I RNA editing, on a scale not seen in other animals <span class="cite">(<a href="#ref-liscovitchbrauer2017">Liscovitch-Brauer et al., 2017</a>)</span>.</p>  </div>
+</section>
+<section class="section" id="models">
+  <div class="wrap narrow">
+    <span class="draft-badge"></span>
+    <h2>A non-traditional model organism</h2>
+<p>Most of what we know about brain development comes from a few species, chiefly mice, zebrafish, flies, and worms. Studying an animal as distant from these as a cephalopod tests which features of brain development are universal and which belong to one lineage. Where cephalopods and vertebrates share a mechanism, it may reflect a deep constraint on how large brains can be built. Where they differ, they reveal alternatives that the standard models cannot show us.</p><p>For most of their history in the laboratory, cephalopods were wild-caught adults, prized for a few remarkable cells or behaviors, and genetics and developmental biology in these animals lagged far behind. That gap is closing. Genome assemblies are now available for several species <span class="cite">(<a href="#ref-albertin2015">Albertin et al., 2015</a>; <a href="#ref-destanovic2023">Destanović et al., 2023</a>)</span>. CRISPR-Cas9 gene knockout works efficiently in squid embryos <span class="cite">(<a href="#ref-crawford2020">Crawford et al., 2020</a>)</span>, and an albino line of the hummingbird bobtail squid made this way allows imaging of neural activity in living animals <span class="cite">(<a href="#ref-ahuja2023">Ahuja et al., 2023</a>)</span>. Single-cell atlases have begun to catalog the cell types of octopus and squid brains <span class="cite">(<a href="#ref-styfhals2022">Styfhals et al., 2022</a>; <a href="#ref-songcocasey2022">Songco-Casey et al., 2022</a>; <a href="#ref-duruz2023">Duruz et al., 2023</a>)</span>, and multiplexed in situ hybridization with tissue clearing can map gene expression across whole embryos <span class="cite">(<a href="#ref-elagoz2022">Elagoz et al., 2022</a>)</span>.</p><p>Just as important, several species can now be raised through their full life cycle in the laboratory. The hummingbird bobtail squid, <em>Euprymna berryi</em>, produces large numbers of embryos and can be cultured throughout its life <span class="cite">(<a href="#ref-ahuja2023">Ahuja et al., 2023</a>)</span>. The lesser Pacific striped octopus, <em>Octopus chierchiae</em>, is small and breeds repeatedly, unlike most octopuses, which reproduce once and die <span class="cite">(<a href="#ref-grearson2021">Grearson et al., 2021</a>)</span>. For the common octopus, an incubation system and staging atlas have opened embryonic development to laboratory study <span class="cite">(<a href="#ref-deryckere2020">Deryckere et al., 2020</a>)</span>.</p><p>Research with cephalopods also carries responsibilities. European Union rules adopted in 2010 extend animal research protections to cephalopods, the only invertebrates they cover, and researchers have worked to define standards for their care and welfare <span class="cite">(<a href="#ref-fiorito2014">Fiorito et al., 2014</a>)</span>.</p>  </div>
+</section>
+<section class="section section--alt" id="frontier">
   <div class="wrap">
+    <div class="narrow">
+      <span class="draft-badge"></span>
+      <h2>Open questions in cephalopod neurodevelopment</h2>
+<p>Coleoid embryos develop directly, without metamorphosis, from large yolk-rich eggs <span class="cite">(<a href="#ref-buresi2016">Buresi et al., 2016</a>)</span>. Their central nervous system follows the molluscan plan, a ring of ganglia around the esophagus, yet parts of its development resemble that of vertebrates <span class="cite">(<a href="#ref-elagoz2024">Elagoz et al., 2024</a>)</span>. These are the questions we find most exciting.</p>    </div>
+    <div class="grid grid-2 interests">
+      <article class="interest">
+        <h3>Where neurons come from</h3>
+        <p class="question">How do neurons born outside the brain find their way into it?</p>
+        <p>In octopus embryos, a major pool of neural progenitors lies outside the developing brain, in the lateral lips beside the eyes. Their progeny migrate long distances to reach their places in the brain <span class="cite">(<a href="#ref-deryckere2021">Deryckere et al., 2021</a>)</span>, recalling the long-distance neuronal migration of vertebrate brains <span class="cite">(<a href="#ref-elagoz2024">Elagoz et al., 2024</a>)</span>. What guides these cells, and how each finds its destination, is an open question.</p>
+      </article>
+      <article class="interest">
+        <h3>Glia as architects</h3>
+        <p class="question">What role do glia play in building the cephalopod brain?</p>
+        <p>Glia have received far less attention than neurons in cephalopods. A recent single-cell study of octopus embryos found an early population of glia, distinct from neural progenitors, whose gene expression suggests that it guides cell migration, axon guidance, and brain patterning <span class="cite">(<a href="#ref-lassnig2026">Lassnig et al., 2026</a>)</span>. A related glial type in an apple snail lacks these guidance genes, which suggests that glia took on new roles as the cephalopod brain expanded.</p>
+      </article>
+      <article class="interest">
+        <h3>Convergent or conserved?</h3>
+        <p class="question">When cephalopods and vertebrates build similar structures, do they use the same developmental tools?</p>
+        <p>Squid retinal development uses mechanisms that are hallmarks of the vertebrate retina, including nuclear migration in dividing progenitors and Notch signaling that controls cell fate <span class="cite">(<a href="#ref-koenig2016">Koenig et al., 2016</a>; <a href="#ref-napoli2022">Napoli et al., 2022</a>)</span>. Yet the squid lens borrows a gene network that patterns limbs in other animals <span class="cite">(<a href="#ref-neal2022">Neal et al., 2022</a>)</span>, and in the yolk-rich cuttlefish embryo, genes that pattern the nervous system from midline to edge appear in a reversed arrangement <span class="cite">(<a href="#ref-buresi2016">Buresi et al., 2016</a>)</span>. Separating shared constraints from independent inventions is a central task for the field.</p>
+      </article>
+      <article class="interest">
+        <h3>Cell type diversity</h3>
+        <p class="question">How does a cephalopod brain generate its many kinds of neurons?</p>
+        <p>Single-cell atlases now catalog neurons and glia in octopus and squid <span class="cite">(<a href="#ref-styfhals2022">Styfhals et al., 2022</a>; <a href="#ref-songcocasey2022">Songco-Casey et al., 2022</a>; <a href="#ref-duruz2023">Duruz et al., 2023</a>)</span>. Neural progenitors express conserved neurogenic transcription factors such as achaete-scute and neurogenin <span class="cite">(<a href="#ref-deryckere2021">Deryckere et al., 2021</a>)</span>, but cephalopods have also expanded gene families, including protocadherins and microRNAs <span class="cite">(<a href="#ref-albertin2015">Albertin et al., 2015</a>; <a href="#ref-zolotarov2022">Zolotarov et al., 2022</a>)</span>, and recode proteins by RNA editing <span class="cite">(<a href="#ref-liscovitchbrauer2017">Liscovitch-Brauer et al., 2017</a>)</span>. How these innovations help specify cell identity during development is largely unknown.</p>
+      </article>
+      <article class="interest">
+        <h3>A brain that keeps growing</h3>
+        <p class="question">How does a brain keep adding neurons while it is already in use?</p>
+        <p>Young cephalopods must hunt and evade predators with a brain far smaller than an adult's. Neurogenesis continues after hatching, at least in tissues such as the cuttlefish retina <span class="cite">(<a href="#ref-ariasmontecino2024">Arias-Montecino et al., 2024</a>)</span>. Where new neurons arise in the growing brain, how they join working circuits, and how experience shapes this growth are open questions, and central to <a href="research.html#interests">our own work</a>.</p>
+      </article>
+      <article class="interest">
+        <h3>Development in a changing ocean</h3>
+        <p class="question">How does temperature shape the developing nervous system?</p>
+        <p>Cephalopod embryos develop at the temperature of the surrounding sea. Chronic heat stress turns down genes for nervous system development in octopus embryos <span class="cite">(<a href="#ref-galindotorres2024">Galindo-Torres et al., 2024</a>)</span>, and octopuses change RNA editing at more than 13,000 codons, many in neural proteins, after a shift in water temperature <span class="cite">(<a href="#ref-birk2023">Birk et al., 2023</a>)</span>. Whether such flexibility protects the developing brain as oceans warm remains to be seen.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="reading">
+  <div class="wrap narrow">
+    <span class="draft-badge"></span>
+    <h2>Papers worth reading</h2>
+<p>Recent work on embryonic neurodevelopment in cephalopods, newest first. If you are new to the field, start with the review by Elagoz and colleagues.</p>    <ul class="reading-list">
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1016/j.cub.2026.09.068" rel="noopener">Dynamic roles of embryonic glial cells in octopus brain development</a>
+        <p class="pub-authors">Lassnig MA, Geslain E, Nguyen B, et al.</p>
+        <p class="pub-venue">Curr Biol, 2026</p>
+<p class="reading-note">Single-cell multiomics of octopus embryos reveals an early glial population that may organize neuronal migration and wiring.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1186/s13064-024-00186-2" rel="noopener">Embryonic development of a centralised brain in coleoid cephalopods</a>
+        <p class="pub-authors">Elagoz AM, Van Dijck M, Lassnig M, et al.</p>
+        <p class="pub-venue">Neural Dev, 2024</p>
+<p class="reading-note">A review of neurogenesis, migration, and patterning in coleoid embryos, with a clear account of open problems. The best place to start.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1016/j.cub.2022.10.027" rel="noopener">Cephalopod retinal development shows vertebrate-like mechanisms of neurogenesis</a>
+        <p class="pub-authors">Napoli FR, Daly CM, Neal S, et al.</p>
+        <p class="pub-venue">Curr Biol, 2022</p>
+<p class="reading-note">Live imaging shows that squid retinal neurogenesis relies on nuclear migration and Notch signaling, hallmarks of the vertebrate retina.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1038/s41467-022-35198-1" rel="noopener">Cell type diversity in a developing octopus brain</a>
+        <p class="pub-authors">Styfhals R, Zolotarov G, Hulselmans G, et al.</p>
+        <p class="pub-venue">Nat Commun, 2022</p>
+<p class="reading-note">A cell type atlas of the young octopus brain, mapped onto brain lobes, in which vertical lobe cells resemble the Kenyon cells of flies.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.3389/fphys.2022.882413" rel="noopener">Optimization of whole mount RNA multiplexed in situ hybridization chain reaction with immunohistochemistry, clearing and imaging to visualize octopus embryonic neurogenesis</a>
+        <p class="pub-authors">Elagoz AM, Styfhals R, Maccuro S, et al.</p>
+        <p class="pub-venue">Front Physiol, 2022</p>
+<p class="reading-note">A protocol for whole-mount multiplexed HCR, immunostaining, clearing, and light-sheet imaging of octopus embryos, with code for probe design.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1186/s12915-021-01182-2" rel="noopener">Co-option of the limb patterning program in cephalopod eye development</a>
+        <p class="pub-authors">Neal S, McCulloch KJ, Napoli FR, et al.</p>
+        <p class="pub-venue">BMC Biol, 2022</p>
+<p class="reading-note">The squid lens develops using the gene network that patterns the limbs of flies, a striking case of co-option.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.7554/eLife.69161" rel="noopener">Identification of neural progenitor cells and their progeny reveals long distance migration in the developing octopus brain</a>
+        <p class="pub-authors">Deryckere A, Styfhals R, Elagoz AM, et al.</p>
+        <p class="pub-venue">eLife, 2021</p>
+<p class="reading-note">Neural progenitors outside the octopus brain generate neurons that migrate long distances to reach their lobes.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1186/s12861-020-00212-6" rel="noopener">A practical staging atlas to study embryonic development of <em>Octopus vulgaris</em> under controlled laboratory conditions</a>
+        <p class="pub-authors">Deryckere A, Styfhals R, Vidal EAG, et al.</p>
+        <p class="pub-venue">BMC Dev Biol, 2020</p>
+<p class="reading-note">An incubation system and staging atlas that make octopus embryos practical to study in the laboratory.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1242/dev.134254" rel="noopener">Eye development and photoreceptor differentiation in the cephalopod <em>Doryteuthis pealeii</em></a>
+        <p class="pub-authors">Koenig KM, Sun P, Meyer E, et al.</p>
+        <p class="pub-venue">Development, 2016</p>
+<p class="reading-note">Establishes squid eye development as an experimental model, with lineage tracing and functional tests of Notch signaling.</p>      </li>
+      <li>
+        <a class="reading-title" href="https://doi.org/10.1016/j.ydbio.2016.04.027" rel="noopener">Nervous system development in cephalopods: how egg yolk-richness modifies the topology of the mediolateral patterning system</a>
+        <p class="pub-authors">Buresi A, Andouche A, Navet S, et al.</p>
+        <p class="pub-venue">Dev Biol, 2016</p>
+<p class="reading-note">Neural patterning genes in cuttlefish embryos show how a yolk-rich egg rearranges a conserved body plan.</p>      </li>
+    </ul>
+  </div>
+</section>
+<section class="section section--alt" id="resources">
+  <div class="wrap narrow">
     <div class="draft">Other species, datasets, protocols, or husbandry resources to list here.</div>
+  </div>
+</section>
+<section class="section" id="references">
+  <div class="wrap narrow">
+    <h2>References</h2>
+    <ul class="references">
+      <li id="ref-ahuja2023">Ahuja N, Hwaun E, Pungor JR, et al. (2023). Creation of an albino squid line by CRISPR-Cas9 and its application for in vivo functional imaging of neural activity. <em>Curr Biol</em> 33:2774–2783.e5. <a href="https://doi.org/10.1016/j.cub.2023.05.066" rel="noopener">doi:10.1016/j.cub.2023.05.066</a></li>
+      <li id="ref-albertin2015">Albertin CB, Simakov O, Mitros T, et al. (2015). The octopus genome and the evolution of cephalopod neural and morphological novelties. <em>Nature</em> 524:220–224. <a href="https://doi.org/10.1038/nature14668" rel="noopener">doi:10.1038/nature14668</a></li>
+      <li id="ref-ariasmontecino2024">Arias-Montecino A, Sykes A, Álvarez-Hernán G, et al. (2024). Histological and scanning electron microscope observations on the developing retina of the cuttlefish (<em>Sepia officinalis</em> Linnaeus, 1758). <em>Tissue Cell</em> 88:102417. <a href="https://doi.org/10.1016/j.tice.2024.102417" rel="noopener">doi:10.1016/j.tice.2024.102417</a></li>
+      <li id="ref-birk2023">Birk MA, Liscovitch-Brauer N, Dominguez MJ, et al. (2023). Temperature-dependent RNA editing in octopus extensively recodes the neural proteome. <em>Cell</em> 186:2544–2555.e13. <a href="https://doi.org/10.1016/j.cell.2023.05.004" rel="noopener">doi:10.1016/j.cell.2023.05.004</a></li>
+      <li id="ref-boycott1955">Boycott BB, Young JZ (1955). A memory system in <em>Octopus vulgaris</em> Lamarck. <em>Proc R Soc Lond B Biol Sci</em> 143:449–480. <a href="https://doi.org/10.1098/rspb.1955.0024" rel="noopener">doi:10.1098/rspb.1955.0024</a></li>
+      <li id="ref-buresi2016">Buresi A, Andouche A, Navet S, et al. (2016). Nervous system development in cephalopods: how egg yolk-richness modifies the topology of the mediolateral patterning system. <em>Dev Biol</em> 415:143–156. <a href="https://doi.org/10.1016/j.ydbio.2016.04.027" rel="noopener">doi:10.1016/j.ydbio.2016.04.027</a></li>
+      <li id="ref-crawford2020">Crawford K, Diaz Quiroz JF, Koenig KM, et al. (2020). Highly efficient knockout of a squid pigmentation gene. <em>Curr Biol</em> 30:3484–3490.e4. <a href="https://doi.org/10.1016/j.cub.2020.06.099" rel="noopener">doi:10.1016/j.cub.2020.06.099</a></li>
+      <li id="ref-deryckere2021">Deryckere A, Styfhals R, Elagoz AM, et al. (2021). Identification of neural progenitor cells and their progeny reveals long distance migration in the developing octopus brain. <em>eLife</em> 10:e69161. <a href="https://doi.org/10.7554/eLife.69161" rel="noopener">doi:10.7554/eLife.69161</a></li>
+      <li id="ref-deryckere2020">Deryckere A, Styfhals R, Vidal EAG, et al. (2020). A practical staging atlas to study embryonic development of <em>Octopus vulgaris</em> under controlled laboratory conditions. <em>BMC Dev Biol</em> 20:7. <a href="https://doi.org/10.1186/s12861-020-00212-6" rel="noopener">doi:10.1186/s12861-020-00212-6</a></li>
+      <li id="ref-destanovic2023">Destanović D, Schultz DT, Styfhals R, et al. (2023). A chromosome-level reference genome for the common octopus, <em>Octopus vulgaris</em> (Cuvier, 1797). <em>G3 (Bethesda)</em> 13:jkad220. <a href="https://doi.org/10.1093/g3journal/jkad220" rel="noopener">doi:10.1093/g3journal/jkad220</a></li>
+      <li id="ref-duruz2023">Duruz J, Sprecher M, Kaldun JC, et al. (2023). Molecular characterization of cell types in the squid <em>Loligo vulgaris</em>. <em>eLife</em> 12:e80670. <a href="https://doi.org/10.7554/eLife.80670" rel="noopener">doi:10.7554/eLife.80670</a></li>
+      <li id="ref-elagoz2022">Elagoz AM, Styfhals R, Maccuro S, et al. (2022). Optimization of whole mount RNA multiplexed in situ hybridization chain reaction with immunohistochemistry, clearing and imaging to visualize octopus embryonic neurogenesis. <em>Front Physiol</em> 13:882413. <a href="https://doi.org/10.3389/fphys.2022.882413" rel="noopener">doi:10.3389/fphys.2022.882413</a></li>
+      <li id="ref-elagoz2024">Elagoz AM, Van Dijck M, Lassnig M, et al. (2024). Embryonic development of a centralised brain in coleoid cephalopods. <em>Neural Dev</em> 19:8. <a href="https://doi.org/10.1186/s13064-024-00186-2" rel="noopener">doi:10.1186/s13064-024-00186-2</a></li>
+      <li id="ref-fiorito2014">Fiorito G, Affuso A, Anderson DB, et al. (2014). Cephalopods in neuroscience: regulations, research and the 3Rs. <em>Invert Neurosci</em> 14:13–36. <a href="https://doi.org/10.1007/s10158-013-0165-x" rel="noopener">doi:10.1007/s10158-013-0165-x</a></li>
+      <li id="ref-galindotorres2024">Galindo-Torres P, Rosas C, Ramos-Rodríguez S, et al. (2024). Chronic thermal stress on <em>Octopus maya</em> embryos down-regulates epigenome-related genes and those involved in the nervous system development and morphogenesis. <em>Comp Biochem Physiol Part D Genomics Proteomics</em> 52:101332. <a href="https://doi.org/10.1016/j.cbd.2024.101332" rel="noopener">doi:10.1016/j.cbd.2024.101332</a></li>
+      <li id="ref-grearson2021">Grearson AG, Dugan A, Sakmar T, et al. (2021). The lesser Pacific striped octopus, <em>Octopus chierchiae</em>: an emerging laboratory model. <em>Front Mar Sci</em> 8:753483. <a href="https://doi.org/10.3389/fmars.2021.753483" rel="noopener">doi:10.3389/fmars.2021.753483</a></li>
+      <li id="ref-hochner2003">Hochner B, Brown ER, Langella M, et al. (2003). A learning and memory area in the octopus brain manifests a vertebrate-like long-term potentiation. <em>J Neurophysiol</em> 90:3547–3554. <a href="https://doi.org/10.1152/jn.00645.2003" rel="noopener">doi:10.1152/jn.00645.2003</a></li>
+      <li id="ref-hodgkin1952">Hodgkin AL, Huxley AF (1952). A quantitative description of membrane current and its application to conduction and excitation in nerve. <em>J Physiol</em> 117:500–544. <a href="https://doi.org/10.1113/jphysiol.1952.sp004764" rel="noopener">doi:10.1113/jphysiol.1952.sp004764</a></li>
+      <li id="ref-katz1967">Katz B, Miledi R (1967). A study of synaptic transmission in the absence of nerve impulses. <em>J Physiol</em> 192:407–436. <a href="https://doi.org/10.1113/jphysiol.1967.sp008307" rel="noopener">doi:10.1113/jphysiol.1967.sp008307</a></li>
+      <li id="ref-keynes2005">Keynes RD (2005). J. Z. and the discovery of squid giant nerve fibres. <em>J Exp Biol</em> 208:179–180. <a href="https://doi.org/10.1242/jeb.01405" rel="noopener">doi:10.1242/jeb.01405</a></li>
+      <li id="ref-koenig2016">Koenig KM, Sun P, Meyer E, et al. (2016). Eye development and photoreceptor differentiation in the cephalopod <em>Doryteuthis pealeii</em>. <em>Development</em> 143:3168–3181. <a href="https://doi.org/10.1242/dev.134254" rel="noopener">doi:10.1242/dev.134254</a></li>
+      <li id="ref-lassnig2026">Lassnig MA, Geslain E, Nguyen B, et al. (2026). Dynamic roles of embryonic glial cells in octopus brain development. <em>Curr Biol</em> 36:5773–5788.e5. <a href="https://doi.org/10.1016/j.cub.2026.09.068" rel="noopener">doi:10.1016/j.cub.2026.09.068</a></li>
+      <li id="ref-liscovitchbrauer2017">Liscovitch-Brauer N, Alon S, Porath HT, et al. (2017). Trade-off between transcriptome plasticity and genome evolution in cephalopods. <em>Cell</em> 169:191–202.e11. <a href="https://doi.org/10.1016/j.cell.2017.03.025" rel="noopener">doi:10.1016/j.cell.2017.03.025</a></li>
+      <li id="ref-napoli2022">Napoli FR, Daly CM, Neal S, et al. (2022). Cephalopod retinal development shows vertebrate-like mechanisms of neurogenesis. <em>Curr Biol</em> 32:5045–5056.e3. <a href="https://doi.org/10.1016/j.cub.2022.10.027" rel="noopener">doi:10.1016/j.cub.2022.10.027</a></li>
+      <li id="ref-neal2022">Neal S, McCulloch KJ, Napoli FR, et al. (2022). Co-option of the limb patterning program in cephalopod eye development. <em>BMC Biol</em> 20:1. <a href="https://doi.org/10.1186/s12915-021-01182-2" rel="noopener">doi:10.1186/s12915-021-01182-2</a></li>
+      <li id="ref-songcocasey2022">Songco-Casey JO, Coffing GC, Piscopo DM, et al. (2022). Cell types and molecular architecture of the <em>Octopus bimaculoides</em> visual system. <em>Curr Biol</em> 32:5031–5044.e4. <a href="https://doi.org/10.1016/j.cub.2022.10.015" rel="noopener">doi:10.1016/j.cub.2022.10.015</a></li>
+      <li id="ref-styfhals2022">Styfhals R, Zolotarov G, Hulselmans G, et al. (2022). Cell type diversity in a developing octopus brain. <em>Nat Commun</em> 13:7392. <a href="https://doi.org/10.1038/s41467-022-35198-1" rel="noopener">doi:10.1038/s41467-022-35198-1</a></li>
+      <li id="ref-sumbre2001">Sumbre G, Gutfreund Y, Fiorito G, et al. (2001). Control of octopus arm extension by a peripheral motor program. <em>Science</em> 293:1845–1848. <a href="https://doi.org/10.1126/science.1060976" rel="noopener">doi:10.1126/science.1060976</a></li>
+      <li id="ref-vale1985">Vale RD, Reese TS, Sheetz MP (1985). Identification of a novel force-generating protein, kinesin, involved in microtubule-based motility. <em>Cell</em> 42:39–50. <a href="https://doi.org/10.1016/s0092-8674(85)80099-4" rel="noopener">doi:10.1016/s0092-8674(85)80099-4</a></li>
+      <li id="ref-zolotarov2022">Zolotarov G, Fromm B, Legnini I, et al. (2022). MicroRNAs are deeply linked to the emergence of the complex octopus brain. <em>Sci Adv</em> 8:eadd9938. <a href="https://doi.org/10.1126/sciadv.add9938" rel="noopener">doi:10.1126/sciadv.add9938</a></li>
+    </ul>
   </div>
 </section>
   </main>
@@ -96,6 +251,6 @@ Rangos Building Rm 295<br>855 N. Wolfe St.<br>Baltimore, MD 21205<br>          <
       <p class="legal">&copy; 2026 Goff Lab, Johns Hopkins University. All rights reserved.</p>
     </div>
   </footer>
-  <script src="assets/js/site.js?v=2bfeff9cc5" defer></script>
+  <script src="assets/js/site.js?v=f1e263a4ee" defer></script>
 </body>
 </html>

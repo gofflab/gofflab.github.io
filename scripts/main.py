@@ -12,6 +12,7 @@ import argparse
 import datetime
 import difflib
 import hashlib
+import html
 import json
 import re
 import sys
@@ -286,6 +287,64 @@ def news(papers, preprints):
 
 
 ##########################
+# Cephalopods page: citations
+##########################
+
+CITATION = re.compile(r'\[(@[^\[\]]+)\]')   # [@key] or [@key1; @key2]
+
+
+def citation_keys(text):
+    return [k.strip().lstrip('@') for m in CITATION.finditer(text or '') for k in m.group(1).split(';')]
+
+
+def _strings(obj):
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            yield from _strings(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from _strings(v)
+
+
+def cephalopods_data():
+    """data/cephalopods.yaml, with its citations checked against its `references`.
+    Adds `cited` (references cited in the text, by first author) and each reading item's `paper`."""
+    data = load_yaml('cephalopods')
+    refs = data.get('references') or {}
+    cited = {k for s in _strings({k: v for k, v in data.items() if k != 'references'}) for k in citation_keys(s)}
+    for key in sorted(cited - refs.keys()):
+        log(f'WARNING: cephalopods.yaml cites [@{key}], which is not listed under references')
+    reading = (data.get('reading') or {}).get('items') or []
+    for item in reading:
+        if item.get('ref') in refs:
+            item['paper'] = dict(refs[item['ref']], key=item['ref'])
+        else:
+            log(f'WARNING: cephalopods.yaml reading item "{item.get("ref")}" is not listed under references')
+    unused = refs.keys() - cited - {i.get('ref') for i in reading}
+    if unused:
+        log(f'NOTE: cephalopods.yaml references not used on the page: {", ".join(sorted(unused))}')
+    data['cited'] = sorted((dict(r, key=k) for k, r in refs.items() if k in cited),
+                           key=lambda r: (r['authors'].lower(), r['year']))
+    return data
+
+
+def cite_filter(refs):
+    """Jinja filter: [@key] -> (Author et al., Year), linked to the reference list."""
+    def one(key):
+        r = refs.get(key)
+        if not r:
+            return f'<span class="cite-missing">@{html.escape(key)}?</span>'
+        return f'<a href="#ref-{key}">{html.escape(r["cite"])}, {r["year"]}</a>'
+
+    def cite(text):
+        return CITATION.sub(lambda m: '<span class="cite">('
+                            + '; '.join(one(k) for k in citation_keys(m.group(0))) + ')</span>', text or '')
+    return cite
+
+
+##########################
 # Filters
 ##########################
 
@@ -384,10 +443,12 @@ def main():
     env.globals['asset_version'] = hashlib.sha1(b''.join(
         (ROOT / 'assets' / p).read_bytes() for p in ('css/site.css', 'js/site.js'))).hexdigest()[:10]
     env.tests['contains'] = lambda seq, item: item in (seq or [])
+    cephalopods = cephalopods_data()
+    env.filters['cite'] = cite_filter(cephalopods.get('references') or {})
 
     common = dict(
         site=site, year=datetime.date.today().year,
-        home=load_yaml('home'), research=load_yaml('research'), cephalopods=load_yaml('cephalopods'),
+        home=load_yaml('home'), research=load_yaml('research'), cephalopods=cephalopods,
         people=load_yaml('people'), tools=tools_data(), contact=load_yaml('contact'),
         genome=load_yaml('genome_ochier'), papers=papers, preprints=preprints, posters=posters(),
         news=news(papers, preprints))

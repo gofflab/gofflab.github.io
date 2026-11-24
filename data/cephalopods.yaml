@@ -38,8 +38,8 @@ sections:
     text:
       - Most of what we know about brain development comes from a few species, chiefly mice, zebrafish, flies, and worms. Studying an animal as distant from these as a cephalopod tests which features of brain development are universal and which belong to one lineage. Where cephalopods and vertebrates share a mechanism, it may reflect a deep constraint on how large brains can be built. Where they differ, they reveal alternatives that the standard models cannot show us.
       - For most of their history in the laboratory, cephalopods were wild-caught adults, prized for a few remarkable cells or behaviors, and genetics and developmental biology in these animals lagged far behind. That gap is closing. Genome assemblies are now available for several species [@albertin2015; @destanovic2023]. CRISPR-Cas9 gene knockout works efficiently in squid embryos [@crawford2020], and an albino line of the hummingbird bobtail squid made this way allows imaging of neural activity in living animals [@ahuja2023]. Single-cell atlases have begun to catalog the cell types of octopus and squid brains [@styfhals2022; @songcocasey2022; @duruz2023], and multiplexed in situ hybridization with tissue clearing can map gene expression across whole embryos [@elagoz2022].
-      - Just as important, several species can now be raised through their full life cycle in the laboratory. The hummingbird bobtail squid, <em>Euprymna berryi</em>, produces large numbers of embryos and can be cultured throughout its life [@ahuja2023]. The lesser Pacific striped octopus, <em>Octopus chierchiae</em>, is small and breeds repeatedly, unlike most octopuses, which reproduce once and die [@grearson2021]. For the common octopus, an incubation system and staging atlas have opened embryonic development to laboratory study [@deryckere2020].
-      - Research with cephalopods also carries responsibilities. European Union rules adopted in 2010 extend animal research protections to cephalopods, the only invertebrates they cover, and researchers have worked to define standards for their care and welfare [@fiorito2014].
+      - Just as important, several species can now be raised through their full life cycle in the laboratory. The hummingbird bobtail squid, <em>Euprymna berryi</em>, is one of our model systems of choice as it produces large numbers of embryos and can be cultured throughout its life [@ahuja2023]. Another model used in our lab, The lesser Pacific striped octopus, or <em>Octopus chierchiae</em>, is small and breeds repeatedly, unlike most octopuses[@grearson2021]. #For the common octopus, an incubation system and staging atlas have opened embryonic development to laboratory study [@deryckere2020].
+      #- Research with cephalopods also carries responsibilities. European Union rules adopted in 2010 extend animal research protections to cephalopods, the only invertebrates they cover, and researchers have worked to define standards for their care and welfare [@fiorito2014].
 
 # Frontier questions, shown as a grid of cards.
 frontier:
@@ -50,22 +50,22 @@ frontier:
   intro: Coleoid embryos develop directly, without metamorphosis, from large yolk-rich eggs [@buresi2016]. Their central nervous system follows the molluscan plan, a ring of ganglia around the esophagus, yet parts of its development resemble that of vertebrates [@elagoz2024]. These are the questions we find most exciting.
   items:
     - title: Where neurons come from
-      question: How do neurons born outside the brain find their way into it?
-      text: In octopus embryos, a major pool of neural progenitors lies outside the developing brain, in the lateral lips beside the eyes. Their progeny migrate long distances to reach their places in the brain [@deryckere2021], recalling the long-distance neuronal migration of vertebrate brains [@elagoz2024]. What guides these cells, and how each finds its destination, is an open question.
-    - title: Glia as architects
-      question: What role do glia play in building the cephalopod brain?
-      text: Glia have received far less attention than neurons in cephalopods. A recent single-cell study of octopus embryos found an early population of glia, distinct from neural progenitors, whose gene expression suggests that it guides cell migration, axon guidance, and brain patterning [@lassnig2026]. A related glial type in an apple snail lacks these guidance genes, which suggests that glia took on new roles as the cephalopod brain expanded.
+      question: How do neurons born outside the brain find their proper places?
+      text: A hatchling squid's brain is a fraction of its adult size, so new neurons must keep arriving long after the embryo is built. In juvenile hummingbird bobtail squid, <em>Euprymna berryi</em>, we labeled newly divided cells and used spatial transcriptomics to follow where they are born and where they settle. New neurons arise outside the central nervous system, in a neurogenic zone in the periocular space, and enter the brain along several migratory streams, each supplying different brain regions (Stock et al., in press). What directs each stream to its target, and how arriving neurons wire into circuits already in use, are open questions.
+    - title: Glia in the cephalopod brain
+      question: What role(s) do non-neuronal cells play in the functioning cephalopod brain?
+      text: Glia were first described in the octopus brain in 1896, yet they have received far less attention than neurons [@ponte2025]. And what little we do know about non-neuronal cell types suggests that they differ from vertebrate glia in important ways. Whether cephalopod glia also buffer ions and transmitters, fuel neurons, or tune synapses, as vertebrate glia do, is largely unexplored. We are interested in how glia contribute to the proper brain function and homeostasis in cephalopods, and how their developmental origins compare to their vertebrate counterparts.
     - title: Convergent or conserved?
       question: When cephalopods and vertebrates build similar structures, do they use the same developmental tools?
-      text: Squid retinal development uses mechanisms that are hallmarks of the vertebrate retina, including nuclear migration in dividing progenitors and Notch signaling that controls cell fate [@koenig2016; @napoli2022]. Yet the squid lens borrows a gene network that patterns limbs in other animals [@neal2022], and in the yolk-rich cuttlefish embryo, genes that pattern the nervous system from midline to edge appear in a reversed arrangement [@buresi2016]. Separating shared constraints from independent inventions is a central task for the field.
+      text: Squid retinal development uses mechanisms that are hallmarks of the vertebrate retina, including nuclear migration in dividing progenitors and Notch signaling that controls cell fate [@koenig2016; @napoli2022]. Yet the squid lens borrows a gene network that patterns limbs in other animals [@neal2022], and in the cuttlefish embryo, genes that pattern the nervous system from midline to edge appear in a reversed arrangement [@buresi2016]. Separating shared constraints from independent inventions is a central task for the field.
     - title: Cell type diversity
       question: How does a cephalopod brain generate its many kinds of neurons?
-      text: Single-cell atlases now catalog neurons and glia in octopus and squid [@styfhals2022; @songcocasey2022; @duruz2023]. Neural progenitors express conserved neurogenic transcription factors such as achaete-scute and neurogenin [@deryckere2021], but cephalopods have also expanded gene families, including protocadherins and microRNAs [@albertin2015; @zolotarov2022], and recode proteins by RNA editing [@liscovitchbrauer2017]. How these innovations help specify cell identity during development is largely unknown.
+      text: Single-cell atlases now catalog neurons and glia in octopus and squid [@styfhals2022; @songcocasey2022; @duruz2023]. Neural progenitors express conserved neurogenic transcription factors such as achaete-scute and neurogenin [@deryckere2021], but cephalopods have also expanded gene families, including protocadherins and microRNAs [@albertin2015; @zolotarov2022], and extensively recode proteins using RNA editing [@liscovitchbrauer2017]. How these innovations help specify cell identity during development is largely unknown.
     - title: A brain that keeps growing
       question: How does a brain keep adding neurons while it is already in use?
       text: Young cephalopods must hunt and evade predators with a brain far smaller than an adult's. Neurogenesis continues after hatching, at least in tissues such as the cuttlefish retina [@ariasmontecino2024]. Where new neurons arise in the growing brain, how they join working circuits, and how experience shapes this growth are open questions, and central to <a href="research.html#interests">our own work</a>.
     - title: Development in a changing ocean
-      question: How does temperature shape the developing nervous system?
+      question: How do temperature, salinity, and ocean acidification shape the developing nervous system?
       text: Cephalopod embryos develop at the temperature of the surrounding sea. Chronic heat stress turns down genes for nervous system development in octopus embryos [@galindotorres2024], and octopuses change RNA editing at more than 13,000 codons, many in neural proteins, after a shift in water temperature [@birk2023]. Whether such flexibility protects the developing brain as oceans warm remains to be seen.
 
 # "Papers worth reading": each item names a key under `references`, plus a one-line note.
@@ -351,3 +351,11 @@ references:
     journal: Sci Adv
     volume: "8:eadd9938"
     doi: 10.1126/sciadv.add9938
+  ponte2025:
+    cite: Ponte et al.
+    year: 2025
+    authors: Ponte G, Zinourov Roncalli di Montorio M, Falcone C, et al.
+    title: Unveiling the hidden world of octopus glia
+    journal: Brain Behav Evol
+    volume: "100:246–262"
+    doi: 10.1159/000545910

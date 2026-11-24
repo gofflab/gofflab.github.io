@@ -18,9 +18,30 @@
 draft: News items to come. Add entries to data/news.yaml.
 
 items:
+  - date: 2026-12-03
+    tag: Paper
+    #pmid: 
+    draft_flag: false
+    hidden: true
+    title: First lab cephalopod paper published
+    text: The lab's first cephalopod paper, describing our finding of a novel neurogenic tissue located outside the central brain of squid hatchlings, is now published in <em>Science</em>. 
+    link: https://www.science.org/
+
+  - date: 2026-11-20
+    tag: Thesis Seminar
+    draft_flag: false
+    title: Alina Spiegel presents her public thesis seminar.
+    text: Neuroscience PhD student Alina Spiegel gave her public seminar in support of her thesis defense.
+
+  - date: 2026-11-10
+    tag: Defense
+    draft_flag: false
+    title: Richard Sriworarat defends his PhD dissertation.
+    text: Neuroscience PhD student Chaichontat (Richard) Sriworarat successfully defends his thesis dissertation, "Joint measurement of gene expression and cell cycle kinetics reveals progenitor heterogeneity that persists in neurons".
+
   - date: 2026-09-01
     tag: Award
-    draft_flag: true
+    draft_flag: false
     title: Loyal Goff named a Kavli Scholar
     text: Loyal has been named a Kavli Scholar by The Kavli Foundation. The award, which begins September 1, 2026, will support the lab's work on cephalopod neural development.
     link: https://www.kavlifoundation.org/kavli-scholars

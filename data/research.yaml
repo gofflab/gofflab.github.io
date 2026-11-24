@@ -3,7 +3,6 @@
 
 approach:
   draft_flag: false
-  heading: General Methodology
   text:
     - We are a computational and experimental molecular neuroscience lab. We develop single cell and spatial transcriptomics assays in conjunction with the computational tools required to analyze these data.
     - We adapt and apply these tools to challenging biological systems where standard assays often struggle.

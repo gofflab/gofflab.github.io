@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 {% import '_macros.html' as m with context %}
+{% macro address_card(c) -%}
+<div class="card contact-card">
+  <address>
+    <strong>{{ c.title }}</strong>
+    {% for line in c.lines %}{{ line }}<br>{% endfor %}
+  </address>
+  {% if c.phone or c.email %}
+  <p class="contact-links">
+    {% if c.phone %}<a href="tel:{{ c.phone|replace('(', '')|replace(')', '')|replace(' ', '-') }}">{{ c.phone }}</a>{% endif %}
+    {% if c.email %}<a href="mailto:{{ c.email }}">{{ c.email }}</a>{% endif %}
+  </p>
+  {% endif %}
+</div>
+{%- endmacro %}
 {% block content %}
 <header class="page-head has-accent">
   {{ m.accent(page) }}
@@ -9,23 +23,12 @@
 </header>
 
 <section class="section">
-  <div class="wrap grid {{ 'grid-3' if contact.image else 'grid-2' }}">
-    <div class="card">
-      <address>
-        <strong>{{ contact.lab.title }}</strong>
-        {% for line in contact.lab.lines %}{{ line }}<br>{% endfor %}
-        <abbr title="Phone">P:</abbr> <a href="tel:{{ contact.lab.phone|replace('(', '')|replace(')', '')|replace(' ', '-') }}">{{ contact.lab.phone }}</a>
-      </address>
+  <div class="wrap">
+    <div class="contact-cards">
+      {{ address_card(contact.lab) }}
+      {{ address_card(contact.pi) }}
     </div>
-    {% if contact.image %}<div class="media-frame">{{ m.img(contact.image.src, contact.image.alt, 800) }}</div>{% endif %}
-    <div class="card">
-      <address>
-        <strong>{{ contact.pi.title }}</strong>
-        {% for line in contact.pi.lines %}{{ line }}<br>{% endfor %}
-        <abbr title="Phone">P:</abbr> <a href="tel:{{ contact.pi.phone|replace('(', '')|replace(')', '')|replace(' ', '-') }}">{{ contact.pi.phone }}</a><br>
-        <abbr title="Email">E:</abbr> <a href="mailto:{{ contact.pi.email }}">{{ contact.pi.email }}</a>
-      </address>
-    </div>
+    {% if contact.directions %}<p class="contact-directions"><a class="link-arrow" href="{{ contact.directions|e }}" rel="noopener">Directions to the Rangos Building</a></p>{% endif %}
   </div>
 </section>
 {% endblock %}

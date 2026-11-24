@@ -1,4 +1,5 @@
 # Contact page. The lab address also appears in the footer of every page.
+# phone and email are optional; leave a line out and it isn't shown.
 lab:
   title: Goff Lab
   lines:
@@ -14,6 +15,5 @@ pi:
     - Baltimore, MD 21205
   phone: (443) 287-0251
   email: loyalgoff@jhmi.edu
-# Optional building photo between the two addresses. The old Miller Research Building photo
-# (images/MRB.jpg) no longer applies; add a Rangos Building photo here to show one again.
-# image: {src: FILE_UNDER_images/, alt: Rangos Building}
+# Shown under the addresses as "Directions to the Rangos Building".
+directions: https://www.google.com/maps/search/?api=1&query=Rangos+Building+855+N+Wolfe+St+Baltimore+MD+21205

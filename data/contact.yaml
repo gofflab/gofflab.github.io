@@ -1,18 +1,19 @@
-# Contact page. Carried over verbatim.
+# Contact page. The lab address also appears in the footer of every page.
 lab:
   title: Goff Lab
   lines:
-    - Miller Research Building, Room 560
-    - 733 N. Broadway Ave.
+    - Rangos Building Rm 295
+    - 855 N. Wolfe St.
     - Baltimore, MD 21205
   phone: (410) 502-9894
 pi:
   title: "PI: Loyal Goff"
   lines:
-    - Institute of Genetic Medicine
-    - Miller Research Building, Room 549
-    - 733 N. Broadway Ave.
-    - Baltimore, MD 21205
+    - Rangos Building Rm 291
+    - 855 N. Wolfe St.
+    - Baltimore, MD 21045
   phone: (443) 287-0251
   email: loyalgoff@jhmi.edu
-image: {src: MRB.jpg, alt: Miller Research Building}
+# Optional building photo between the two addresses. The old Miller Research Building photo
+# (images/MRB.jpg) no longer applies; add a Rangos Building photo here to show one again.
+# image: {src: FILE_UNDER_images/, alt: Rangos Building}

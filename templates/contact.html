@@ -9,7 +9,7 @@
 </header>
 
 <section class="section">
-  <div class="wrap grid grid-3">
+  <div class="wrap grid {{ 'grid-3' if contact.image else 'grid-2' }}">
     <div class="card">
       <address>
         <strong>{{ contact.lab.title }}</strong>
@@ -17,7 +17,7 @@
         <abbr title="Phone">P:</abbr> <a href="tel:{{ contact.lab.phone|replace('(', '')|replace(')', '')|replace(' ', '-') }}">{{ contact.lab.phone }}</a>
       </address>
     </div>
-    <div class="media-frame">{{ m.img(contact.image.src, contact.image.alt, 800) }}</div>
+    {% if contact.image %}<div class="media-frame">{{ m.img(contact.image.src, contact.image.alt, 800) }}</div>{% endif %}
     <div class="card">
       <address>
         <strong>{{ contact.pi.title }}</strong>

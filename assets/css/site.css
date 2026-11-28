@@ -191,8 +191,7 @@ em { font-style: italic; }
 @media (max-width: 640px) { .contact-cards { grid-template-columns: 1fr; } }
 
 .pillar { border-top: 2px solid var(--accent); padding-top: 1.25rem; }
-.pillar .num { font: 500 .8rem var(--font-mono); color: var(--muted); letter-spacing: .1em; }
-.pillar h3 { font-family: var(--font-serif); font-size: 1.5rem; margin: .4rem 0 .5rem; }
+.pillar h3 { font-family: var(--font-serif); font-size: 1.5rem; margin: 0 0 .5rem; }
 .pillar p { color: var(--text-2); }
 
 /* ---------- Spotlight ---------- */
